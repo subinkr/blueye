@@ -38,7 +38,7 @@
 
 <div class="w-full flex flex-col justify-center items-center overflow-x-hidden">
   <MainScreen />
-  <div class="max-w-8xl flex flex-col text-center items-center" bind:this={blueye6DivisionElement}>
+  <div class="max-w-8xl flex flex-col text-center items-center px-8" bind:this={blueye6DivisionElement}>
     <Blueye_6_Division />
   </div>
   <div class="w-full" bind:this={carouselElement}>

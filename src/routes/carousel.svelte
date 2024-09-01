@@ -9,12 +9,12 @@
   export const images = [
     {
       alt: '두바이',
-      src: '/images/panorama.jpg',
+      src: '/images/dubai.png',
       title: 'dubai'
     },
     {
       alt: '캄보디아',
-      src: '/images/panorama.jpg',
+      src: '/images/cambodia.png',
       title: 'cambodia'
     },
     {
