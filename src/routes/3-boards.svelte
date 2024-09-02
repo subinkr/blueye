@@ -1,4 +1,6 @@
 <script>
+  import { Button } from "flowbite-svelte";
+  import { ArrowRightOutline } from 'flowbite-svelte-icons';
   import Board from "../components/board.svelte";
 
   export let country;
@@ -39,6 +41,10 @@
 
 <div class="flex flex-col md:flex-row justify-center items-center m-4 gap-4">
   {#each boards[country] as board}
-    <Board {...board} />
+    <Board {...board}>
+      <Button>
+        Read more <ArrowRightOutline class="w-6 h-6 ms-2 text-white" />
+      </Button>
+    </Board>
   {/each}
 </div>
