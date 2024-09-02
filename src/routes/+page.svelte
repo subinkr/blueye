@@ -2,7 +2,7 @@
   import Carousel from './carousel.svelte';
   import Gallery from './gallery.svelte';
   import MainScreen from './main-screen.svelte';
-  import Marquee from './marquee.svelte';
+  import CoOp from './co-op.svelte';
   import Blueye_6_Division from './blueye-6-division.svelte';
   import { onMount } from 'svelte';
   import { scrollY, mainScreenHeight, blueye6DivisionHeight, carouselHeight, carouselTop } from '$lib/scroll-control.ts';
@@ -47,5 +47,5 @@
   <!-- <div class="max-w-6xl flex flex-col text-center items-center">
     <Gallery />
   </div> -->
-  <Marquee />
+  <CoOp />
 </div>
