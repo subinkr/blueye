@@ -1,50 +1,81 @@
 <script>
-  import { Navbar, NavBrand, NavUl, NavLi, MegaMenu, Button } from 'flowbite-svelte';
   import { DarkMode } from 'flowbite-svelte';
-  import { fly } from 'svelte/transition';
   import { onMount } from 'svelte';
   import {menus} from '$lib/menus.ts';
   import Hamburger from './hamburger.svelte';
 
-  let child = [];
   let visible = false;
 
   onMount(() => {
     visible = true;
   })
 
+	const platforms = [
+		{
+			alt: '페이스북',
+      src: '/images/logo/facebook.svg',
+      href: '/',
+      title: 'facebook'
+		},
+		{
+			alt: '유튜브',
+      src: '/images/logo/youtube.svg',
+      href: '/',
+      title: 'youtube'
+		},
+		{
+			alt: '인스타그램',
+      src: '/images/logo/instagram.svg',
+      href: '/',
+      title: 'instagram'
+		},
+		{
+			alt: '카카오톡',
+      src: '/images/logo/kakaotalk.svg',
+      href: '/',
+      title: 'kakaotalk'
+		},
+		{
+			alt: '블로그',
+      src: '/images/logo/blog.svg',
+      href: '/',
+      title: 'blog'
+		},
+	]
 </script>
 
 
-<Navbar let:hidden class="border-b text-center h-20 flex">
-  <NavBrand href="/">
-    <img src="/images/blueye-logo.jpg" class="me-3 h-6 sm:h-9" alt="Blueye Logo" />
-    <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Blueye</span>
-    <div class="m-1" />
-    <DarkMode />
-  </NavBrand>
-    <Hamburger {menus} />
-    <NavUl {hidden}>
+<div class="border-b text-center px-4 py-4 flex flex-col gap-4">
+  <div id="blueye" class="flex justify-between items-center">
+    <a href="/">
+      <img src="/images/logo/blueye-logo.svg" class="h-9 dark:hidden" alt="Blueye Logo" />
+      <img src="/images/logo/blueye-logo-white.svg" class="h-9 hidden dark:block" alt="Blueye Logo" />
+    </a>
+    <div class="flex gap-4">
+      <DarkMode class="hidden md:block" />
+      <Hamburger {menus} />
+    </div>
+  </div>
+
+  <div id="menus" class="hidden md:flex justify-between items-center">
+    <div class="flex gap-1">
       {#each menus as menu}
-        {#if visible}
-        <div class="w-full" in:fly={{ x: 100, duration: 1000 }}>
-        <NavLi class="w-[11vw] cursor-pointer text-sm lg:text-base xl:text-lg font-bold hover:underline" 
-          on:mouseenter={()=> {
-            child = menu.child;
-          }}
-        >
-          {menu.title}
-        </NavLi>
-        <MegaMenu full items={child} let:item class="flex justify-end z-50">
-          <div slot="default" class="w-[20vw]">
-            <a href={item.url} class="hover:underline hover:font-bold text-sm lg:text-base xl:text-lg hover:text-primary-800 dark:hover:text-white">
-              <!-- <div transition:fly={{ y: 100, duration: 250 }}>{item.title}</div> -->
-              <div>{item.title}</div>
-            </a>
+        <div class="group relative cursor-pointer font-bold hover:rounded-full px-4 pt-1 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black">
+          <div>{menu.title}</div>
+          <div class="absolute hidden top-7 group-hover:flex flex-col pt-4 pb-2 z-40 bg-white dark:bg-black text-black dark:text-white rounded-b-xl">
+            {#each menu.child as child}
+              <div class="mx-4 my-2 whitespace-nowrap text-left hover:underline">
+                <a href="/"><div class="pl-4 pr-12">{child.title}</div></a>
+              </div>
+            {/each}
           </div>
-        </MegaMenu>
-      </div>
-      {/if}
-        {/each}
-    </NavUl>
-</Navbar>
+        </div>
+      {/each}
+    </div>
+    <div class="flex gap-4">
+      {#each platforms as platform}
+        <a href={platform.href} class="w-5 h-5"><img src={platform.src} alt={platform.alt} /></a>
+      {/each}
+    </div>
+  </div>
+</div>

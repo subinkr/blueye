@@ -1,5 +1,5 @@
 <script>
-  import { Drawer, Button, CloseButton, Sidebar, SidebarDropdownItem, SidebarDropdownWrapper, SidebarGroup, SidebarWrapper } from 'flowbite-svelte';
+  import { Drawer, Button, CloseButton, Sidebar, SidebarDropdownItem, SidebarDropdownWrapper, SidebarGroup, SidebarWrapper, DarkMode } from 'flowbite-svelte';
   import { BarsOutline } from 'flowbite-svelte-icons';
   import { sineIn } from 'svelte/easing';
 
@@ -18,8 +18,9 @@
 
 <Drawer class="w-full h-screen p-0 flex flex-col justify-start items-center" placement="top" width="w-full" transitionType="fly" transitionParams={transitionParamsTop} bind:hidden={hidden2} id="sidebar7">
   <div class="w-full min-h-20 px-4 flex justify-between items-center">
-    <h5 id="drawer-navigation-label-3" class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">Menu</h5>
-    <CloseButton on:click={() => (hidden2 = true)} class="dark:text-white" />
+    <DarkMode />
+    <h5 id="drawer-navigation-label-3" class="flex-1 text-base font-semibold text-gray-500 uppercase dark:text-gray-400">Menu</h5>
+    <CloseButton on:click={() => (hidden2 = true)} class="dark:text-white m-0" />
   </div>
   <Sidebar>
     <SidebarWrapper divClass="overflow-y-auto rounded dark:bg-gray-800">
@@ -30,7 +31,7 @@
               <SidebarDropdownItem href={child.url} label={child.title} />
             {/each}
           </SidebarDropdownWrapper>
-        {/each}
+          {/each}
       </SidebarGroup>
     </SidebarWrapper>
   </Sidebar>

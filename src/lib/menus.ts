@@ -1,84 +1,147 @@
 export const menus = [
   {
-    title: "블루아이 소개",
+    title: "회사소개",
     child: [
       {
-        title: "블루아이는?",
+        title: "대표인사말",
         url: "/menu",
       },
       {
-        title: "비전과 미션",
+        title: "주요연혁",
         url: "/menu",
       },
       {
-        title: "연혁",
-        url: "/menu",
-      },
-      {
-        title: "임직원",
+        title: "사업영역",
         url: "/menu",
       },
     ],
   },
   {
-    title: "지사 소개",
+    title: "여행-리치조아",
     child: [
       {
-        title: "한국",
+        title: "비즈니스 투어",
         url: "/service",
       },
       {
-        title: "중국",
+        title: "부동산 투어",
         url: "/service",
       },
       {
-        title: "캄보디아",
+        title: "한달살기(교육, 실버)",
         url: "/service",
       },
       {
-        title: "베트남",
+        title: "골프투어, 트래킹",
         url: "/service",
+      },
+      {
+        title: "전시회(라이브), 대행",
+        url: "/service",
+      },
+    ],
+  },
+  {
+    title: "아시아부동산",
+    child: [
+      {
+        title: "중국 & 상하이",
+        url: "/products",
       },
       {
         title: "말레이시아",
-        url: "/service",
+        url: "/products",
       },
       {
         title: "싱가포르",
-        url: "/service",
-      },
-    ],
-  },
-  {
-    title: "진행중인 사업",
-    child: [
-      {
-        title: "부동산",
         url: "/products",
       },
       {
-        title: "여행",
+        title: "캄보디아",
         url: "/products",
       },
       {
-        title: "교육",
+        title: "베트남(호치민/하노이)",
         url: "/products",
       },
       {
-        title: "미디어",
+        title: "두바이",
+        url: "/products",
+      },
+      {
+        title: "한국",
         url: "/products",
       },
     ],
   },
   {
-    title: "고객지원",
+    title: "교육-블루에듀",
     child: [
       {
-        title: "오시는 길",
+        title: "재외국민 특례전형",
+        url: "/contract",
+      },
+    ],
+  },
+  {
+    title: "매거진",
+    child: [
+      {
+        title: "더리치(The Litchi)",
         url: "/contract",
       },
       {
-        title: "문의하기",
+        title: "베한타임즈(베트남)",
+        url: "/contract",
+      },
+      {
+        title: "에듀아시아 신문(상하이)",
+        url: "/contract",
+      },
+      {
+        title: "포커스기업소식(텐진)",
+        url: "/contract",
+      },
+      {
+        title: "에듀아시아 매거진",
+        url: "/contract",
+      },
+      {
+        title: "이메일 구독신청",
+        url: "/contract",
+      },
+    ],
+  },
+  {
+    title: "뷰니버스(Buniverse)",
+    child: [
+      {
+        title: "디자인 | 표아트(PYO art)",
+        url: "/contract",
+      },
+      {
+        title: "영상 | 스노우큐브(SNOWCUBE)",
+        url: "/contract",
+      },
+      {
+        title: "프로그래밍 | 너디블루(NerdyBlue)",
+        url: "/contract",
+      },
+    ],
+  },
+  {
+    title: "고객센터",
+    child: [
+      {
+        title: "세미나 & 현장투어",
+        url: "/contract",
+      },
+      {
+        title: "공지사항",
+        url: "/contract",
+      },
+      {
+        title: "Q&A",
         url: "/contract",
       },
     ],
