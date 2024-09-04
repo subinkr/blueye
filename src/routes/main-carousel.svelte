@@ -44,7 +44,7 @@
       <a class={"w-full h-full relative"} href="/">
         <div>hello world</div>
         <div class="absolute">hello world</div>
-        <div class={"px-4 w-full absolute top-20 right-0 sm:top-40 lg:right-40 max-w-[1400px] text-center lg:text-right flex flex-col gap-10 " + image.textColor}>
+        <div class={"px-4 w-screen z-10 absolute top-32 left-0 sm:top-40 lg:right-40 lg:left-auto max-w-[1400px] text-center lg:text-right flex flex-col gap-10 " + image.textColor}>
           <div class="text-xl lg:text-5xl font-extrabold">{image.title}</div>
           <div class="hidden sm:block">
             <div class="text-sm lg:text-xl">{image.content1}</div>
