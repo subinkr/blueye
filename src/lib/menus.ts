@@ -17,31 +17,6 @@ export const menus = [
     ],
   },
   {
-    title: "여행-리치조아",
-    child: [
-      {
-        title: "비즈니스 투어",
-        url: "/service",
-      },
-      {
-        title: "부동산 투어",
-        url: "/service",
-      },
-      {
-        title: "한달살기(교육, 실버)",
-        url: "/service",
-      },
-      {
-        title: "골프투어, 트래킹",
-        url: "/service",
-      },
-      {
-        title: "전시회(라이브), 대행",
-        url: "/service",
-      },
-    ],
-  },
-  {
     title: "아시아부동산",
     child: [
       {
@@ -113,18 +88,43 @@ export const menus = [
     ],
   },
   {
+    title: "여행-리치조아",
+    child: [
+      {
+        title: "비즈니스 투어",
+        url: "/service",
+      },
+      {
+        title: "부동산 투어",
+        url: "/service",
+      },
+      {
+        title: "한달살기(교육, 실버)",
+        url: "/service",
+      },
+      {
+        title: "골프투어, 트래킹",
+        url: "/service",
+      },
+      {
+        title: "전시회(라이브), 대행",
+        url: "/service",
+      },
+    ],
+  },
+  {
     title: "뷰니버스(Buniverse)",
     child: [
       {
-        title: "디자인 | 표아트(PYO art)",
+        title: "디자인 | PYO art",
         url: "/contract",
       },
       {
-        title: "영상 | 스노우큐브(SNOWCUBE)",
+        title: "영상 | SNOWCUBE",
         url: "/contract",
       },
       {
-        title: "프로그래밍 | 너디블루(NerdyBlue)",
+        title: "프로그래밍 | NerdyBlue",
         url: "/contract",
       },
     ],

@@ -4,9 +4,11 @@
   import CoOp from './co-op.svelte';
   import Blueye_6_Division from './blueye-6-division.svelte';
   import { onMount } from 'svelte';
-  import { scrollY, mainScreenHeight, blueye6DivisionHeight, carouselHeight } from '$lib/scroll-control.ts';
+  import { scrollY, bodyHeight, mainScreenHeight, blueye6DivisionHeight, carouselHeight } from '$lib/scroll-control.ts';
   import News from './news.svelte';
   import MainCarousel from './main-carousel.svelte';
+  import Portfolio from './portfolio.svelte';
+  import Recommend from './recommend.svelte';
 
   let blueye6DivisionElement;
   let carouselElement;
@@ -36,19 +38,25 @@
 
 <svelte:window bind:scrollY={$scrollY} on:resize={updateHeight} />
 
-<div class="w-full flex flex-col justify-center items-center overflow-x-hidden">
+<div class="w-full flex flex-col justify-center items-center overflow-hidden">
   <div class="w-full" bind:this={carouselElement}>
     <MainCarousel />
   </div>
-  <div class="w-full">
+  <div class="max-w-8xl flex flex-col text-center items-center px-8" bind:this={blueye6DivisionElement}>
+    <Portfolio />
+  </div>
+  <div class="max-w-8xl flex flex-col text-center items-center px-8" bind:this={blueye6DivisionElement}>
+    <Recommend />
+  </div>
+  <!-- <div class="w-full">
     <News />
   </div>
   <MainScreen />
   <div class="max-w-8xl flex flex-col text-center items-center px-8" bind:this={blueye6DivisionElement}>
     <Blueye_6_Division />
   </div>
-  <!-- <div class="max-w-6xl flex flex-col text-center items-center">
+  <div class="max-w-6xl flex flex-col text-center items-center">
     <Gallery />
-  </div> -->
-  <CoOp />
+  </div>
+  <CoOp /> -->
 </div>

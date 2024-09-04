@@ -1,15 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 26.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+<svg class="fill-primary-900 dark:fill-white" version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 56.69 56.69" style="enable-background:new 0 0 56.69 56.69;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#FFFFFF;}
-	.st1{fill:#32327E;}
-</style>
 <g>
-	<circle class="st0" cx="28.35" cy="28.35" r="28.35"/>
+	<circle cx="28.35" cy="28.35" r="28.35"/>
 	<g>
-		<path class="st1" d="M28.35,0C12.69,0,0,12.69,0,28.35C0,40.72,7.93,51.23,18.97,55.1c-1.63-8.49-1.69-14.5-1.4-18.19l-2.12,5.4
+		<path d="M28.35,0C12.69,0,0,12.69,0,28.35C0,40.72,7.93,51.23,18.97,55.1c-1.63-8.49-1.69-14.5-1.4-18.19l-2.12,5.4
 			l1.81,2.99c0.15,0.24,0.07,0.56-0.17,0.71c-0.08,0.05-0.18,0.07-0.27,0.07c-0.17,0-0.35-0.09-0.44-0.25l-1.08-1.78l-0.15,2.7
 			c-0.02,0.27-0.24,0.49-0.52,0.49c-0.01,0-0.02,0-0.03,0c-0.28-0.02-0.5-0.26-0.49-0.55l0.16-2.74l-1.61,2.02
 			c-0.18,0.22-0.5,0.26-0.73,0.08c-0.22-0.18-0.26-0.5-0.08-0.73l1.61-2.02l-1.91,0.55c-0.27,0.08-0.56-0.08-0.64-0.35

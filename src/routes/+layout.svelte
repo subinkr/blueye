@@ -2,12 +2,29 @@
   import "../app.css";
   import Header from '../components/header.svelte'
   import Footer from '../components/footer.svelte'
+  import { headerHeight, bodyHeight } from '$lib/scroll-control.ts';
+  import { onMount } from "svelte";
+
+  onMount(() => {
+    $headerHeight = headerElement.clientHeight;
+    $bodyHeight = " min-h-[calc(100vh-73px)] lg:min-h-[calc(100vh-117px)]";
+    visible = true;
+  })
+  
+  let visible = false;
+  let headerElement;
 </script>
 
 <div class="bg-white dark:bg-gray-900 text-black dark:text-white flex flex-col justify-center">
-  <Header />
-    <div class="w-full min-h-[calc(100vh-80px)] flex flex-col justify-center items-center">
+  <div bind:this={headerElement}>
+    <Header />
+  </div>
+  {#if visible}
+    <div class="w-full flex flex-col justify-start items-center">
       <slot />
     </div>
+  {:else}
+    <div class="h-screen"></div>
+  {/if}
   <Footer />
 </div>

@@ -19,7 +19,7 @@
 
 {#if $scrollY >= $mainScreenHeight / 5}
 <div transition:fly={{ y: -100, duration: 1000 }}
-  class="z-50 fixed top-0 left-0 bg-black w-fit flex h-8 text-white font-bold sm:text-xl md:text-2xl text-center"
+  class="z-40 fixed top-0 left-0 bg-black w-fit flex h-8 text-white font-bold sm:text-xl md:text-2xl text-center"
 >
   <Marquee speed={0.3} hoverSpeed={0} class="text-sm min-w-fit">
     {#each headlines as headline}

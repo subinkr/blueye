@@ -82,7 +82,7 @@
 	export let duration = 200
 	export let easing = 'ease-out'
 	export let startIndex = 0
-	export let draggable = true
+	export let draggable = false
 	export let multipleDrag = true	
 	export let dots = true	
 	export let controls = true

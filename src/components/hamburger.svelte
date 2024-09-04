@@ -2,8 +2,9 @@
   import { Drawer, Button, CloseButton, Sidebar, SidebarDropdownItem, SidebarDropdownWrapper, SidebarGroup, SidebarWrapper, DarkMode } from 'flowbite-svelte';
   import { BarsOutline } from 'flowbite-svelte-icons';
   import { sineIn } from 'svelte/easing';
+  import Platforms from './platforms.svelte';
 
-  let hidden2 = true;
+  let hidden = true;
   let transitionParamsTop = {
     y: -320,
     duration: 200,
@@ -12,19 +13,19 @@
   export let menus;
 </script>
 
-<div class="md:hidden text-center">
-  <Button on:click={() => (hidden2 = false)}><BarsOutline /></Button>
+<div class="lg:hidden text-center">
+  <Button on:click={() => (hidden = false)}><BarsOutline /></Button>
 </div>
 
-<Drawer class="w-full h-screen p-0 flex flex-col justify-start items-center" placement="top" width="w-full" transitionType="fly" transitionParams={transitionParamsTop} bind:hidden={hidden2} id="sidebar7">
+<Drawer class="z-50 w-full h-screen p-0 flex flex-col justify-start items-center" placement="top" width="w-full" transitionType="fly" transitionParams={transitionParamsTop} bind:hidden={hidden} id="sidebar7">
   <div class="w-full min-h-20 px-4 flex justify-between items-center">
     <DarkMode />
     <h5 id="drawer-navigation-label-3" class="flex-1 text-base font-semibold text-gray-500 uppercase dark:text-gray-400">Menu</h5>
-    <CloseButton on:click={() => (hidden2 = true)} class="dark:text-white m-0" />
+    <CloseButton on:click={() => (hidden = true)} class="dark:text-white m-0" />
   </div>
   <Sidebar>
-    <SidebarWrapper divClass="overflow-y-auto rounded dark:bg-gray-800">
-      <SidebarGroup>
+    <SidebarWrapper divClass="h-[calc(100vh-80px)] flex flex-col justify-between items-center overflow-y-auto rounded dark:bg-gray-800">
+      <SidebarGroup class="w-full">
         {#each menus as menu}
           <SidebarDropdownWrapper class="pl-0" href={menu.url} label={menu.title}>
             {#each menu.child as child}
@@ -32,7 +33,10 @@
             {/each}
           </SidebarDropdownWrapper>
           {/each}
-      </SidebarGroup>
+        </SidebarGroup>
+        <div class="my-8">
+          <Platforms size="h-8" />
+        </div>
     </SidebarWrapper>
   </Sidebar>
 </Drawer>
