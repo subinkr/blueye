@@ -43,7 +43,7 @@
   {#each images as image, index (index)}
       <a class="relative" href="/">
         <img class={"w-full object-cover " + $bodyHeight} src={image.src} alt={image.alt} />
-        <div class={"px-4 w-full absolute z-10 top-40 right-0 lg:translate-x-0 lg:translate-y-0 lg:top-40 lg:right-40 max-w-[1400px] text-center lg:text-right flex flex-col gap-10 " + image.color}>
+        <div class={"px-4 w-full absolute top-1/4 right-0 lg:translate-x-0 lg:translate-y-0 lg:right-40 max-w-[1400px] text-center lg:text-right flex flex-col gap-10 " + image.color}>
           <div class="text-xl lg:text-5xl font-extrabold">{image.title}</div>
           <div class="hidden sm:block">
             <div class="text-sm lg:text-xl">{image.content1}</div>
