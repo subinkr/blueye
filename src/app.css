@@ -2,10 +2,6 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-* {
-  font-family: "Dotum", "돋움", sans-serif;
-}
-
 *:focus {
   outline: none;
 }
