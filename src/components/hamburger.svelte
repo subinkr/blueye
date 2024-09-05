@@ -27,9 +27,9 @@
     <SidebarWrapper divClass="h-[calc(100vh-80px)] flex flex-col justify-between items-center overflow-y-auto rounded dark:bg-gray-800">
       <SidebarGroup class="w-full">
         {#each menus as menu}
-          <SidebarDropdownWrapper class="pl-0" href={menu.url} label={menu.title}>
+          <SidebarDropdownWrapper class="pl-0" href={menu.href} label={menu.title}>
             {#each menu.child as child}
-              <SidebarDropdownItem href={child.url} label={child.title} />
+              <SidebarDropdownItem href={child.href} label={child.title} on:click={() => (hidden = true)} />
             {/each}
           </SidebarDropdownWrapper>
           {/each}

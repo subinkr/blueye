@@ -1,22 +1,23 @@
 export const menus = [
   {
     title: "회사소개",
+    href: "/introduce",
     child: [
       {
         title: "대표인사말",
-        url: "/menu",
+        href: "/introduce#ceo",
       },
       {
         title: "주요연혁",
-        url: "/menu",
+        href: "/introduce#history",
       },
       {
         title: "사업영역",
-        url: "/menu",
+        href: "/introduce#business",
       },
       {
         title: "블루아이 사람들",
-        url: "/menu",
+        href: "/introduce/people",
       },
     ],
   },
@@ -25,31 +26,31 @@ export const menus = [
     child: [
       {
         title: "두바이",
-        url: "/products",
+        href: "/products",
       },
       {
         title: "중국 & 상하이",
-        url: "/products",
+        href: "/products",
       },
       {
         title: "말레이시아",
-        url: "/products",
+        href: "/products",
       },
       {
         title: "싱가포르",
-        url: "/products",
+        href: "/products",
       },
       {
         title: "캄보디아",
-        url: "/products",
+        href: "/products",
       },
       {
         title: "베트남(호치민/하노이)",
-        url: "/products",
+        href: "/products",
       },
       {
         title: "한국(블루아시아)",
-        url: "/products",
+        href: "/products",
       },
     ],
   },
@@ -58,11 +59,11 @@ export const menus = [
     child: [
       {
         title: "재외국민 특례전형",
-        url: "/contract",
+        href: "/contract",
       },
       {
         title: "손안에캠퍼스 '손캠'",
-        url: "/contract",
+        href: "/contract",
       },
     ],
   },
@@ -71,27 +72,27 @@ export const menus = [
     child: [
       {
         title: "더리치(The Litchi)",
-        url: "/contract",
+        href: "/contract",
       },
       {
         title: "베한타임즈(베트남)",
-        url: "/contract",
+        href: "/contract",
       },
       {
         title: "에듀아시아 신문(상하이)",
-        url: "/contract",
+        href: "/contract",
       },
       {
         title: "에듀아시아 매거진",
-        url: "/contract",
+        href: "/contract",
       },
       {
         title: "포커스기업소식(텐진)",
-        url: "/contract",
+        href: "/contract",
       },
       {
         title: "이메일 구독신청",
-        url: "/contract",
+        href: "/contract",
       },
     ],
   },
@@ -100,23 +101,23 @@ export const menus = [
     child: [
       {
         title: "비즈니스 투어",
-        url: "/service",
+        href: "/service",
       },
       {
         title: "부동산 투어",
-        url: "/service",
+        href: "/service",
       },
       {
         title: "한달살기(교육, 실버)",
-        url: "/service",
+        href: "/service",
       },
       {
         title: "골프투어, 트래킹",
-        url: "/service",
+        href: "/service",
       },
       {
         title: "전시회(라이브)",
-        url: "/service",
+        href: "/service",
       },
     ],
   },
@@ -125,15 +126,15 @@ export const menus = [
     child: [
       {
         title: "영상 | 스노우큐브",
-        url: "/contract",
+        href: "/contract",
       },
       {
         title: "디자인 | PYO art",
-        url: "/contract",
+        href: "/contract",
       },
       {
         title: "프로그래밍 | NerdyBlue",
-        url: "/contract",
+        href: "/contract",
       },
     ],
   },
@@ -142,15 +143,15 @@ export const menus = [
     child: [
       {
         title: "설명회 & 현장투어",
-        url: "/contract",
+        href: "/contract",
       },
       {
         title: "공지사항",
-        url: "/contract",
+        href: "/contract",
       },
       {
         title: "Q&A",
-        url: "/contract",
+        href: "/contract",
       },
     ],
   },
