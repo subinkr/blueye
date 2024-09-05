@@ -3,7 +3,7 @@
   import { Heading } from "flowbite-svelte";
   import Panel from "../components/panel.svelte";
 
-  const layout = " text-gray-50 w-72 sm:w-60 xl:w-72 2xl:w-80 3xl:w-[400px] border-gray-100 bg-gray-900/40 hover:bg-blue-900/80 hover:font-bold "
+  const layout = " text-gray-50 w-72 sm:w-60 xl:w-72 2xl:w-80 3xl:w-[400px] border-gray-100 bg-gray-900/40 hover:bg-blue-900/80 hover:font-bold hover:sm:w-[30rem] hover:xl:w-[36rem] hover:2xl:w-[40rem] hover:3xl:w-[600px] "
   let src = ""
   let position = ""
 
@@ -36,7 +36,7 @@
   <article class="w-full flex flex-col 2xl:flex-row gap-4 justify-center items-center" on:mouseleave={(e) => src = ""}>
     <div class="w-full flex flex-col sm:flex-row gap-4 justify-center items-center">
     {#each data.slice(0,2) as board}
-      <article class="text-sm lg:text-base xl:text-lg " on:mouseenter={(e) => { src = board.src; position = " right-0 " }}>
+      <article class="text-sm lg:text-base xl:text-lg hover:sm:text-lg hover:md:text-xl hover:lg:text-2xl " on:mouseenter={(e) => { src = board.src; position = " right-0 " }}>
         <Panel reverse={true} {layout} img={board.src}>
           <div class="h-full flex flex-col justify-between">
             <h3 class="whitespace-nowrap">{board.title}</h3>
@@ -47,7 +47,7 @@
     </div>
     <div class="w-full flex flex-col sm:flex-row gap-4 justify-center items-center">
     {#each data.slice(2,4) as board}
-      <article class="text-sm lg:text-base xl:text-lg " on:mouseenter={(e) => { src = board.src; position = " left-0 " }}>
+      <article class="text-sm lg:text-base xl:text-lg hover:sm:text-lg hover:md:text-xl hover:lg:text-2xl " on:mouseenter={(e) => { src = board.src; position = " left-0 " }}>
         <Panel reverse={true} {layout} img={board.src}>
           <div class="h-full flex flex-col justify-between">
             <h3 class="whitespace-nowrap">{board.title}</h3>
