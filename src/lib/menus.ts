@@ -113,7 +113,7 @@ export const menus = [
     ],
   },
   {
-    title: "뷰니버스(Buniverse)",
+    title: "뷰니버스(Büniverse)",
     child: [
       {
         title: "디자인 | PYO art",
