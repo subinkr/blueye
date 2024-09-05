@@ -14,11 +14,19 @@ export const menus = [
         title: "사업영역",
         url: "/menu",
       },
+      {
+        title: "블루아이 사람들",
+        url: "/menu",
+      },
     ],
   },
   {
     title: "아시아부동산",
     child: [
+      {
+        title: "두바이",
+        url: "/products",
+      },
       {
         title: "중국 & 상하이",
         url: "/products",
@@ -40,11 +48,7 @@ export const menus = [
         url: "/products",
       },
       {
-        title: "두바이",
-        url: "/products",
-      },
-      {
-        title: "한국",
+        title: "한국(블루아시아)",
         url: "/products",
       },
     ],
@@ -54,6 +58,10 @@ export const menus = [
     child: [
       {
         title: "재외국민 특례전형",
+        url: "/contract",
+      },
+      {
+        title: "손안에캠퍼스 '손캠'",
         url: "/contract",
       },
     ],
@@ -74,11 +82,11 @@ export const menus = [
         url: "/contract",
       },
       {
-        title: "포커스기업소식(텐진)",
+        title: "에듀아시아 매거진",
         url: "/contract",
       },
       {
-        title: "에듀아시아 매거진",
+        title: "포커스기업소식(텐진)",
         url: "/contract",
       },
       {
@@ -107,7 +115,7 @@ export const menus = [
         url: "/service",
       },
       {
-        title: "전시회(라이브), 대행",
+        title: "전시회(라이브)",
         url: "/service",
       },
     ],
@@ -116,11 +124,11 @@ export const menus = [
     title: "뷰니버스(Büniverse)",
     child: [
       {
-        title: "디자인 | PYO art",
+        title: "영상 | 스노우큐브",
         url: "/contract",
       },
       {
-        title: "영상 | SNOWCUBE",
+        title: "디자인 | PYO art",
         url: "/contract",
       },
       {
@@ -133,7 +141,7 @@ export const menus = [
     title: "고객센터",
     child: [
       {
-        title: "세미나 & 현장투어",
+        title: "설명회 & 현장투어",
         url: "/contract",
       },
       {

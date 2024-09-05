@@ -1,37 +1,143 @@
 <script>
-  import { Footer, FooterLinkGroup, FooterLink, FooterIcon, FooterCopyright } from 'flowbite-svelte';
-  import { FacebookSolid, GithubSolid, DiscordSolid, TwitterSolid } from 'flowbite-svelte-icons';
+  import { Footer, FooterLinkGroup, FooterLink } from 'flowbite-svelte';
   import { menus } from '$lib/menus.ts';
+  import Separator from './icons/separator.svelte';
+  import BlueyeLogo from './icons/blueye-logo.svelte';
 </script>
 
-<Footer footerType="sitemap" class="bg-white dark:bg-gray-900 border-t">
+<Footer footerType="logo" class="bg-white dark:bg-gray-900 border-t flex flex-col items-center gap-20">
+  <!-- large sitemap -->
   <div class="w-full flex flex-col items-center">
-  <div class="w-full max-w-4xl grid grid-cols-2 gap-8 py-8 px-6 md:grid-cols-4">
-    {#each menus as menu}
-    <div>
-      <h2 class="mb-6 text-sm sm:text-base md:text-lg font-semibold dark:text-gray-400 uppercase">{menu.title}</h2>
-      <FooterLinkGroup ulClass="dark:text-gray-300">
-        {#each menu.child as child}
-        <FooterLink liClass="mb-4" href={child.url}>{child.title}</FooterLink>
-        {/each}
-      </FooterLinkGroup>
+    <div class="w-full max-w-4xl hidden md:grid grid-cols-2 gap-8 py-8 px-6 md:grid-cols-4">
+      {#each menus.filter((menu, index) => {
+        if(index % 2 == 0) return menu
+      }) as menu}
+      <div>
+        <h2 class="mb-6 text-sm sm:text-base md:text-lg font-semibold dark:text-gray-400 uppercase">{menu.title}</h2>
+        <FooterLinkGroup ulClass="dark:text-gray-300">
+          {#each menu.child as child}
+          <FooterLink liClass="mb-4" href={child.url}>{child.title}</FooterLink>
+          {/each}
+        </FooterLinkGroup>
+      </div>
+      {/each}
+      {#each menus.filter((menu, index) => {
+        if(index % 2 == 1) return menu
+      }) as menu}
+      <div>
+        <h2 class="mb-6 text-sm sm:text-base md:text-lg font-semibold dark:text-gray-400 uppercase">{menu.title}</h2>
+        <FooterLinkGroup ulClass="dark:text-gray-300">
+          {#each menu.child as child}
+          <FooterLink liClass="mb-4" href={child.url}>{child.title}</FooterLink>
+          {/each}
+        </FooterLinkGroup>
+      </div>
+      {/each}
     </div>
-    {/each}
+
+    <!-- middle sitemap -->
+    <div class="w-full max-w-4xl hidden sm:grid grid-cols-2 gap-8 py-8 px-6 md:hidden">
+      <div class="flex flex-col gap-8">
+      {#each menus.filter((menu, index) => {
+        if(index < (menus.length + 1) / 2) return menu
+      }) as menu}
+      <div>
+        <h2 class="mb-6 text-sm sm:text-base md:text-lg font-semibold dark:text-gray-400 uppercase">{menu.title}</h2>
+        <FooterLinkGroup ulClass="dark:text-gray-300">
+          {#each menu.child as child}
+          <FooterLink liClass="mb-4" href={child.url}>{child.title}</FooterLink>
+          {/each}
+        </FooterLinkGroup>
+      </div>
+      {/each}
+      </div>
+      <div class="flex flex-col gap-8">
+      {#each menus.filter((menu, index) => {
+        if(index >= (menus.length + 1) / 2) return menu
+      }) as menu}
+      <div>
+        <h2 class="mb-6 text-sm sm:text-base md:text-lg font-semibold dark:text-gray-400 uppercase">{menu.title}</h2>
+        <FooterLinkGroup ulClass="dark:text-gray-300">
+          {#each menu.child as child}
+          <FooterLink liClass="mb-4" href={child.url}>{child.title}</FooterLink>
+          {/each}
+        </FooterLinkGroup>
+      </div>
+      {/each}
+      </div>
+    </div>
+
+    <!-- small sitemap -->
+    <div class="w-full max-w-4xl grid grid-cols-1 gap-8 py-8 px-6 sm:hidden">
+      <div class="flex flex-col gap-8">
+      {#each menus as menu}
+      <div>
+        <h2 class="mb-6 text-sm sm:text-base md:text-lg font-semibold dark:text-gray-400 uppercase">{menu.title}</h2>
+        <FooterLinkGroup ulClass="dark:text-gray-300">
+          {#each menu.child as child}
+          <FooterLink liClass="mb-4" href={child.url}>{child.title}</FooterLink>
+          {/each}
+        </FooterLinkGroup>
+      </div>
+      {/each}
+      </div>
+    </div>
   </div>
-</div>
 
-  <div class="py-6 px-4 bg-white dark:bg-gray-700 md:flex md:items-center md:justify-between">
-    <FooterCopyright spanClass="text-sm dark:text-gray-300 sm:text-center" href="/" by="Blueye" />
-    <div class="flex mt-4 space-x-6 rtl:space-x-reverse sm:justify-center md:mt-0">
-     <div></div>
-      블루아이(Blueye)그룹 | 한국 · 중국 · 말레이시아 · 싱가포르 · 캄보디아 · 베트남 · 두바이
-
-      상하이센터 | 上海市闵行区虹莘路3988号(디존빌딩 408호) 대표전화 186 1694 0029
-      서울광화문센터 | 서울 종로구 종로1 교보생명빌딩 15층
-      블루아시아 | 현대가산퍼블릭 서울 금천구 디지털로 178. A동 418호  대표전화 02 2114 8288
-      캄보디아모건센터 | St.Sopheak Monkol RD, Tonle Basak, koh Pich Phnom Penh 대표전화 ( 855) 15 493 600
-      호치민아시아센터 | On the third floor of building D2 Galleria, Le Thuoc Street, Thao Dien Ward, District 2, Thu Duc City, HCMC
-      ⓒCopyright 2024 BLUEYE. All Rights Reserved. 아시아 라이프 매거진 더리치(The Litchi)  에듀아시아(EDU ASIA)  베한타임즈(Vietnam-Korea Times)
+  <div class="w-[80vw] text-xs flex flex-col gap-8 lg:gap-1 text-gray-500 font-normal lg:font-bold">
+    <div class="flex flex-col justify-center items-center gap-1">
+      <BlueyeLogo />
+      <div class="text-base font-bold mt-8">한국 · 중국 · 말레이시아 · 싱가포르 · 캄보디아 · 베트남 · 두바이</div>
+      <div class="lg:flex gap-4 font-bold">
+        <div>아시아 라이프 매거진 더리치(The Litchi)</div>
+        <Separator />
+        <div>에듀아시아(EDU ASIA)</div>
+        <Separator />
+        <div>베한타임즈(Vietnam-Korea Times)</div>
+      </div>
     </div>
+    <div class="hidden lg:block">
+      <br />
+      <br />
+      <br />
+    </div>
+    <div class="lg:flex gap-4">
+      <div class="font-bold w-24">상하이센터</div>
+      <Separator />
+      <div>上海市闵行区虹莘路3988号(디존빌딩 408호)</div>
+      <Separator />
+      <div>대표전화 (186) 1694 0029</div>
+    </div>
+    <div class="lg:flex gap-4">
+      <div class="font-bold w-24">서울광화문센터</div>
+      <Separator />
+      <div>서울 종로구 종로1 교보생명빌딩 15층</div>
+    </div>
+    <div class="lg:flex gap-4">
+      <div class="font-bold w-24">블루아시아</div>
+      <Separator />
+      <div>현대가산퍼블릭 서울 금천구 디지털로 178. A동 418호</div>
+      <Separator />
+      <div>대표전화 (02) 2114 8288</div>
+    </div>
+    <div class="lg:flex gap-4">
+      <div class="font-bold w-24">캄보디아모건센터</div>
+      <Separator />
+      <div>St.Sopheak Monkol RD, Tonle Basak, koh Pich Phnom Penh</div>
+      <Separator />
+      <div>대표전화 (855) 15 493 600</div>
+    </div>
+    <div class="lg:flex gap-4">
+      <div class="font-bold w-24">호치민아시아센터</div>
+      <Separator />
+      <div>On the third floor of building D2 Galleria, Le Thuoc Street, Thao Dien Ward, District 2, Thu Duc City, HCMC</div>
+    </div>
+    <div class="lg:flex gap-4">
+      <div class="font-bold w-24">하노이센터</div>
+      <Separator />
+      <div>The garden 1002, my dinh 1, nam tu liem, hanoi</div>
+    </div>
+    <br />
+    <div class="font-normal text-center">ⓒCopyright 2002 - 2024 BLUEYE. All Rights Reserved.</div>
   </div>
 </Footer> 
