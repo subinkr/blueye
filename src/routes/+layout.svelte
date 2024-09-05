@@ -19,12 +19,12 @@
   <div bind:this={headerElement}>
     <Header />
   </div>
+  <div class="w-full flex flex-col justify-start items-center">
   {#if visible}
-    <div class="w-full flex flex-col justify-start items-center">
-      <slot />
-    </div>
+    <slot />
   {:else}
     <div class="h-screen"></div>
   {/if}
+  </div>
   <Footer />
 </div>
