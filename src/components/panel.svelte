@@ -6,8 +6,9 @@
   export let reverse = false
   export let layout = ""
   export let imgClass = ""
+  export let href = ""
 </script>
 
-<Card color="gray" shadow={false} {img} {reverse} {horizontal} href="/" imgClass={"object-cover flex-1" + imgClass} class={layout}>
+<Card color="gray" shadow={false} {img} {reverse} {horizontal} {href} imgClass={"object-cover flex-1" + imgClass} class={layout}>
  <slot />
 </Card>

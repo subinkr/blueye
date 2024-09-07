@@ -2,8 +2,8 @@
   import { Heading } from "flowbite-svelte";
 </script>
 
-<div>
-  <Heading tag="h2" class="text-black dark:text-white whitespace-nowrap text-center py-4" customSize="text-base font-extrabold sm:text-lg md:text-xl lg:text-2xl">대표인사말</Heading>
+<div class="flex flex-col justify-center items-center h-screen gap-4">
+  <Heading tag="h2" class="mb-4" customSize="text-xl font-extrabold text-center sm:text-2xl md:text-3xl">대표인사말</Heading>
   <div class="max-w-8xl md:flex items-center">
     <img class="w-[400px] max-h-screen object-cover" src="/images/people/ceo.jpg" alt="ceo" />
     <div class="flex flex-col gap-8 p-2 py-8 sm:p-8">

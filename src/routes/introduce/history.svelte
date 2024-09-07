@@ -40,8 +40,8 @@
   ]
 </script>
 
-<div class="w-full flex flex-col items-center justify-center p-4">
-  <Heading tag="h2" class="text-black dark:text-white whitespace-nowrap text-center py-4" customSize="text-base font-extrabold sm:text-lg md:text-xl lg:text-2xl">주요연혁</Heading>
+<div class="w-full flex flex-col items-center justify-center p-4 gap-4">
+  <Heading tag="h2" class="mb-4" customSize="text-xl font-extrabold text-center sm:text-2xl md:text-3xl">주요연혁</Heading>
   <Timeline>
     {#each history as data}
       <TimelineItem title={data.title} date={data.date}>
