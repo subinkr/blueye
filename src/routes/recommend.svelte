@@ -3,7 +3,7 @@
   import { Heading } from "flowbite-svelte";
   import Panel from "../components/panel.svelte";
 
-  const layout = " text-gray-50 border-gray-100 bg-gray-900/40 hover:bg-blue-900/80 hover:font-bold w-72 sm:w-60 xl:w-72 2xl:w-80 hover:sm:w-[800px] hover:lg:w-60 hover:xl:w-72 hover:2xl:w-80 "
+  const layout = " text-gray-50 border-gray-100 bg-gray-900/40 hover:bg-blue-900/80 hover:font-bold w-72 sm:w-60 xl:w-72 hover:sm:w-[800px] hover:lg:w-60 hover:xl:w-72 "
   let src = ""
   let position = ""
 
@@ -30,13 +30,13 @@
   <img class={"hidden lg:block fixed h-screen top-0 " + position} {src} alt="" />
   <div class="flex gap-2">
     <div>|</div>
-    <Heading tag="h2" class="text-black dark:text-white whitespace-nowrap" customSize="text-base font-extrabold sm:text-lg md:text-xl lg:text-2xl">블루아이 고객에게 딱 맞는 추천상품</Heading>
+    <Heading tag="h2" class="text-black dark:text-white whitespace-nowrap" customSize="text-base font-extrabold sm:text-lg md:text-xl">블루아이 고객에게 딱 맞는 추천상품</Heading>
     <div>|</div>
   </div>
   <article class="w-full flex flex-col lg:flex-row gap-4 justify-center items-center" on:mouseleave={(e) => src = ""}>
     <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
     {#each data.slice(0,2) as board}
-      <article class="text-sm lg:text-base xl:text-lg 2xl:text-2xl hover:sm:text-lg hover:lg:text-base hover:xl:text-lg hover:2xl:text-2xl " on:mouseenter={(e) => { src = board.src; position = " right-0 " }}>
+      <article class="text-sm lg:text-base xl:text-lg hover:sm:text-lg hover:lg:text-base hover:xl:text-lg" on:mouseenter={(e) => { src = board.src; position = " right-0 " }}>
         <Panel reverse={true} {layout} img={board.src}>
           <div class="h-full flex flex-col justify-between">
             <h3 class="whitespace-nowrap">{board.title}</h3>
@@ -47,7 +47,7 @@
     </div>
     <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
     {#each data.slice(2,4) as board}
-      <article class="text-sm lg:text-base xl:text-lg 2xl:text-2xl hover:sm:text-lg hover:lg:text-base hover:xl:text-lg hover:2xl:text-2xl " on:mouseenter={(e) => { src = board.src; position = " left-0 " }}>
+      <article class="text-sm lg:text-base xl:text-lg hover:sm:text-lg hover:lg:text-base hover:xl:text-lg" on:mouseenter={(e) => { src = board.src; position = " left-0 " }}>
         <Panel reverse={true} {layout} img={board.src}>
           <div class="h-full flex flex-col justify-between">
             <h3 class="whitespace-nowrap">{board.title}</h3>
