@@ -14,19 +14,8 @@
   let carouselElement;
 
   onMount(() => {
-  const handleScroll = () => {
-    $scrollY = window.scrollY;
-    // console.log($scrollY, $mainScreenHeight / 3 + $blueye6DivisionHeight)
-  };
-
-  window.addEventListener("scroll", handleScroll);
-
-  updateHeight(); // 초기 높이 설정
-
-  return () => {
-    window.removeEventListener("scroll", handleScroll);
-  };
-});
+    updateHeight(); // 초기 높이 설정
+  });
 
   function updateHeight() {
     // resize 이벤트 발생 시 높이 업데이트
@@ -36,7 +25,7 @@
   }
 </script>
 
-<svelte:window bind:scrollY={$scrollY} on:resize={updateHeight} />
+<svelte:window on:resize={updateHeight} />
 
 <div class="w-full flex flex-col justify-center items-center overflow-hidden">
   <div class="w-full" bind:this={carouselElement}>
