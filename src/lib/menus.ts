@@ -17,7 +17,7 @@ export const menus = [
       },
       {
         title: "블루아이 사람들",
-        href: "/introduce/people",
+        href: "/introduce#people",
       },
     ],
   },

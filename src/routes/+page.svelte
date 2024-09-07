@@ -1,8 +1,6 @@
 <script>
   import Gallery from './gallery.svelte';
   import MainScreen from './main-screen.svelte';
-  import CoOp from './co-op.svelte';
-  import Blueye_6_Division from './blueye-6-division.svelte';
   import { onMount } from 'svelte';
   import { scrollY, bodyHeight, mainScreenHeight, blueye6DivisionHeight, carouselHeight } from '$lib/scroll-control.ts';
   import News from './news.svelte';
@@ -40,10 +38,6 @@
   <News />
 </div>
 <MainScreen />
-<div class="max-w-8xl flex flex-col text-center items-center px-8" bind:this={blueye6DivisionElement}>
-  <Blueye_6_Division />
-</div>
 <div class="max-w-6xl flex flex-col text-center items-center">
   <Gallery />
-</div>
-<CoOp /> -->
+</div> -->

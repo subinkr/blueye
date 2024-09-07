@@ -33,7 +33,7 @@
   <div bind:this={headerElement}>
     <Header />
   </div>
-  <div class="w-full flex flex-col justify-start items-center">
+  <div class="w-full flex flex-col justify-start items-center overflow-hidden">
   {#if visible}
     <slot />
   {:else}
