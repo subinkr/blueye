@@ -42,6 +42,6 @@
   </div>
   <Footer />
   {#if $scrollY > 200}
-    <button class="fixed w-16 h-16 bottom-8 right-8 rounded-full flex justify-center items-center bg-gray-900/60" on:click={()=>{window.scrollTo({top:0, behavior:'smooth'});}}><AngleUpOutline size="xl" color="white" /></button>
+    <button class="fixed w-16 h-16 bottom-4 right-4 sm:bottom-8 sm:right-8 rounded-full flex justify-center items-center bg-gray-900/60" on:click={()=>{window.scrollTo({top:0, behavior:'smooth'});}}><AngleUpOutline size="xl" color="white" /></button>
   {/if}
 </div>
