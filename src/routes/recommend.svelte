@@ -34,7 +34,7 @@
     <div>|</div>
   </div>
   <article class="w-full flex flex-col lg:flex-row gap-4 justify-center items-center" on:mouseleave={(e) => src = ""}>
-    <div class="w-full flex flex-col sm:flex-row gap-4 justify-center items-center">
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
     {#each data.slice(0,2) as board}
       <article class="text-sm lg:text-base xl:text-lg 2xl:text-2xl hover:sm:text-lg hover:lg:text-base hover:xl:text-lg hover:2xl:text-2xl " on:mouseenter={(e) => { src = board.src; position = " right-0 " }}>
         <Panel reverse={true} {layout} img={board.src}>
@@ -45,7 +45,7 @@
       </article>
     {/each}
     </div>
-    <div class="w-full flex flex-col sm:flex-row gap-4 justify-center items-center">
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
     {#each data.slice(2,4) as board}
       <article class="text-sm lg:text-base xl:text-lg 2xl:text-2xl hover:sm:text-lg hover:lg:text-base hover:xl:text-lg hover:2xl:text-2xl " on:mouseenter={(e) => { src = board.src; position = " left-0 " }}>
         <Panel reverse={true} {layout} img={board.src}>
