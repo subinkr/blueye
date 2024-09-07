@@ -26,7 +26,7 @@
           <div class="absolute hidden top-7 group-hover:flex flex-col pt-4 pb-2 z-40 bg-white dark:bg-black text-black dark:text-white rounded-b-xl">
             {#each menu.child as child}
               <div class="mx-4 my-2 whitespace-nowrap text-left hover:underline">
-                <a href="/"><div class="pl-4 pr-12">{child.title}</div></a>
+                <a href={child.href}><div class="pl-4 pr-12">{child.title}</div></a>
               </div>
             {/each}
           </div>
