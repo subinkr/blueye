@@ -1,20 +1,9 @@
 <script>
-  import { bodyHeight } from '$lib/scroll-control.ts'
-  import BlueyeLogo from '../../components/icons/blueye-logo.svelte';
+  import { Heading } from "flowbite-svelte";
 </script>
 
-<div class={"flex flex-col justify-center items-center gap-40 " + $bodyHeight}>
-  <div></div>
-  <div class="text-center">
-    <div class="text-4xl">사람과 기업과</div>
-    <div class="text-4xl">기회를 연결하고</div>
-    <div class="text-4xl">모두의 꿈을 잇는</div>
-    <br />
-    <div class="text-4xl font-bold">아시아 라이프 솔루션 기업</div>
-  </div>
-  <BlueyeLogo />
-</div>
 <div>
+  <Heading tag="h2" class="text-black dark:text-white whitespace-nowrap text-center py-4" customSize="text-base font-extrabold sm:text-lg md:text-xl lg:text-2xl">대표인사말</Heading>
   <div class="max-w-8xl md:flex items-center">
     <img class="w-[400px] max-h-screen object-cover" src="/images/people/ceo.jpg" alt="ceo" />
     <div class="flex flex-col gap-8 p-2 py-8 sm:p-8">

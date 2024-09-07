@@ -40,13 +40,15 @@
   ]
 </script>
 
-<Heading tag="h2" class="text-black dark:text-white whitespace-nowrap text-center py-4" customSize="text-base font-extrabold sm:text-lg md:text-xl lg:text-2xl">주요연혁</Heading>
-<Timeline>
-  {#each history as data}
-    <TimelineItem title={data.title} date={data.date}>
-      {#each data.detail as detail}
-        <p class="text-sm sm:text-base font-normal text-gray-500 dark:text-gray-400">{detail}</p>
-      {/each}
-    </TimelineItem>
-  {/each}
-</Timeline>
+<div class="w-full flex flex-col items-center justify-center p-4">
+  <Heading tag="h2" class="text-black dark:text-white whitespace-nowrap text-center py-4" customSize="text-base font-extrabold sm:text-lg md:text-xl lg:text-2xl">주요연혁</Heading>
+  <Timeline>
+    {#each history as data}
+      <TimelineItem title={data.title} date={data.date}>
+        {#each data.detail as detail}
+          <p class="text-sm sm:text-base font-normal text-gray-500 dark:text-gray-400">{detail}</p>
+        {/each}
+      </TimelineItem>
+    {/each}
+  </Timeline>
+</div>
