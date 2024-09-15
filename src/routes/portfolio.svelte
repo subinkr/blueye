@@ -9,7 +9,7 @@
 <div class="mt-10 flex flex-col gap-4 items-center">
   <div class="flex gap-2 items-center">
     <div>|</div>
-    <Heading tag="h2" class="text-black dark:text-white whitespace-nowrap" customSize="text-base font-extrabold sm:text-lg md:text-xl lg:text-2xl">7개국 핵심 부동산 자산관리를 제안합니다</Heading>
+    <Heading tag="h2" class="text-black dark:text-white whitespace-nowrap" customSize="text-base font-extrabold sm:text-lg md:text-xl lg:text-2xl">블루아이는 7개국 9개 도시에 현지 지사를 운영하고 있습니다.</Heading>
     <div>|</div>
   </div>
   <div class="flex flex-col lg:flex-row gap-4 justify-center items-center">
