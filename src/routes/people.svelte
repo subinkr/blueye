@@ -55,7 +55,7 @@
 </script>
 
 <div class="flex flex-col gap-8">
-  <h2 class="text-2xl font-extrabold text-center">블루아이 사람들</h2>
+  <h2 class="text-2xl font-extrabold text-center lg:text-3xl">블루아이 사람들</h2>
   <Marquee speed={0.5} hoverSpeed={0}>
     {#each peoples as people, peopleId}
     <div class="w-full flex flex-col justify-center items-center">

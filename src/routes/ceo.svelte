@@ -1,8 +1,18 @@
+<script>
+
+  import { Button } from "flowbite-svelte";
+
+  let src="/images/people/ceo.jpg";
+
+</script>
 <div class="flex flex-col justify-center items-center min-h-screen md:py-20 gap-4">
   <div class="p-4 max-w-[1200px] flex flex-col md:flex-row items-center md:items-start">
     <div>
-      <img class="w-80 md:min-w-[400px] max-h-screen object-cover" src="/images/people/ceo.jpg" alt="ceo" />
-      <div class="py-4 text-center">대표저서 노마시안</div>
+      <img class="w-80 md:min-w-[400px] max-h-screen object-cover" {src} alt="ceo" />
+      <div class="flex mb-4">
+        <Button on:click={() => src="/images/people/ceo.jpg"} class="flex-1 py-4 rounded-none rounded-bl-lg text-center" disabled={src === "/images/people/ceo.jpg"}>CEO 배양희</Button>
+        <Button on:click={() => src="/images/people/nomasian.jpg"} class="flex-1 py-4 rounded-none rounded-br-lg text-center" disabled={src === "/images/people/nomasian.jpg"}>대표저서 노마시안</Button>
+      </div>
     </div>
     <div class="flex flex-col gap-8 sm:px-8">
       <div class="text-yellow-400 text-2xl sm:text-4xl text-center sm:text-left">
@@ -17,7 +27,7 @@
       <div class="text-base">
         <div><span class="text-xl font-bold">23년 전</span>, 중국 상하이에서 코리아부동산을 설립하며 해외 부동산 시장에 첫 발을 내디뎠습니다. 교민 여러분의 성원에 힘입어 코리아부동산은 중국에서 가장 큰 교민 부동산으로 성장하였고, 그 네트워크를 기반으로 글로벌 시장에 진출할 수 있었습니다.</div>
         <br />
-        <div>현재 블루아이는 중국 상하이와 서안을 비롯하여 두바이, 호치민, 하노이, 프놈펜, 싱가포르, 조호바루, 서울 등 <span class="text-xl font-bold">7개 국가 9개 도시에 지사를 운영</span>하고 있습니다. 이를 통해 현지 시장에 대한 깊은 이해와 전문성을 확보하였으며, 고객님들께 신뢰할 수 있는 투자 기회를 제공하고 있습니다.</div>
+        <div>현재 블루아이는 중국 상하이와 서안을 비롯하여 두바이, 호치민, 하노이, 프놈펜, 싱가포르, 조호바루, 서울 등 <span class="text-xl font-bold">7개 국가 10개 도시에 지사를 운영</span>하고 있습니다. 이를 통해 현지 시장에 대한 깊은 이해와 전문성을 확보하였으며, 고객님들께 신뢰할 수 있는 투자 기회를 제공하고 있습니다.</div>
         <br />
         <div>그동안 <span class="text-xl font-bold">3,500여 명의 고객님께 30,000건 이상의 해외 부동산 거래를 성사</span>시키며 쌓아온 경험과 노하우는 블루아이의 가장 큰 자산입니다. 이는 저희의 전문성과 고객 중심의 서비스를 증명하는 결과이기도 합니다.</div>
         <br />
