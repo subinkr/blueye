@@ -8,7 +8,7 @@
   export let content = '';
 </script>
 
-<Button class="max-w-40 text-xl" on:click={() => (modal = true)}>{keyword}</Button>
+<Button class="w-full text-xl" on:click={() => (modal = true)}>{keyword}</Button>
 <Popover class="hidden sm:block w-64 text-sm font-light z-10" placement="bottom" {title} transition={slide}>
   {content}
 </Popover>

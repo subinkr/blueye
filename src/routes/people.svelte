@@ -1,9 +1,9 @@
 <script>
-  import { Marquee, Heading } from 'flowbite-svelte'
+  import { Marquee } from 'flowbite-svelte'
 
   const peoples = [
     {name:"배양희", position: "CEO", team: "블루아이(Blueye)" },
-    {name:"표병선", position: "대표", team: "미디어 솔루션" },
+    {name:"표병선", position: "대표", team: "블루아이 미디어" },
     {name:"유영주", position: "부대표", team: "상하이 본사" },
     {name:"마성철", position: "대표", team: "상하이센터" },
     {name:"박성우", position: "대표", team: "아시아총본부" },
@@ -15,12 +15,12 @@
     {name:"백현종", position: "대표", team: "호치민아시아센터" },
     {name:"김서연", position: "지사장", team: "호치민아시아센터" },
     {name:"김용희", position: "지사장", team: "싱가포르" },
-    {name:"정미란", position: "이사", team: "7개국 해외부동산/고객관리" },
+    {name:"정미란", position: "이사", team: "7개 국가 해외부동산/고객관리" },
     {name:"강희경", position: "이사", team: "주재원 임대 전문" },
     {name:"유영미", position: "센터장", team: "상하이 푸동(浦东)" },
     {name:"오금화", position: "팀장", team: "푸리 & 런헝 임대 전문" },
     {name:"최현옥", position: "팀장", team: "얼서우 매매 전문/부동산 법률 자문" },
-    {name:"임송옥", position: "팀장", team: "7개국 계약팀" },
+    {name:"임송옥", position: "팀장", team: "7개 국가 계약팀" },
     {name:"이지영", position: "팀장", team: "상하이 임대/매매 전문" },
     {name:"김미영", position: "팀장", team: "홍췐루, 구베이 임대" },
     {name:"김매", position: "매니저", team: "단기임대 중국고객 전담" },
@@ -55,7 +55,7 @@
 </script>
 
 <div class="flex flex-col gap-8">
-  <h2 class="text-xl font-extrabold text-center sm:text-2xl md:text-3xl">블루아이 사람들</h2>
+  <h2 class="text-2xl font-extrabold text-center">블루아이 사람들</h2>
   <Marquee speed={0.5} hoverSpeed={0}>
     {#each peoples as people, peopleId}
     <div class="w-full flex flex-col justify-center items-center">

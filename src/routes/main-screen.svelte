@@ -2,7 +2,6 @@
   import { Heading } from 'flowbite-svelte';
   import { fade, fly } from 'svelte/transition';
   import { onMount } from 'svelte';
-  import MainButton from './main-button.svelte';
 
   let visible = false;
 
@@ -32,9 +31,9 @@
 </script>
 
 <img class='absolute inset-0 w-full h-full object-cover object-center' alt="블루아이 배경화면" src="/images/main/dubai.jpg" />
-<div class="w-full flex flex-col justify-center items-center gap-8 text-center absolute h-[400px] bg-white/80 dark:bg-black/80">
+<div class="w-full flex flex-col justify-center items-center gap-8 text-center absolute h-[400px] bg-white/0 dark:bg-black/0">
   <div class="mt-12 h-full flex flex-col justify-center items-center">
-    <p class="w-[80vw] text-black dark:text-white text-wrap text-xl font-extrabold sm:text-2xl md:text-3xl lg:text-4xl ">왜 수많은 교민들이 <span class="text-blue-600">블루아이</span>를 선택했을까요?</p>
+    <p class="w-[80vw] text-black dark:text-white text-wrap text-xl font-extrabold sm:text-2xl md:text-3xl lg:text-4xl">왜 수많은 교민들이 <span class="text-blue-600">블루아이</span>를 선택했을까요?</p>
     <!-- <Heading tag="h2" class="w-[80vw] text-black dark:text-white text-wrap" customSize="text-xl font-extrabold sm:text-2xl md:text-3xl lg:text-4xl ">해외 부동산 관리 기업</Heading>
     <Heading tag="h1" class="w-[80vw] mt-12 text-black dark:text-white" customSize="text-3xl sm:text-4xl font-extrabold md:text-5xl lg:text-6xl ">블루아이</Heading> -->
   </div>

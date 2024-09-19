@@ -24,16 +24,16 @@
 <div id="people" class="py-20">
   <People />
 </div>
-<div class="relative h-[400px] w-full">
+<!-- <div class="relative h-[400px] w-full">
   <MainScreen />
-</div>
+</div> -->
 <div id="why" class="w-full flex justify-center">
   <Why />
 </div>
 <div id="reviews" class="w-full py-20 flex flex-col gap-4 bg-primary-50 dark:bg-black">
   <Reviews />
 </div>
-<div id="benefits" class="w-full flex flex-col gap-4 justify-center py-20">
+<div id="benefits" class=" w-full flex flex-col gap-4 justify-center py-20">
   <Benefits />
 </div>
 <Hr classHr="w-full" />

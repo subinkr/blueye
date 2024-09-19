@@ -24,7 +24,7 @@
     <CloseButton on:click={() => (hidden = true)} class="dark:text-white m-0" />
   </div>
   <Sidebar>
-    <SidebarWrapper divClass="h-[calc(100vh-80px)] flex flex-col justify-between items-center overflow-y-auto rounded dark:bg-gray-800">
+    <SidebarWrapper divClass="h-[calc(100vh-80px)] flex flex-col items-center overflow-y-auto rounded dark:bg-gray-800">
       <SidebarGroup class="w-full">
         {#each menus as menu}
           <SidebarDropdownWrapper class="pl-0" href={menu.href} label={menu.title}>
