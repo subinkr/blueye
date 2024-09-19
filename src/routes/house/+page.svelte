@@ -1,5 +1,5 @@
 <script>
-  import HorizonSeparator from "../../components/icons/horizon-separator.svelte";
+  import { Hr } from "flowbite-svelte";
 
   const house = {
     descriptions: [
@@ -17,18 +17,18 @@
   <div class="px-4 flex flex-col gap-4">
     <div class="text-3xl">Le conde</div>
     <div class="text-3xl">상품특징</div>
-    <HorizonSeparator />
+    <Hr />
     {#each house.descriptions as description}
     <div>
       <b class="text-xl">{description.title}</b>
       <div class="text-xl">{description.content}</div>
     </div>
     {/each}
-    <HorizonSeparator />
+    <Hr />
     <div>{house.detail}</div>
-    <HorizonSeparator />
+    <Hr />
     <div class="text-3xl">매물 지도</div>
     <div class="w-full h-[400px] bg-gray-500"></div>
-    <HorizonSeparator />
+    <Hr />
   </div>
 </div>
