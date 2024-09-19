@@ -22,7 +22,7 @@
     {name:"최현옥", position: "팀장", team: "얼서우 매매 전문/부동산 법률 자문" },
     {name:"임송옥", position: "팀장", team: "7개국 계약팀" },
     {name:"이지영", position: "팀장", team: "상하이 임대/매매 전문" },
-    {name:"김미영", position: "팀장", team: "홍췐루, 구베이, 林巧灵 임대" },
+    {name:"김미영", position: "팀장", team: "홍췐루, 구베이 임대" },
     {name:"김매", position: "매니저", team: "단기임대 중국고객 전담" },
     {name:"김국화", position: "매니저", team: "계약팀" },
     {name:"林巧灵", position: "매니저", team: "상하이 구베이" },
