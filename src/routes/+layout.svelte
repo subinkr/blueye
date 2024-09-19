@@ -29,7 +29,7 @@
 
 <svelte:window bind:scrollY={$scrollY} />
 
-<div class="bg-white dark:bg-gray-900 text-black dark:text-white flex flex-col justify-center">
+<div class="bg-white dark:bg-gray-900 text-black dark:text-white flex flex-col justify-center break-keep">
   <div bind:this={headerElement}>
     <Header />
   </div>

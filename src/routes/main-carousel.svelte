@@ -49,25 +49,23 @@
   // ];
 </script>
 
-<div class="w-full">
-  <Carousel>
-  {#each images as image, index (index)}
-      <a class={"w-full h-full relative"} href="/">
-        <div class={"px-4 w-screen z-10 absolute top-32 left-0 sm:top-40 lg:right-40 lg:left-auto max-w-[1400px] text-center lg:text-right flex flex-col gap-10 " + image.textColor}>
-          <div class="text-xl lg:text-5xl font-extrabold">{image.title}</div>
-          <div class="hidden sm:block">
-            <div class="text-sm lg:text-xl">{image.content1}</div>
-            <div class="text-sm lg:text-xl">{image.content2}</div>
-          </div>
-          <div class="sm:hidden text-left px-4">
-            <div class="text-sm lg:text-xl">{image.content}</div>
-          </div>
+<Carousel>
+{#each images as image, index (index)}
+    <a class={"w-full h-full relative"} href="/">
+      <div class={"px-4 z-10 absolute top-32 left-0.5 right-0.5 sm:top-40 lg:right-40 lg:left-auto text-center lg:text-right flex flex-col gap-10 " + image.textColor}>
+        <div class="lg:max-w-[50vw] text-xl lg:text-4xl font-extrabold">{image.title}</div>
+        <div class="hidden sm:block">
+          <div class="text-sm lg:text-xl">{image.content1}</div>
+          <div class="text-sm lg:text-xl">{image.content2}</div>
         </div>
-        <img class={"w-full object-cover " + $bodyHeight} src={image.src} alt={image.alt} />
-      </a>
-    {/each}
-  </Carousel>
-</div>
+        <div class="sm:hidden text-left px-4">
+          <div class="text-sm lg:text-xl">{image.content}</div>
+        </div>
+      </div>
+      <img class={"w-full object-cover " + $bodyHeight} src={image.src} alt={image.alt} />
+    </a>
+  {/each}
+</Carousel>
 
 <!-- <div class="w-full">
   <Carousel autoplay="10000">

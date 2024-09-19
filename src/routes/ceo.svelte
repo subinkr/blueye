@@ -1,15 +1,10 @@
-<script>
-  import { Heading } from "flowbite-svelte";
-</script>
-
-<div class="flex flex-col justify-center items-center min-h-screen gap-4">
-  <Heading tag="h2" class="mt-12" customSize="text-xl font-extrabold text-center sm:text-2xl md:text-3xl">대표 인사말</Heading>
-  <div class="p-2 max-w-[1200px] flex flex-col md:flex-row items-center">
+<div class="flex flex-col justify-center items-center min-h-screen md:py-20 gap-4">
+  <div class="p-4 max-w-[1200px] flex flex-col md:flex-row items-center md:items-start">
     <div>
       <img class="w-80 md:min-w-[400px] max-h-screen object-cover" src="/images/people/ceo.jpg" alt="ceo" />
-      <div>대표저서 노마시안</div>
+      <div class="py-4 text-center">대표저서 노마시안</div>
     </div>
-    <div class="flex flex-col gap-8 py-8 sm:p-8">
+    <div class="flex flex-col gap-8 sm:px-8">
       <div class="text-yellow-400 text-2xl sm:text-4xl text-center sm:text-left">
         <div>블루아이와 함께라면</div>
         <div class="font-bold">해외 자산 구축이</div>
