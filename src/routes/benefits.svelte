@@ -20,13 +20,16 @@
   {/each}
 </div>
 <div class="hidden sm:block">
-  <Tabs tabStyle="underline">
+  <Tabs contentClass="bg-white" tabStyle="underline">
     {#each benefits as benefit}
     <TabItem open title={benefit.title}>
-      <p class="text-sm text-gray-500 dark:text-gray-400">
-        <b>{benefit.title}:</b>
-        {benefit.content}
-      </p>
+      <div class="bg-gray-100 p-4">
+        <p class="text-sm text-gray-500 dark:text-gray-400">
+          <b>{benefit.title}:</b>
+          {benefit.content}
+        </p>
+      </div>
+      <div class="text-center flex justify-center items-center h-80">{benefit.title} 컨텐츠 준비중입니다.</div>
     </TabItem>
     {/each}
     <!-- <TabItem disabled></TabItem> -->
