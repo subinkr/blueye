@@ -1,11 +1,11 @@
 <script>
   import { onMount } from "svelte";
   import { page } from '$app/stores';
+  import { Hr, P } from 'flowbite-svelte';
  
   import Ceo from "./ceo.svelte";
   import Slogan from "./slogan.svelte";
   import History from "./history.svelte";
-  import HorizonSeparator from "../../components/icons/horizon-separator.svelte";
   import Business from "./business.svelte";
   import People from "./people.svelte";
 
@@ -17,19 +17,19 @@
 </script>
 
 <Slogan />
-<HorizonSeparator />
+<Hr classHr="w-48 h-1 mx-auto my-4 rounded md:my-10" />
 <div id="ceo">
   <Ceo />
 </div>
-<HorizonSeparator />
+<Hr classHr="w-48 h-1 mx-auto my-4 rounded md:my-10" />
 <div id="history">
   <History />
 </div>
-<HorizonSeparator />
+<Hr classHr="w-48 h-1 mx-auto my-4 rounded md:my-10" />
 <div id="business">
   <Business />
 </div>
-<HorizonSeparator />
+<Hr classHr="w-48 h-1 mx-auto my-4 rounded md:my-10" />
 <div id="people">
   <People />
 </div>

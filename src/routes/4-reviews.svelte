@@ -1,6 +1,8 @@
 <script>
   import { Button } from "flowbite-svelte";
   import { ArrowRightOutline } from 'flowbite-svelte-icons';
+  import { QuoteSolid } from 'flowbite-svelte-icons';
+
   import Review from "../components/review.svelte";
 
   const reviews =[
@@ -20,12 +22,14 @@
   <div class="flex flex-wrap justify-center items-center gap-4">
     {#each reviews.slice(0,2) as review}
       <Review {...review}>
+        <QuoteSolid class="absolute right-4 bottom-4" />
       </Review>
     {/each}
   </div>
   <div class="flex flex-wrap justify-center items-center gap-4">
     {#each reviews.slice(2,4) as review}
       <Review {...review}>
+        <QuoteSolid class="absolute right-4 bottom-4" />
         <!-- <Button>
           Read more <ArrowRightOutline class="w-6 h-6 ms-2 text-white" />
         </Button> -->

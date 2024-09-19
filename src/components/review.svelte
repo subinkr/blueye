@@ -11,7 +11,7 @@
 </script>
 
 <div class="w-64">
-  <Card {img} {horizontal} class="flex justify-between gap-4 min-h-[340px]">
+  <Card {img} {horizontal} class="flex justify-between gap-4 min-h-[340px] relative">
     <div>
       <h5 class="text-xl text-center font-bold tracking-tight text-gray-900 dark:text-white">{region}</h5>
       <h5 class="text-xl text-center font-bold tracking-tight text-gray-900 dark:text-white">{building}</h5>
