@@ -1,5 +1,5 @@
 <script>
-  import { bodyHeight } from '$lib/scroll-control.ts'
+  import { bodyHeight } from '$lib/scroll-controls/index.ts'
   import BlueyeLogo from "../../components/icons/blueye-logo.svelte";
 </script>
 
