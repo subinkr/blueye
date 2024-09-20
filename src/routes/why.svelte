@@ -1,5 +1,7 @@
 <script>
   import { CheckOutline } from "flowbite-svelte-icons";
+  import Title from "../components/title.svelte";
+  import TitleResponsive from "../components/title-responsive.svelte";
 
   let whys = [
     {suspicion: "해외 부동산 선택 시 이 3가지는 꼭 확인해주세요.", reasons: ["현지에 상주하는 전문 직원들", "부동산 매매 후에도 지속적인 관리", "임대 관리 및 계약 처리의 신속하고 안전한 대응"], description: "해외 부동산을 선택할 때는 단순한 매매를 넘어서 현지에 상주하는 전문 인력의 지원이 필수입니다. 블루아이는 각 국가에 실제 지사와 현지 직원이 있어, 부동산 관리부터 임대, 계약 처리까지 직접 관리해드립니다."},
@@ -10,7 +12,7 @@
 <div class="max-w-[920px] flex flex-col gap-20 pb-20 p-4">
   {#each whys as why}
     <div class="flex flex-col gap-4">
-      <h2 class="text-2xl font-extrabold lg:text-3xl">{why.suspicion}</h2>
+      <TitleResponsive>{why.suspicion}</TitleResponsive>
       <div class="flex flex-col gap-4">
         {#each why.reasons as reason}
         <div class="flex items-center gap-4 text-gray-400">

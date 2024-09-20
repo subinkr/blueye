@@ -15,7 +15,7 @@
 
 <News />
 <div class="flex flex-col gap-4">
-  <img src="images/intro/malaysia.jpg" alt="말레이시아" />
+  <img class="max-h-[80vh] object-cover" src="images/intro/johorbahru-city.jpg" alt="말레이시아" />
   <div class="px-4 flex flex-col gap-4">
     <div class="text-3xl">Le conde</div>
     <div class="text-3xl">상품특징</div>

@@ -1,6 +1,7 @@
 <script>
   import { Tabs, TabItem, Button } from 'flowbite-svelte';
   import MainButton from '../components/main-button.svelte'
+  import Title from '../components/title.svelte';
 
   const benefits = [
     {title: "더리치 매거진", content: "부동산과 경제 동향을 다루는 매거진으로, 성공적인 투자 전략과 사례를 공유합니다."},
@@ -11,7 +12,7 @@
   ]
 </script>
 
-<h2 class="text-black text-center px-8 dark:text-white text-3xl font-extrabold">블루아이 고객만이 받는 혜택</h2>
+<Title>블루아이 고객만이 받는 혜택</Title>
 <div class="sm:hidden w-full flex flex-col justify-center items-center gap-4">
   {#each benefits as benefit}
   <div class="w-[260px]">
@@ -20,10 +21,10 @@
   {/each}
 </div>
 <div class="hidden sm:block">
-  <Tabs contentClass="bg-white" tabStyle="underline">
+  <Tabs contentClass="bg-inherit" tabStyle="underline">
     {#each benefits as benefit}
     <TabItem open title={benefit.title}>
-      <div class="bg-gray-100 p-4">
+      <div class="bg-gray-100 dark:bg-gray-700 p-4">
         <p class="text-sm text-gray-500 dark:text-gray-400">
           <b>{benefit.title}:</b>
           {benefit.content}

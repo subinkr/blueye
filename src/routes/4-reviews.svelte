@@ -4,6 +4,8 @@
   import { QuoteSolid } from 'flowbite-svelte-icons';
 
   import Review from "../components/review.svelte";
+  import TitleSub from "../components/title-sub.svelte";
+  import Title from "../components/title.svelte";
 
   const reviews =[
       {title: "48세 남성", detail: "중국 주재원", region: "중국 상하이", building: "런헝허빈청", content: "해외 부동산 투자는 처음이라 많이 걱정했는데, 블루아이의 전문적인 상담과 현지 지원 덕분에 안전하게 투자를 마칠 수 있었습니다. 특히 계약 과정에서의 투명성과 신속한 대응이 인상적이었습니다. 감사합니다.",},
@@ -15,8 +17,8 @@
 
 
 <div>
-  <h2 class="text-gray-500 md:text-black text-center dark:text-white text-lg font-extrabold md:text-2xl lg:text-3xl">해외 부동산에 대한 신뢰성은</h2>
-  <h2 class="text-black text-center dark:text-white text-3xl font-extrabold">고객님들의 후기가 말해줍니다.</h2>
+  <TitleSub>해외 부동산에 대한 신뢰성은</TitleSub>
+  <Title>고객님들의 후기가 말해줍니다.</Title>
 </div>
 <div class="flex flex-wrap justify-center items-center gap-4">
   <div class="flex flex-wrap justify-center items-center gap-4">

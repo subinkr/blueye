@@ -1,5 +1,6 @@
 <script>
   import { Marquee } from 'flowbite-svelte'
+  import Title from '../components/title.svelte';
 
   const peoples = [
     {name:"배양희", position: "CEO", team: "블루아이(Blueye)" },
@@ -55,7 +56,7 @@
 </script>
 
 <div class="flex flex-col gap-8">
-  <h2 class="text-2xl font-extrabold text-center lg:text-3xl">블루아이 사람들</h2>
+  <Title>블루아이 사람들</Title>
   <Marquee speed={0.5} hoverSpeed={0}>
     {#each peoples as people, peopleId}
     <div class="w-full flex flex-col justify-center items-center">

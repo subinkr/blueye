@@ -3,84 +3,45 @@
   import { menus } from '$lib/menus.ts';
   import Separator from './icons/separator.svelte';
   import BlueyeLogo from './icons/blueye-logo.svelte';
+  import TitleSmall from './title-small.svelte';
+  import TitleSub from './title-sub.svelte';
 </script>
 
 <Footer footerType="logo" class="bg-white dark:bg-gray-900 border-t flex flex-col items-center gap-20">
   <!-- large sitemap -->
-  <div class="w-full flex flex-col items-center">
-    <div class="w-full max-w-4xl hidden md:grid grid-cols-2 gap-8 py-8 px-6 md:grid-cols-4">
-      {#each menus.filter((menu, index) => {
-        if(index % 2 == 0) return menu
-      }) as menu}
-      <div>
-        <h2 class="mb-6 text-sm sm:text-base md:text-lg font-semibold dark:text-gray-400 uppercase">{menu.title}</h2>
-        <FooterLinkGroup ulClass="dark:text-gray-300">
-          {#each menu.child as child}
-          <FooterLink liClass="mb-4" href={child.url}>{child.title}</FooterLink>
+  <div class="hidden sm:flex min-w-[640px] flex-col items-center">
+    <div class="w-full grid gap-8 py-8 px-6 grid-cols-3">
+      {#each {length: 3} as _, i}
+        <div class="flex flex-col gap-8">
+          {#each menus.filter((menu, index) => {
+            if(index % 3 == i) return menu
+          }) as menu}
+          <div class="flex flex-col gap-4">
+            <a href={menu.href}><TitleSmall>{menu.title}</TitleSmall></a>
+            <FooterLinkGroup ulClass="dark:text-gray-300">
+              {#each menu.child as child}
+              <FooterLink liClass="mb-4" href={child.href}>{child.title}</FooterLink>
+              {/each}
+            </FooterLinkGroup>
+          </div>
           {/each}
-        </FooterLinkGroup>
-      </div>
-      {/each}
-      {#each menus.filter((menu, index) => {
-        if(index % 2 == 1) return menu
-      }) as menu}
-      <div>
-        <h2 class="mb-6 text-sm sm:text-base md:text-lg font-semibold dark:text-gray-400 uppercase">{menu.title}</h2>
-        <FooterLinkGroup ulClass="dark:text-gray-300">
-          {#each menu.child as child}
-          <FooterLink liClass="mb-4" href={child.url}>{child.title}</FooterLink>
-          {/each}
-        </FooterLinkGroup>
-      </div>
+        </div>
       {/each}
     </div>
+  </div>
 
-    <!-- middle sitemap -->
-    <div class="w-full max-w-4xl hidden sm:grid grid-cols-2 gap-8 py-8 px-6 md:hidden">
-      <div class="flex flex-col gap-8">
-      {#each menus.filter((menu, index) => {
-        if(index < (menus.length + 1) / 2) return menu
-      }) as menu}
-      <div>
-        <h2 class="mb-6 text-sm sm:text-base md:text-lg font-semibold dark:text-gray-400 uppercase">{menu.title}</h2>
-        <FooterLinkGroup ulClass="dark:text-gray-300">
-          {#each menu.child as child}
-          <FooterLink liClass="mb-4" href={child.url}>{child.title}</FooterLink>
-          {/each}
-        </FooterLinkGroup>
-      </div>
-      {/each}
-      </div>
-      <div class="flex flex-col gap-8">
-      {#each menus.filter((menu, index) => {
-        if(index >= (menus.length + 1) / 2) return menu
-      }) as menu}
-      <div>
-        <h2 class="mb-6 text-sm sm:text-base md:text-lg font-semibold dark:text-gray-400 uppercase">{menu.title}</h2>
-        <FooterLinkGroup ulClass="dark:text-gray-300">
-          {#each menu.child as child}
-          <FooterLink liClass="mb-4" href={child.url}>{child.title}</FooterLink>
-          {/each}
-        </FooterLinkGroup>
-      </div>
-      {/each}
-      </div>
-    </div>
-
-    <!-- small sitemap -->
-    <div class="w-full max-w-4xl grid grid-cols-1 gap-8 py-8 px-6 sm:hidden">
-      <div class="flex flex-col gap-8">
+  <div class="sm:hidden w-full flex flex-col items-center">
+    <div class="w-full grid gap-4 py-4 px-6 grid-cols-1">
       {#each menus as menu}
-      <div>
-        <h2 class="mb-6 text-sm sm:text-base md:text-lg font-semibold dark:text-gray-400 uppercase">{menu.title}</h2>
+      <div class="flex flex-col gap-4">
+        <a href={menu.href}><TitleSmall>{menu.title}</TitleSmall></a>
         <FooterLinkGroup ulClass="dark:text-gray-300">
           {#each menu.child as child}
-          <FooterLink liClass="mb-4" href={child.url}>{child.title}</FooterLink>
+          <FooterLink liClass="mb-4" href={child.href}>{child.title}</FooterLink>
           {/each}
         </FooterLinkGroup>
       </div>
       {/each}
-      </div>
     </div>
   </div>
 

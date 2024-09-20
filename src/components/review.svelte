@@ -1,5 +1,6 @@
 <script>
   import { Card } from 'flowbite-svelte';
+  import TitleSmall from './title-small.svelte';
 
   export let img = null;
   export let title;
@@ -13,8 +14,8 @@
 <div class="w-64">
   <Card {img} {horizontal} class="flex justify-between gap-4 min-h-[340px] relative">
     <div>
-      <h5 class="text-xl text-center font-bold tracking-tight text-gray-900 dark:text-white">{region}</h5>
-      <h5 class="text-xl text-center font-bold tracking-tight text-gray-900 dark:text-white">{building}</h5>
+      <TitleSmall>{region}</TitleSmall>
+      <TitleSmall>{building}</TitleSmall>
     </div>
     <div class="flex items-end justify-between">
       <h5 class="mb-2 text-sm font-bold tracking-tight text-gray-900 dark:text-white">{title}</h5>
