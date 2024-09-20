@@ -2,7 +2,7 @@
   import "../app.css";
   import Header from '../components/header.svelte'
   import Footer from '../components/footer.svelte'
-  import { scrollY, headerHeight, bodyHeight } from '$lib/scroll-control.ts';
+  import { scrollY, headerHeight, bodyHeight } from '$lib/scroll-controls/index.ts';
   import { onMount } from "svelte";
   import { AngleUpOutline } from 'flowbite-svelte-icons';
 
@@ -42,6 +42,6 @@
   </div>
   <Footer />
   {#if $scrollY > 200}
-    <button class="fixed w-16 h-16 bottom-4 right-4 sm:bottom-8 sm:right-8 rounded-full flex justify-center items-center bg-gray-900/60" on:click={()=>{window.scrollTo({top:0, behavior:'smooth'});}}><AngleUpOutline size="xl" color="white" /></button>
+    <button class="z-40 fixed w-16 h-16 bottom-24 right-4 sm:bottom-24 sm:right-8 rounded-full flex justify-center items-center bg-gray-900/60" on:click={()=>{window.scrollTo({top:0, behavior:'smooth'});}}><AngleUpOutline size="xl" color="white" /></button>
   {/if}
 </div>

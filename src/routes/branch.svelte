@@ -12,7 +12,7 @@
     <TitleResponsive>현지 지사를 운영하고 있습니다.</TitleResponsive>
   </div>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-4 justify-center items-center">
+<div class="flex flex-wrap md:grid md:grid-cols-3 gap-4 justify-center items-center">
   {#each countries as country}
     {#each country.child as child}
       <Panel {layout} href={child.href} img={"/images/intro/" + child.name + ".jpg"}>

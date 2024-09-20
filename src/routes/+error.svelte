@@ -1,5 +1,5 @@
 <script>
-  import {bodyHeight} from '$lib/scroll-control.ts'
+  import {bodyHeight} from '$lib/scroll-controls/index.ts'
 </script>
 
 <div class={"flex flex-col justify-center " + $bodyHeight}>

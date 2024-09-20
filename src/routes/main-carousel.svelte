@@ -1,7 +1,7 @@
 <script>
 	import Carousel from "../components/carousel.svelte";
   import { AngleLeftOutline ,AngleRightOutline } from 'flowbite-svelte-icons';
-  import { bodyHeight } from '$lib/scroll-control.ts';
+  import { bodyHeight } from '$lib/scroll-controls/index.ts';
 
 	const images = [
     {

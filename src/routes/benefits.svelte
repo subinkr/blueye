@@ -16,7 +16,7 @@
 <div class="sm:hidden w-full flex flex-col justify-center items-center gap-4">
   {#each benefits as benefit}
   <div class="w-[260px]">
-    <MainButton keyword={benefit.title} {...benefit} />
+    <MainButton {...benefit} />
   </div>
   {/each}
 </div>
