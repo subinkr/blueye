@@ -29,7 +29,7 @@
 <div id="ceo">
   <Ceo />
 </div>
-<div id="branch" class="w-full p-8 min-h-screen flex flex-col gap-4 justify-center items-center bg-primary-50 dark:bg-black">
+<div id="branch" class="w-full py-8 min-h-screen flex flex-col gap-4 justify-center items-center bg-primary-50 dark:bg-black">
   <Branch />
 </div>
 <div id="people" class="py-20">
