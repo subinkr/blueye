@@ -4,10 +4,9 @@
   import Separator from './icons/separator.svelte';
   import BlueyeLogo from './icons/blueye-logo.svelte';
   import TitleSmall from './title-small.svelte';
-  import TitleSub from './title-sub.svelte';
 </script>
 
-<Footer footerType="logo" class="bg-white dark:bg-gray-900 border-t flex flex-col items-center gap-20">
+<Footer footerType="logo" class="z-20 bg-white dark:bg-gray-900 border-t flex flex-col items-center gap-20">
   <!-- large sitemap -->
   <div class="hidden sm:flex min-w-[640px] flex-col items-center">
     <div class="w-full grid gap-8 py-8 px-6 grid-cols-3">

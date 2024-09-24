@@ -6,7 +6,7 @@
 	const images = [
     {
       alt: '두바이',
-      src: '/images/main/blueye2.jpg',
+      src: '/images/main/blueye.jpg',
       // portrait_src: '/images/main/dubai.jpg',
       title: " 해외 부동산 자산관리, 블루아이와 함께라면 23년 노하우가 당신의 것입니다.",
       content: "30,000건의 매매 거래로 증명된 신뢰와 전문성 3,500명의 고객이 증명한 성공적인 해외 자산 관리 파트너",
