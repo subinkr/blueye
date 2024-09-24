@@ -65,7 +65,7 @@
           {/each}
         </div>
         <div class="flex flex-col gap-4 justify-start items-center">
-          <img src="/images/people/9.jpg" alt="추경철 말레이시아 지사장" />
+          <img class="min-w-[120px]" src="/images/people/9.jpg" alt="추경철 말레이시아 지사장" />
           <div class="text-center">
             <TitleResponsive>{house.from.name}</TitleResponsive>
             <div>{house.from.position}</div>

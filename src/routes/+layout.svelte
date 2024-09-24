@@ -6,6 +6,13 @@
   import { onMount } from "svelte";
   import { AngleUpOutline } from 'flowbite-svelte-icons';
 
+  let visible = false;
+  let headerElement;
+
+  const resize = () => {
+    $headerHeight = headerElement.clientHeight;
+  }
+
   onMount(() => {
 
     const handleScroll = () => {
@@ -14,7 +21,7 @@
 
     window.addEventListener("scroll", handleScroll);
     
-    $headerHeight = headerElement.clientHeight;
+    resize();
     $bodyHeight = " min-h-[calc(100vh-73px)] lg:min-h-[calc(100vh-117px)]";
     visible = true;
 
@@ -22,12 +29,9 @@
       window.removeEventListener("scroll", handleScroll);
     };
   })
-  
-  let visible = false;
-  let headerElement;
 </script>
 
-<svelte:window bind:scrollY={$scrollY} />
+<svelte:window bind:scrollY={$scrollY} on:resize={resize} />
 
 <div class="bg-white dark:bg-gray-900 text-black dark:text-white flex flex-col justify-center break-keep">
   <div bind:this={headerElement}>
