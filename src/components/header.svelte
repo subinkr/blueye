@@ -21,11 +21,11 @@
   <div id="menus" class="hidden lg:flex justify-between items-center">
     <div class="flex">
       {#each menus as menu}
-        <div class="group relative cursor-pointer font-bold hover:rounded-full px-3 pt-1 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black">
+        <div class="group relative cursor-pointer font-bold hover:rounded-full px-3 pt-1 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black ">
           <a href={menu.href}>{menu.title}</a>
-          <div class="absolute hidden top-7 group-hover:flex flex-col pt-4 pb-2 z-40 bg-white dark:bg-black text-black dark:text-white rounded-b-xl">
+          <div class="absolute hidden top-7 group-hover:flex flex-col pt-4 pb-2 z-40 bg-white dark:bg-black text-black dark:text-white rounded-b-xl border-b-2">
             {#each menu.child as child}
-              <div class="mx-4 my-2 whitespace-nowrap text-left hover:underline">
+              <div class="mx-4 my-2 whitespace-nowrap text-left hover:underline ">
                 <a href={child.href}><div class="pl-4 pr-12">{child.title}</div></a>
               </div>
             {/each}

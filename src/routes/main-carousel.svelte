@@ -6,13 +6,13 @@
 	const images = [
     {
       alt: '두바이',
-      src: '/images/main/dubai.jpg',
+      src: '/images/main/blueye2.jpg',
       // portrait_src: '/images/main/dubai.jpg',
       title: " 해외 부동산 자산관리, 블루아이와 함께라면 23년 노하우가 당신의 것입니다.",
       content: "30,000건의 매매 거래로 증명된 신뢰와 전문성 3,500명의 고객이 증명한 성공적인 해외 자산 관리 파트너",
       content1: "30,000건의 매매 거래로 증명된 신뢰와 전문성",
       content2: "3,500명의 고객이 증명한 성공적인 해외 자산 관리 파트너",
-      textColor: " text-white "
+      textColor: " text-white drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] "
     },
   ];
 	// const images = [
@@ -75,7 +75,7 @@
           <div class="text-xl lg:text-5xl font-extrabold">{image.title}</div>
           <div class="hidden sm:block">
             <div class="text-sm lg:text-xl">{image.content1}</div>
-            <div class="text-sm lg:text-xl">{image.content2}</div>
+            <div class="text-sm lg:text-xl">{image.content2}</div>http://localhost:5173/
           </div>
           <div class="sm:hidden text-left px-4">
             <div class="text-sm lg:text-xl">{image.content}</div>
