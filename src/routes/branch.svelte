@@ -5,7 +5,6 @@
   import Working from '../lib/components/icons/working.svelte';
   import Todo from '../lib/components/icons/todo.svelte';
 
-  const layout = " hover:cursor-pointer relative w-60 h-60 flex flex-col justify-between border-gray-100 text-black hover:shadow-xl "
 </script>
 
 <div class="flex gap-2 items-center p-0">
@@ -17,7 +16,7 @@
 <div class="flex flex-wrap gap-4 justify-center items-center">
   {#each countries as country}
     {#each country.child as child}
-    <Panel {layout} href={child.href} img={"/images/intro/" + child.name + ".jpg"}>
+    <Panel href={child.href} img={"/images/intro/" + child.name + ".jpg"}>
       <div class="absolute left-0 bottom-0 w-full p-4 flex justify-between items-end bg-white/90 dark:bg-gray-900 rounded-b-sm">
         {#if country.status === "개발중"}
           <Working />
@@ -31,7 +30,7 @@
     </Panel>
     {/each}
     {#if country.child.length === 0}
-    <Panel {layout} href={country.href} img={"/images/intro/" + country.name + ".jpg"}>
+    <Panel href={country.href} img={"/images/intro/" + country.name + ".jpg"}>
       <div class="absolute left-0 bottom-0 w-full p-4 flex justify-between items-end bg-white/90 dark:bg-gray-900">
         {#if country.status === "개발중"}
           <Working />

@@ -29,7 +29,7 @@ export function load() {
     ],
     detail:
       "R&F 푸리는 중국의 대표적인 부동산 개발업체이며, 2023년 기준 8위업체이며 최고의 위치에 최고의 건물을 짓는 회사임. 베이징, 하이난 등의 project는 강과 바다 조망의 최고의 테마파크 건설 중임. 푸리Group은 한국에도 진출하여 영종도 미단시티에 복합리조트 개발 추진 중임.",
-    averageUsd: "$4,100",
+    averagePricePerM2: "$4,100",
     salesType: "분양",
     area: "",
     config:
@@ -40,5 +40,27 @@ export function load() {
     builder: "FURI (푸리)",
     expectedAverageReturn: "평균 4 ~ 5%",
     tax: "SPA(계약서)금액의 4%",
+    images: [
+      {
+        alt: "1",
+        src: "/images/malaysia/rnf/1.jpg",
+        // portrait_src: '/images/main/dubai.jpg',
+      },
+      {
+        alt: "2",
+        src: "/images/malaysia/rnf/2.jpg",
+        // portrait_src: '/images/main/dubai.jpg',
+      },
+      {
+        alt: "3",
+        src: "/images/malaysia/rnf/3.jpg",
+        // portrait_src: '/images/main/dubai.jpg',
+      },
+      {
+        alt: "4",
+        src: "/images/malaysia/rnf/4.jpg",
+        // portrait_src: '/images/main/dubai.jpg',
+      },
+    ],
   };
 }

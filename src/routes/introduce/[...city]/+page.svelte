@@ -1,16 +1,15 @@
 <script>
-  import {countries} from "$lib/data/menus.ts"
-  import { onMount } from "svelte";
+  import Title from '$lib/components/title.svelte';
+  import Panel from '../../../lib/components/panel.svelte';
 
   export let data;
-
-  onMount(() => {
-    data = countries[0]
-  })
-
 </script>
 
-<div>
-  <div>{data.title}</div>
-  <!-- <div>{data. child[0].title}</div> -->
+<div class="w-full p-20">
+  <Title>부동산</Title>
+  {#each data.house as house}
+    <Panel img={house.image} href={house.href}>
+      <div>{house.title}</div>
+    </Panel>
+  {/each}
 </div>

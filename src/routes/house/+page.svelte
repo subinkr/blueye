@@ -28,7 +28,7 @@
   <TitleResponsive>{data.title}</TitleResponsive>
 </div>
 <div id="main-carousel" class="w-full">
-  <MainImages />
+  <MainImages {...data} />
 </div>
 <div>
   <div class="px-4 md:px-20 my-4">

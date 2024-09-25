@@ -13,7 +13,7 @@
     <AlignCenter>
       <CashOutline size="xl" /><b>평균 분양가 (m²당 USD)</b>
     </AlignCenter>
-    <div class="preview">{@html marked(house?.averageUsd ?? "")}</div>
+    <div class="preview">{@html marked(house?.averagePricePerM2 ?? "")}</div>
   </HouseInfo>
   <HouseInfo>
     <AlignCenter>
