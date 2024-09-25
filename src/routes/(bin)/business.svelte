@@ -1,6 +1,6 @@
 <script>
   import { Heading } from "flowbite-svelte";
-  import Panel from "../../components/panel.svelte";
+  import Panel from "$lib/components/panel.svelte";
 
 const layout = " w-full h-40 flex flex-col justify-between gap-4 border-gray-100 hover:bg-blue-900/80 text-black hover:text-gray-50 "
 

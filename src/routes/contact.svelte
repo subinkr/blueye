@@ -1,8 +1,8 @@
 <script>
 
-  import Separator from "../components/icons/separator.svelte";
-  import TitleSmall from "../components/title-small.svelte";
-  import Title from "../components/title.svelte";
+  import Separator from "$lib/components/icons/separator.svelte";
+  import TitleSmall from "$lib/components/title-small.svelte";
+  import Title from "$lib/components/title.svelte";
 
 </script>
 

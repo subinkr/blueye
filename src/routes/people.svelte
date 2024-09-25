@@ -1,6 +1,6 @@
 <script>
   import { Marquee } from 'flowbite-svelte'
-  import Title from '../components/title.svelte';
+  import Title from '$lib/components/title.svelte';
 
   const peoples = [
     {name:"배양희", position: "CEO", team: "블루아이(Blueye)" },

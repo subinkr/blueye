@@ -1,7 +1,7 @@
 <script>
 
   import { Heading } from "flowbite-svelte";
-  import Panel from "../components/panel.svelte";
+  import Panel from "$lib/components/panel.svelte";
 
   const layout = " text-gray-50 border-gray-100 bg-gray-900/40 hover:bg-blue-900/80 hover:font-bold w-72 sm:w-60 xl:w-72 hover:sm:w-[800px] hover:lg:w-60 hover:xl:w-72 "
   let src = ""

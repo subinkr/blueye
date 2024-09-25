@@ -1,11 +1,9 @@
 <script>
-  import { Button } from "flowbite-svelte";
-  import { ArrowRightOutline } from 'flowbite-svelte-icons';
   import { QuoteSolid } from 'flowbite-svelte-icons';
 
-  import Review from "../components/review.svelte";
-  import TitleSub from "../components/title-sub.svelte";
-  import Title from "../components/title.svelte";
+  import Review from "$lib/components/review.svelte";
+  import TitleSub from "$lib/components/title-sub.svelte";
+  import Title from "$lib/components/title.svelte";
 
   const reviews =[
       {title: "48세 남성", detail: "중국 주재원", region: "중국 상하이", building: "런헝허빈청", content: "해외 부동산 투자는 처음이라 많이 걱정했는데, 블루아이의 전문적인 상담과 현지 지원 덕분에 안전하게 투자를 마칠 수 있었습니다. 특히 계약 과정에서의 투명성과 신속한 대응이 인상적이었습니다. 감사합니다.",},
@@ -32,9 +30,6 @@
     {#each reviews.slice(2,4) as review}
       <Review {...review}>
         <QuoteSolid class="absolute right-4 bottom-4" />
-        <!-- <Button>
-          Read more <ArrowRightOutline class="w-6 h-6 ms-2 text-white" />
-        </Button> -->
       </Review>
     {/each}
   </div>

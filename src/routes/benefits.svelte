@@ -1,7 +1,7 @@
 <script>
-  import { Tabs, TabItem, Button } from 'flowbite-svelte';
-  import MainButton from '../components/main-button.svelte'
-  import Title from '../components/title.svelte';
+  import { Tabs, TabItem } from 'flowbite-svelte';
+  import ButtonMain from '$lib/components/button-main.svelte'
+  import Title from '$lib/components/title.svelte';
 
   const benefits = [
     {title: "더리치 매거진", content: "부동산과 경제 동향을 다루는 매거진으로, 성공적인 투자 전략과 사례를 공유합니다."},
@@ -16,7 +16,7 @@
 <div class="sm:hidden w-full flex flex-col justify-center items-center gap-4">
   {#each benefits as benefit}
   <div class="w-[260px]">
-    <MainButton {...benefit} />
+    <ButtonMain {...benefit} />
   </div>
   {/each}
 </div>

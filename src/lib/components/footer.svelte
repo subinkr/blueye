@@ -1,6 +1,6 @@
 <script>
   import { Footer, FooterLinkGroup, FooterLink } from 'flowbite-svelte';
-  import { menus } from '$lib/menus.ts';
+  import { menus } from '$lib/data/menus.ts';
   import Separator from './icons/separator.svelte';
   import BlueyeLogo from './icons/blueye-logo.svelte';
   import TitleSmall from './title-small.svelte';

@@ -47,7 +47,3 @@
     </button>
   </div>
 </div>
-<!-- 
-{#each images as image, index (index)}
-  <img class={"w-full object-cover "} src={image.src} alt={image.alt} />
-{/each} -->

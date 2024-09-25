@@ -1,7 +1,7 @@
 <script>
   import "../app.css";
-  import Header from '../components/header.svelte'
-  import Footer from '../components/footer.svelte'
+  import Header from '$lib/components/header.svelte'
+  import Footer from '$lib/components/footer.svelte'
   import { scrollY, headerHeight, bodyHeight } from '$lib/scroll-controls/index.ts';
   import { onMount } from "svelte";
   import { AngleUpOutline } from 'flowbite-svelte-icons';
