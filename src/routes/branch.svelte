@@ -17,7 +17,7 @@
   {#each countries as country}
     {#each country.child as child}
     <Panel href={child.href} img={"/images/intro/" + child.name + ".jpg"}>
-      <div class="absolute left-0 bottom-0 w-full p-4 flex justify-between items-end bg-white/90 dark:bg-gray-900 rounded-b-sm">
+      <div class="absolute left-0 bottom-0 w-full p-4 flex justify-between items-end bg-white/90 dark:bg-gray-900">
         {#if country.status === "개발중"}
           <Working />
         {/if}

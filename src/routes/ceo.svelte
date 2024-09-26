@@ -1,26 +1,36 @@
 <script>
 
   import { Button } from "flowbite-svelte";
+  import Title from "../lib/components/title.svelte";
 
   let src="/images/people/ceo.jpg";
 
 </script>
-<div class="flex flex-col justify-center items-center min-h-screen md:py-20 gap-4">
-  <div class="p-4 max-w-[1200px] flex flex-col md:flex-row items-center md:items-start">
+<div class="flex flex-col justify-center items-center min-h-screen py-20 gap-4">
+  <div class="lg:hidden text-yellow-400 text-2xl sm:text-4xl text-center sm:text-left">
+    <div>블루아이와 만난 순간</div>
+    <div class="font-bold">풍요로운 해외 라이프가</div>
+    <div class="font-bold">꿈이 아닌 현실이 됩니다.</div>
+  </div>
+  <div class="lg:hidden flex gap-2 items-center justify-center sm:justify-normal sm:text-xl">
+    <div>CEO</div>
+    <div class="sm:text-2xl font-bold">배양희</div>
+  </div>
+  <div class="p-4 max-w-[1200px] flex flex-col lg:flex-row items-center lg:items-start">
     <div>
-      <img class="w-80 md:min-w-[400px] max-h-screen object-cover" {src} alt="ceo" />
+      <img class="w-80 lg:min-w-[400px] max-h-screen object-cover" {src} alt="ceo" />
       <div class="flex mb-4">
         <Button on:click={() => src="/images/people/ceo.jpg"} class="flex-1 py-4 rounded-none rounded-bl-lg text-center" disabled={src === "/images/people/ceo.jpg"}>CEO 배양희</Button>
         <Button on:click={() => src="/images/people/nomasian.jpg"} class="flex-1 py-4 rounded-none rounded-br-lg text-center" disabled={src === "/images/people/nomasian.jpg"}>대표저서 노마시안</Button>
       </div>
     </div>
     <div class="flex flex-col gap-8 sm:px-8">
-      <div class="text-yellow-400 text-2xl sm:text-4xl text-center sm:text-left">
+      <div class="hidden lg:block text-yellow-400 text-2xl sm:text-4xl text-center sm:text-left">
         <div>블루아이와 만난 순간</div>
         <div class="font-bold">풍요로운 해외 라이프가</div>
         <div class="font-bold">꿈이 아닌 현실이 됩니다.</div>
       </div>
-      <div class="flex gap-2 items-center justify-center sm:justify-normal sm:text-xl">
+      <div class="hidden lg:flex gap-2 items-center justify-center sm:justify-normal sm:text-xl">
         <div>CEO</div>
         <div class="sm:text-2xl font-bold">배양희</div>
       </div>

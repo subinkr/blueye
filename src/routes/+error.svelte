@@ -1,9 +1,8 @@
 <script>
-  import {bodyHeight} from '$lib/scroll-controls/index.ts'
   import {Button} from 'flowbite-svelte'
 </script>
 
-<div class={"flex flex-col justify-center " + $bodyHeight}>
+<div class={`flex flex-col justify-center min-h-screen`}>
   <h1>방문해 주셔서 감사합니다!</h1>
   <br />
   <h1>존재하지 않거나 개발 예정인 페이지입니다.</h1>
