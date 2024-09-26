@@ -8,7 +8,7 @@
   export let house = {};
 </script>
 
-<div class="flex flex-wrap lg:grid lg:grid-cols-5 gap-4 justify-center items-start text-center">
+<div class="flex flex-wrap gap-4 justify-center items-start text-center">
   <HouseInfo>
     <AlignCenter>
       <CashOutline size="xl" /><b>평균 분양가 (m²당 USD)</b>

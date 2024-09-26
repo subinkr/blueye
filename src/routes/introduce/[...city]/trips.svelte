@@ -12,7 +12,7 @@
   {/if}
   {#each trips as trip}
     <Panel img={trip.image} href={"/trip/" + trip.id}>
-      <div class="p-4 flex flex-col gap-4 border-gray-100 border-2 rounded-b-lg">
+      <div class="p-4 flex flex-col gap-4 border-gray-100 dark:border-gray-700 border-2 rounded-b-lg">
         <b>{trip.title}</b>
         <div class="text-center">{trip.date}</div>
         <div class="text-center text-lg">{trip.price}</div>
