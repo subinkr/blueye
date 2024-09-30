@@ -14,10 +14,12 @@
     <Title>{data.region}</Title>
     <TitleSmall>{data.country}</TitleSmall>
   </div>
-  <div class="w-full sm:w-9/12 min-h-16 bg-white dark:bg-gray-900 flex justify-center items-center gap-4 sm:gap-8 rounded-t-lg">
+  <div class="w-full sm:w-9/12 min-h-16 bg-white dark:bg-gray-900 flex justify-between px-8 items-center gap-4 sm:gap-8 rounded-t-lg">
     <a class={$page.url.search === '' ? "underline" : "hover:underline"} href="/introduces/{$page.params.city}"><TitleSmall>전체</TitleSmall></a>
-    <a class={$page.url.search === '?houses' ? "underline" : "hover:underline"} href="/introduces/{$page.params.city}?houses"><TitleSmall>부동산</TitleSmall></a>
-    <a class={$page.url.search === '?trips' ? "underline" : "hover:underline"} href="/introduces/{$page.params.city}?trips"><TitleSmall>한달살기</TitleSmall></a>
+    <div class="flex gap-4 sm:gap-8">
+      <a class={$page.url.search === '?houses' ? "underline" : "hover:underline"} href="/introduces/{$page.params.city}?houses"><TitleSmall>부동산</TitleSmall></a>
+      <a class={$page.url.search === '?trips' ? "underline" : "hover:underline"} href="/introduces/{$page.params.city}?trips"><TitleSmall>한달살기</TitleSmall></a>
+    </div>
   </div>
 </div>
 {#if $page.url.search === '?houses' || $page.url.search === '' }
