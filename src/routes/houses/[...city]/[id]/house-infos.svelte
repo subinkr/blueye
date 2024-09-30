@@ -17,7 +17,7 @@
     <AlignCenter>
       <CashOutline size="xl" /><b>평균 분양가 (m²당 USD)</b>
     </AlignCenter>
-    <div class="preview">{@html marked(house?.averagePricePerM2 ?? "")}</div>
+    <div class="preview">{@html marked(house?.pricePerSquareMeter ?? "")}</div>
   </HouseInfo>
   <HouseInfo>
     <AlignCenter>
@@ -29,7 +29,7 @@
     <AlignCenter>
       <RulerCombinedOutline size="xl" /><b>전용 면적 (m²)</b>
     </AlignCenter>
-    <div class="preview">{@html marked(house?.area ?? "")}</div>
+    <div class="preview">{@html marked(house?.squareMeter ?? "")}</div>
   </HouseInfo>
   <HouseInfo>
     <AlignCenter>
@@ -47,7 +47,7 @@
     <AlignCenter>
       <UsersGroupOutline size="xl" /><b>총 세대수</b>
     </AlignCenter>
-    <div class="preview">{@html marked(house?.houseHold ?? "")}</div>
+    <div class="preview">{@html marked(house?.houseHolders ?? "")}</div>
   </HouseInfo>
   <HouseInfo>
     <AlignCenter>
@@ -65,7 +65,7 @@
     <AlignCenter>
       <DollarOutline size="xl" /><b>예상 임대 수익률</b>
     </AlignCenter>
-    <div class="preview">{@html marked(house?.expectedAverageReturn ?? "")}</div>
+    <div class="preview">{@html marked(house?.expectedReturn ?? "")}</div>
   </HouseInfo>
   <HouseInfo>
     <AlignCenter>

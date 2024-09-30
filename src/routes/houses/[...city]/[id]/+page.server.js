@@ -4,28 +4,7 @@ export function load() {
     city: "malaysia/johorbahrucity",
     title: "R&F Princess Cove 2nd & 3rd Phase (2/3차 분양)",
     writer: 9,
-    descriptions: [
-      {
-        title: "구도시 중심의 행정, 상업, 금융, 쇼핑의 핵심위치.",
-        content:
-          "행정, 상업 및 금융 과 쇼핑의 천국의 중심지. 조호에서 싱가폴로 일하어 다니는 사람들이 가장 선호하는 위치에 있는 Project임. 2026년 개통 예정인 RTS(Railway Transit System) 개통 에정이며 이후 Johor주에서 가장 Hot Place가 되는 지역임.",
-      },
-      {
-        title: "합당한 수익률",
-        content:
-          "Pandemic의 어려운 상황을 극복하고 현재 부동산 가치 상승이 시작되어 많은 싱가폴 및 해외 구매자들의 발길이 이어지고 있으며 장기 임대 연간 수익률은 약 4~5%이나, 최근의 상승세는 어느 지역보다 짧은 시간 내에 6~7% 까지 예상 되고 있음. 무엇보다 부동산 상승의 가늠자 역할을 하는 Project임.",
-      },
-      {
-        title: "장기VISA 취득 기회",
-        content:
-          "Malaysia는 MM2H라는 외국인들에게 장기체류의 기회를 주는 Program이 있는데,반드시 부동산을 취득해야 하는 조건임. 싼 가격에 좋은 콘도를 구입해서 미래를 준비 하는 좋은 기회임.",
-      },
-      {
-        title: "부동산 상승의 기회",
-        content:
-          "최근 홍콩사태 이후 중국의 부자들이 영국,대만,싱가폴,베트남,말레이시아 등으로 거주 및 투자를 옮겨 가는 추세 속에서 싱가폴과 가까운 (직선 거리 1 km) Johor Bahru지역으로 최근 많은 중국인, 싱가폴인 등이 집을 구매 할려는 문의가 많아 지고 있어 실제 판매되고 있어서 지금이 부동산 상승전 구매의 적기임.",
-      },
-    ],
+    descriptions: `[{"title":"구도시 중심의 행정, 상업, 금융, 쇼핑의 핵심위치.","content":"행정, 상업 및 금융 과 쇼핑의 천국의 중심지. 조호에서 싱가폴로 일하어 다니는 사람들이 가장 선호하는 위치에 있는 Project임. 2026년 개통 예정인 RTS(Railway Transit System) 개통 에정이며 이후 Johor주에서 가장 Hot Place가 되는 지역임."},{"title":"합당한 수익률","content":"Pandemic의 어려운 상황을 극복하고 현재 부동산 가치 상승이 시작되어 많은 싱가폴 및 해외 구매자들의 발길이 이어지고 있으며 장기 임대 연간 수익률은 약 4~5%이나, 최근의 상승세는 어느 지역보다 짧은 시간 내에 6~7% 까지 예상 되고 있음. 무엇보다 부동산 상승의 가늠자 역할을 하는 Project임."},{"title":"장기VISA 취득 기회","content":"Malaysia는 MM2H라는 외국인들에게 장기체류의 기회를 주는 Program이 있는데,반드시 부동산을 취득해야 하는 조건임. 싼 가격에 좋은 콘도를 구입해서 미래를 준비 하는 좋은 기회임."},{"title":"부동산 상승의 기회","content":"최근 홍콩사태 이후 중국의 부자들이 영국,대만,싱가폴,베트남,말레이시아 등으로 거주 및 투자를 옮겨 가는 추세 속에서 싱가폴과 가까운 (직선 거리 1 km) Johor Bahru지역으로 최근 많은 중국인, 싱가폴인 등이 집을 구매 할려는 문의가 많아 지고 있어 실제 판매되고 있어서 지금이 부동산 상승전 구매의 적기임."}]`,
     builder: "FURI (푸리)",
     builderDetail:
       "R&F 푸리는 중국의 대표적인 부동산 개발업체이며, 2023년 기준 8위업체이며 최고의 위치에 최고의 건물을 짓는 회사임. 베이징, 하이난 등의 project는 강과 바다 조망의 최고의 테마파크 건설 중임. 푸리Group은 한국에도 진출하여 영종도 미단시티에 복합리조트 개발 추진 중임.",
@@ -43,27 +22,7 @@ export function load() {
     own: "FREE HOLD (영구 소유)",
     expectedAverageReturn: "평균 4 ~ 5%",
     tax: "SPA(계약서)금액의 4%",
-    images: [
-      {
-        alt: "1",
-        src: "/images/malaysia/rnf/1.jpg",
-        // portrait_src: '/images/main/dubai.jpg',
-      },
-      {
-        alt: "2",
-        src: "/images/malaysia/rnf/2.jpg",
-        // portrait_src: '/images/main/dubai.jpg',
-      },
-      {
-        alt: "3",
-        src: "/images/malaysia/rnf/3.jpg",
-        // portrait_src: '/images/main/dubai.jpg',
-      },
-      {
-        alt: "4",
-        src: "/images/malaysia/rnf/4.jpg",
-        // portrait_src: '/images/main/dubai.jpg',
-      },
-    ],
+    images:
+      "/images/malaysia/rnf/1.jpg\n/images/malaysia/rnf/2.jpg\n/images/malaysia/rnf/3.jpg\n/images/malaysia/rnf/4.jpg",
   };
 }

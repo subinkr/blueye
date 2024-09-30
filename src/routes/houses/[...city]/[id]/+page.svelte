@@ -35,7 +35,7 @@
   <TitleResponsive>{data.title}</TitleResponsive>
 </div>
 <div id="main-carousel" class="w-full">
-  <MainImages {...data} />
+  <MainImages images={data.images.split('\n')} />
 </div>
 <div>
   <div class="px-4 md:px-20 my-4">
@@ -43,7 +43,7 @@
       <Title>매물 특징</Title>
       <div class="flex flex-col sm:flex-row gap-8">
         <div class="flex flex-col gap-8">
-          {#each data.descriptions as description}
+          {#each JSON.parse(data.descriptions) as description}
           <div class="flex flex-col gap-4">
             <TitleSmall>{description.title}</TitleSmall>
             <div>{description.content}</div>
