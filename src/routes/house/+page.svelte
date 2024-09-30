@@ -8,6 +8,8 @@
   import { scrollY, headerHeight, screenHeight, footerTop } from "$lib/scroll-controls/index.ts"
   import HouseInfos from "./house-infos.svelte";
 
+  import { peoples } from "$lib/data/peoples.ts";
+
   export let data;
   $: height = $footerTop - $screenHeight;
 
@@ -49,10 +51,10 @@
           {/each}
         </div>
         <div class="flex flex-col gap-4 justify-start items-center">
-          <img class="min-w-[120px]" src="/images/people/9.jpg" alt="추경철 말레이시아 지사장" />
+          <img class="min-w-[120px]" src={"/images/people/" + data.writer + ".jpg"} alt={data.writer} />
           <div class="text-center">
-            <TitleResponsive>{data.from.name}</TitleResponsive>
-            <div>{data.from.position}</div>
+            <TitleResponsive>{peoples[data.writer].name}</TitleResponsive>
+            <div>{peoples[data.writer].team + ' ' + peoples[data.writer].position}</div>
           </div>
         </div>
       </div>
@@ -60,8 +62,8 @@
     <Hr />
     <div class="flex flex-col gap-4 justify-center items-center">
       <Title>개발사 정보</Title>
-      <img class="w-[240px]" src="images/builder/furi.png" alt="furi" />
-      <div>{data.detail}</div>
+      <TitleSmall>{data.builder}</TitleSmall>
+      <div>{data.builderDetail}</div>
     </div>
     <Hr />
     <div class="h-fit flex flex-col gap-4">
