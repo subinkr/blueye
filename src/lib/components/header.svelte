@@ -24,11 +24,12 @@
     <div class="flex">
       {#each menus as menu}
         <div class="group relative cursor-pointer font-bold hover:rounded-full px-3 pt-1 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black ">
-          {#if menu.status === "개발중"}
+          {#if menu.status === "완료"}
+            <div></div>
+          {:else if menu.status === "개발중"}
             <Working />
-          {/if}
-          {#if menu.status === "개발예정"}
-            <Todo />
+          {:else}
+            <Todo title={menu.status} />
           {/if}
           <a href={menu.href ?? menu.child[0].href}>{menu.title}</a>
           <div class="absolute hidden top-7 group-hover:flex flex-col pt-4 pb-2 z-40 bg-white dark:bg-black text-black dark:text-white rounded-b-xl border-b-2">

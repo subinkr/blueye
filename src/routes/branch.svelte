@@ -18,12 +18,13 @@
     {#each country.child as child}
     <Panel href={child.href} img={"/images/intro/" + child.name + ".jpg"}>
       <div class="absolute left-0 bottom-0 w-full p-4 flex justify-between items-end bg-white/90 dark:bg-gray-900">
-        {#if country.status === "개발중"}
-          <Working />
-        {/if}
-        {#if country.status === "개발예정"}
-          <Todo />
-        {/if}
+         {#if country.status === "완료"}
+            <div></div>
+          {:else if country.status === "개발중"}
+            <Working />
+          {:else}
+            <Todo title={country.status} />
+          {/if}
         <h3 class="text-lg font-bold md:text-xl lg:text-2xl">{child.title}</h3>
         <h3 class="text-sm text-gray-400">{country.title}</h3>
       </div>
@@ -32,12 +33,13 @@
     {#if country.child.length === 0}
     <Panel href={country.href} img={"/images/intro/" + country.name + ".jpg"}>
       <div class="absolute left-0 bottom-0 w-full p-4 flex justify-between items-end bg-white/90 dark:bg-gray-900">
-        {#if country.status === "개발중"}
-          <Working />
-        {/if}
-        {#if country.status === "개발예정"}
-          <Todo />
-        {/if}
+         {#if country.status === "완료"}
+            <div></div>
+          {:else if country.status === "개발중"}
+            <Working />
+          {:else}
+            <Todo title={country.status} />
+          {/if}
         <h3 class="text-lg font-bold md:text-xl lg:text-2xl">{country.title}</h3>
       </div>
     </Panel>

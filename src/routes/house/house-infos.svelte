@@ -4,10 +4,14 @@
 
   import HouseInfo from "./house-info.svelte";
   import AlignCenter from "$lib/components/align-center.svelte";
+  import TitleResponsive from "$lib/components/title-responsive.svelte";
 
   export let house = {};
 </script>
 
+<div class="pb-4 text-center">
+  <TitleResponsive>{house?.price}</TitleResponsive>
+</div>
 <div class="flex flex-wrap gap-4 justify-center items-start text-center">
   <HouseInfo>
     <AlignCenter>
@@ -37,7 +41,7 @@
     <AlignCenter>
       <CalendarMonthOutline size="xl" /><b>입주 예정일</b>
     </AlignCenter>
-    <div class="preview">{@html marked(house?.enter ?? "")}</div>
+    <div class="preview">{@html marked(house?.date ?? "")}</div>
   </HouseInfo>
   <HouseInfo>
     <AlignCenter>

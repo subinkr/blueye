@@ -1,4 +1,5 @@
 <script>
+  import { marked } from 'marked'
   import { Hr } from "flowbite-svelte";
   import Title from "$lib/components/title.svelte";
   import TitleResponsive from "$lib/components/title-responsive.svelte";
@@ -70,9 +71,11 @@
     <Hr />
   </div>
 </div>
-<div class="w-full flex flex-col gap-4">
+<div class="w-full flex flex-col gap-4 text-center">
   <Title>매물 지도</Title>
-  <iframe class="w-full h-80" id="house" title="house example" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3054.328562299716!2d103.76879173327359!3d1.4592816036147944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da12de0a2b934d%3A0x6e531768aa57332c!2zMSwgSmFsYW4gVGFuanVuZyBQdXRlcmksIFRhbmp1bmcgUHV0ZXJpLCA4MDMwMCBKb2hvciBCYWhydSwgSm9ob3IsIOunkOugiOydtOyLnOyVhA!5e0!3m2!1sko!2skr!4v1726809492706!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <TitleSmall>{data.location}</TitleSmall>
+  {@html marked(data.googleMap)}
+  
 </div>
 <button id="contact" class="bg-primary-700 text-white w-full h-[70px] border-t-2 flex justify-center items-center p-4 hover:cursor-pointer">
   <Title>문의하기</Title>

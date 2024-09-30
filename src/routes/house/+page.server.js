@@ -29,12 +29,15 @@ export function load() {
     ],
     detail:
       "R&F 푸리는 중국의 대표적인 부동산 개발업체이며, 2023년 기준 8위업체이며 최고의 위치에 최고의 건물을 짓는 회사임. 베이징, 하이난 등의 project는 강과 바다 조망의 최고의 테마파크 건설 중임. 푸리Group은 한국에도 진출하여 영종도 미단시티에 복합리조트 개발 추진 중임.",
+    price: "$200,000 ~ $500,000",
+    location: "Tanjung Puteri 1, Johor Bahru City, Malaysia.",
+    googleMap: `<iframe class="w-full h-80" id="house" title="house example" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3054.328562299716!2d103.76879173327359!3d1.4592816036147944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da12de0a2b934d%3A0x6e531768aa57332c!2zMSwgSmFsYW4gVGFuanVuZyBQdXRlcmksIFRhbmp1bmcgUHV0ZXJpLCA4MDMwMCBKb2hvciBCYWhydSwgSm9ob3IsIOunkOugiOydtOyLnOyVhA!5e0!3m2!1sko!2skr!4v1726809492706!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
     averagePricePerM2: "$4,100",
     salesType: "분양",
     area: "",
     config:
       "1층~7층 주차장,\n\n8층 Facilities,\n\n9층 ~ 49층 4개 동 3,600세대.",
-    enter: `2차 일부: 2024년 12월,\n\n3차: 2029년.`,
+    date: `2차 일부: 2024년 12월,\n\n3차: 2029년.`,
     houseHold: "3600세대",
     own: "FREE HOLD (영구 소유)",
     builder: "FURI (푸리)",

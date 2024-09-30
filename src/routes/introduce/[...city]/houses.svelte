@@ -1,6 +1,7 @@
 <script>
   import Title from '$lib/components/title.svelte';
   import Panel from '$lib/components/panel.svelte';
+  import { marked } from 'marked';
 
   export let houses;
 </script>
@@ -14,9 +15,8 @@
     <Panel img={house.image} href={"/house/" + house.id}>
       <div class="p-4 flex flex-col gap-4 border-gray-100 dark:border-gray-700 border-2 rounded-b-lg">
         <b>{house.title}</b>
-        <div class="text-center">{house.date}</div>
+        <div>{@html marked(house?.date ?? "")}</div>
         <div class="text-center text-lg">{house.price}</div>
-        <div class="text-xs text-gray-300">{house.location}</div>
       </div>
     </Panel>
   {/each}

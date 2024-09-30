@@ -1,5 +1,5 @@
 <script>
-  import Reviews from './4-reviews.svelte';
+  import Reviews from './reviews.svelte';
   import Ceo from './ceo.svelte';
   import MainCarousel from './main-carousel.svelte';
   import Branch from './branch.svelte';

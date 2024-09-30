@@ -16,7 +16,6 @@
         <b>{trip.title}</b>
         <div class="text-center">{trip.date}</div>
         <div class="text-center text-lg">{trip.price}</div>
-        <div class="text-xs text-gray-300">{trip.detail}</div>
       </div>
     </Panel>
   {/each}
