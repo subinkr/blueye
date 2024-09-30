@@ -10,6 +10,7 @@ export function load({ params }) {
   return {
     country: "말레이시아",
     region: "조호바루",
+    city: "malaysia/johorbahrucity",
     houses: [
       {
         image: "/images/malaysia/rnf/1.jpg",

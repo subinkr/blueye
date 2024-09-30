@@ -7,7 +7,7 @@ export const countries = [
       {
         title: "조호바루",
         name: "johorbahrucity",
-        href: "/introduce/malaysia/johorbahrucity",
+        href: "/introduces/malaysia/johorbahrucity",
       },
     ],
   },
@@ -19,7 +19,7 @@ export const countries = [
       {
         title: "두바이",
         name: "dubai",
-        href: "/introduce/uae/dubai",
+        href: "/introduces/uae/dubai",
       },
     ],
   },
@@ -31,7 +31,7 @@ export const countries = [
       {
         title: "프놈펜",
         name: "phnompenh",
-        href: "/introduce/cambodia/phnompenh",
+        href: "/introduces/cambodia/phnompenh",
       },
     ],
   },
@@ -43,12 +43,12 @@ export const countries = [
       {
         title: "북경",
         name: "beijing",
-        href: "/introduce/china/beijing",
+        href: "/introduces/china/beijing",
       },
       {
         title: "상해",
         name: "shanghai",
-        href: "/introduce/china/shanghai",
+        href: "/introduces/china/shanghai",
       },
     ],
   },
@@ -60,19 +60,19 @@ export const countries = [
       {
         title: "하노이",
         name: "hanoi",
-        href: "/introduce/vietnam/hanoi",
+        href: "/introduces/vietnam/hanoi",
       },
       {
         title: "호치민",
         name: "hochiminhcity",
-        href: "/introduce/vietnam/hochiminhcity",
+        href: "/introduces/vietnam/hochiminhcity",
       },
     ],
   },
   {
     title: "싱가포르",
     name: "singapore",
-    href: "/introduce/singapore",
+    href: "/introduces/singapore",
     status: "정보필요",
     child: [],
   },
@@ -84,7 +84,7 @@ export const countries = [
       {
         title: "서울",
         name: "seoul",
-        href: "/introduce/korea/seoul",
+        href: "/introduces/korea/seoul",
       },
     ],
   },
@@ -102,7 +102,7 @@ export const menus = [
       },
       // {
       //   title: "주요연혁",
-      //   href: "/introduce#history",
+      //   href: "/introduces#history",
       // },
       {
         title: "지사소개",
