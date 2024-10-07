@@ -31,11 +31,11 @@
           {:else}
             <Todo title={menu.status} />
           {/if}
-          <a href={menu.href ?? menu.child[0].href}>{menu.title}</a>
+          <a rel="external" href={menu.href ?? menu.child[0].href}>{menu.title}</a>
           <div class="absolute hidden top-7 group-hover:flex flex-col pt-4 pb-2 z-40 bg-white dark:bg-black text-black dark:text-white rounded-b-xl border-b-2">
             {#each menu.child as child}
               <div class="mx-4 my-2 whitespace-nowrap text-left hover:underline ">
-                <a href={child.href}><div class="pl-4 pr-12">{child.title}</div></a>
+                <a rel="external" href={child.href}><div class="pl-4 pr-12">{child.title}</div></a>
               </div>
             {/each}
           </div>

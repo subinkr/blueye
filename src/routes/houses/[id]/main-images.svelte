@@ -8,17 +8,23 @@
 
 <Modal color="primary" {title} bind:open={modal} autoclose outsideclose>
   {#each images as src}
-    <img {src} alt={src} />
+    <img src={`http://localhost:4321/public/image/${src}`} alt={src} />
   {/each}
 </Modal>
 <div class="w-full flex justify-center">
   <div class="max-w-[1200px] flex justify-center gap-4 px-4 lg:px-20">
     <button class="flex-1"  on:click={() => (modal = true)}>
-      <img class="w-full h-full object-cover" src={images[0]} alt={images[0]} />
+      {#if images.length > 0}
+        <img class="w-full h-full object-cover" src={`http://localhost:4321/public/image/${images[0]}`} alt={images[0]} />
+      {/if}
     </button>
     <button class="hidden lg:flex w-[400px] flex-col gap-4" on:click={() => (modal = true)}>
-      <img src={images[1]} alt={images[1]} />
-      <img src={images[2]} alt={images[2]} />
+      {#if images.length > 1}
+      <img src={`http://localhost:4321/public/image/${images[1]}`} alt={images[1]} />
+      {/if}
+      {#if images.length > 2}
+      <img src={`http://localhost:4321/public/image/${images[2]}`} alt={images[2]} />
+      {/if}
     </button>
   </div>
 </div>

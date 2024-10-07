@@ -42,7 +42,7 @@
     <div class="flex flex-col gap-8">
       <Title>매물 특징</Title>
       <div class="flex flex-col sm:flex-row gap-8">
-        <div class="flex flex-col gap-8">
+        <div class="flex-1 flex flex-col gap-8">
           {#each JSON.parse(data.descriptions) as description}
           <div class="flex flex-col gap-4">
             <TitleSmall>{description.title}</TitleSmall>

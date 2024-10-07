@@ -74,7 +74,13 @@ export const countries = [
     name: "singapore",
     href: "/introduces/singapore",
     status: "정보필요",
-    child: [],
+    child: [
+      {
+        title: "싱가포르",
+        name: "singapore",
+        href: "/introduces/singapore",
+      },
+    ],
   },
   {
     title: "대한민국",
