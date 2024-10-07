@@ -4,7 +4,6 @@
   import { marked } from 'marked';
 
   export let houses;
-  console.log(houses)
 </script>
 
 <Title>부동산</Title>

@@ -7,7 +7,7 @@ export async function load({ cookies }) {
 }
 
 export const actions = {
-  default: async ({ request, cookies }) => {
+  house: async ({ request, cookies }) => {
     const data = await request.formData();
     console.log(data);
     const response = await fetch(`http://localhost:4321/houses`, {
@@ -17,7 +17,7 @@ export const actions = {
       },
       body: data,
     });
-    const json = await response.json();
-    console.log(json);
+    const { id } = await response.json();
+    redirect(303, `/houses/${id}`);
   },
 };

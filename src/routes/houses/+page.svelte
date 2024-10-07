@@ -5,7 +5,7 @@
   import { scrollY, headerHeight } from "$lib/scroll-controls/index.ts"
   import HouseInfo from "./house-info.svelte";
   import AlignCenter from "$lib/components/align-center.svelte";
-  import { Input, Textarea, Select, Button } from "flowbite-svelte";
+  import { Input, Textarea, Select, Button, Modal } from "flowbite-svelte";
 
   function handleKeydown(event) {
     if (event.key === 'Enter') {
@@ -51,7 +51,13 @@
   let expectedReturn = ""
   let tax = ""
   let images = ""
+  // let images = ""
 
+  let newImages = []
+
+  const beforeSubmit = () => {
+    descriptionsString = JSON.stringify(descriptions)
+  };
 </script>
 
 {#if $scrollY >= $headerHeight}
@@ -59,12 +65,53 @@
     <Input placeholder="프로젝트 이름" bind:value={title} on:keydown={handleKeydown} />
   </div>
 {/if}
-<form method="POST">
+
+<form method="POST" action="?/house">
   <div id="title" class="w-full text-center mb-4 p-4 border-b-2">
     <Input name="title" placeholder="프로젝트 이름" bind:value={title} on:keydown={handleKeydown} />
   </div>
-  <div id="main-carousel" class="w-full">
-    <Input name="images" class="hidden" bind:value={images} on:keydown={handleKeydown} />
+  <div id="main-carousel" class="w-full flex flex-col items-center">
+    <div class='w-[80vw]'>
+      <Input name="images" class="hidden" bind:value={images} on:keydown={handleKeydown} />
+        {#each images.split('\n') as src}
+          <img src={`http://localhost:4321/public/image/${src}`} alt={src} />
+        {/each}
+        {#each newImages as newImage}
+          <!-- {#if newImage.src}
+            <img src={newImage.src} alt="newImage" />
+          {/if} -->
+          <Input type="file" accept="image/*" class={newImage.src === '' ? "" : 'hidden'} on:change={async (e) => {
+            const fileReader = new FileReader(); // File 을 읽기 위한 FileReader 객체 생성
+            fileReader.readAsDataURL(e.target.files[0]); // Blob -> base64 data로 변환
+      
+            const formData = new FormData();
+            formData.append('file', e.target.files[0]);
+
+            const response = await fetch('http://localhost:4321/data/image', {
+              method: 'POST',
+              body: formData
+            });
+
+            if (response.ok) {
+              const { image } = await response.json();
+              images = images !== '' ? images + '\n' + image : image
+            } else {
+              console.error('Image upload failed');
+            }
+
+            // 파일 읽기가 완료되었을 때 실행되는 이벤트 핸들러
+            fileReader.onload = () => {
+              newImage.src = fileReader.result;
+              newImage.value = e.target.files[0]
+              newImages = newImages
+            }
+          }}/>
+        {/each}
+        <Button on:click={() => {
+          newImages.push({id: `image-${newImages.length}`, value: '', src: ''})
+          newImages = newImages
+        }} class="w-full text-lg mt-4">이미지 추가</Button>
+      </div>
   </div>
   <div>
     <div class="px-4 md:px-20 my-4">
@@ -185,11 +232,7 @@
     <Input name="location" placeholder="주소" value={location} on:keydown={handleKeydown} />
     <Input name="googleMap" placeholder="iframe 태그" value={googleMap} on:keydown={handleKeydown} />
   </div>
-  <button type="submit" on:click={
-    () => {
-      descriptionsString = JSON.stringify(descriptions)
-    }
-  } 
+  <button type="submit" on:click={beforeSubmit} 
   id="contact" class="bg-primary-700 text-white w-full h-[70px] border-t-2 flex justify-center items-center p-4 hover:cursor-pointer">
     <Title>업로드</Title>
       <!-- <MainButton title="문의하기">
