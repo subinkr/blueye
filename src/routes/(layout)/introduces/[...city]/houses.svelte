@@ -2,9 +2,9 @@
   import Title from '$lib/components/title.svelte';
   import Panel from '$lib/components/panel.svelte';
   import { marked } from 'marked';
-  import { API_SERVER } from "$env/static/private";
 
   export let houses;
+  export let API_SERVER;
 </script>
 
 <Title>부동산</Title>

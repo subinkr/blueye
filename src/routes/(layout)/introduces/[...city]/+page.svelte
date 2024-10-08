@@ -29,7 +29,7 @@
 </div>
 {#if $page.url.search === '?houses' || $page.url.search === '' }
   <div id="houses" class="w-full sm:px-20 py-8">
-    <Houses houses={data.houses} />
+    <Houses houses={data.houses} API_SERVER={data.API_SERVER} />
   </div>
 {/if}
 {#if $page.url.search === '?trips' || $page.url.search === '' }
