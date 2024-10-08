@@ -15,4 +15,5 @@
   <Input name="username" autocomplete="username" />
   <Input type="password" name="password" autocomplete="current-password" />
   <Button type="submit">로그인</Button>
+  <Button type='button' outline=true href="/">홈으로</Button>
 </form>

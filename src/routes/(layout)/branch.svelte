@@ -2,8 +2,8 @@
   import { countries } from '$lib/data/menus.ts';
   import Panel from "$lib/components/panel.svelte";
   import TitleResponsive from '$lib/components/title-responsive.svelte';
-  import Working from '../lib/components/icons/working.svelte';
-  import Todo from '../lib/components/icons/todo.svelte';
+  import Working from '$lib/components/icons/working.svelte';
+  import Todo from '$lib/components/icons/todo.svelte';
 
 </script>
 

@@ -13,6 +13,8 @@
     }
   }
 
+  export let data;
+  let modal = false;
   let selected;
 
   let countries = [
@@ -53,7 +55,7 @@
   let images = ""
   // let images = ""
 
-  let newImages = []
+  $: newImages = []
 
   const beforeSubmit = () => {
     descriptionsString = JSON.stringify(descriptions)
@@ -70,48 +72,56 @@
   <div id="title" class="w-full text-center mb-4 p-4 border-b-2">
     <Input name="title" placeholder="프로젝트 이름" bind:value={title} on:keydown={handleKeydown} />
   </div>
+  <Input name="images" bind:value={images} class="hidden" />
   <div id="main-carousel" class="w-full flex flex-col items-center">
-    <div class='w-[80vw]'>
+    <Modal color="primary" {title} bind:open={modal} size='xl' outsideclose>
       <Input name="images" class="hidden" bind:value={images} on:keydown={handleKeydown} />
-        {#each images.split('\n') as src}
-          <img src={`http://localhost:4321/public/image/${src}`} alt={src} />
-        {/each}
+        {#if images.length}
+          {#each images.split('|') as src}
+            <div class='relative'>
+              <img src={`${data.API_SERVER}/public/image/${src}`} alt={src} />
+              <Button on:click={
+                () => {
+                  images = images.split('|').filter(image => image !== src).join('|')
+                }
+              } class="w-16 h-16 absolute flex justify-center items-center top-0 right-0">
+                <TrashBinOutline size='lg' />
+              </Button>
+            </div>
+          {/each}
+        {/if}
         {#each newImages as newImage}
-          <!-- {#if newImage.src}
-            <img src={newImage.src} alt="newImage" />
-          {/if} -->
-          <Input type="file" accept="image/*" class={newImage.src === '' ? "" : 'hidden'} on:change={async (e) => {
-            const fileReader = new FileReader(); // File 을 읽기 위한 FileReader 객체 생성
-            fileReader.readAsDataURL(e.target.files[0]); // Blob -> base64 data로 변환
-      
-            const formData = new FormData();
-            formData.append('file', e.target.files[0]);
+          <Input type="file" accept="image/*" class={!newImage.value ? "" : 'hidden'} on:change={async (e) => {
+            if(e.target.files.length) {
+              const formData = new FormData();
+              formData.append('file', e.target.files[0]);
 
-            const response = await fetch('http://localhost:4321/data/image', {
-              method: 'POST',
-              body: formData
-            });
+              const response = await fetch(`${data.API_SERVER}/data/image`, {
+                method: 'POST',
+                body: formData
+              });
 
-            if (response.ok) {
-              const { image } = await response.json();
-              images = images !== '' ? images + '\n' + image : image
-            } else {
-              console.error('Image upload failed');
-            }
-
-            // 파일 읽기가 완료되었을 때 실행되는 이벤트 핸들러
-            fileReader.onload = () => {
-              newImage.src = fileReader.result;
-              newImage.value = e.target.files[0]
+              if (response.ok) {
+                const { image } = await response.json();
+                images = images !== '' ? `${images}|${image}` : image
+              } else {
+                console.error('Image upload failed');
+              }
+              newImage.value = true
               newImages = newImages
             }
           }}/>
         {/each}
         <Button on:click={() => {
-          newImages.push({id: `image-${newImages.length}`, value: '', src: ''})
+          newImages.push({id: `image-${newImages.length}`, value: ''})
           newImages = newImages
-        }} class="w-full text-lg mt-4">이미지 추가</Button>
-      </div>
+        }} class="w-full text-2xl mt-4">+</Button>
+    </Modal>
+    <div class='w-full px-4 md:px-20'>
+      <Button on:click={() => {
+        modal = true
+      }} class="w-full text-lg mt-4">이미지 추가</Button>
+    </div>
   </div>
   <div>
     <div class="px-4 md:px-20 my-4">
@@ -226,11 +236,13 @@
       <Hr />
     </div>
   </div>
-  <div class="w-full flex flex-col gap-4 text-center mb-8">
-    <Title>매물 지도</Title>
-    <Select name="city" class="mt-2" items={countries} bind:value={selected} placeholder="부동산 지역 선택" on:keydown={handleKeydown} />
-    <Input name="location" placeholder="주소" value={location} on:keydown={handleKeydown} />
-    <Input name="googleMap" placeholder="iframe 태그" value={googleMap} on:keydown={handleKeydown} />
+  <div class='w-full px-4 md:px-20'>
+    <div class="w-full flex flex-col gap-4 text-center mb-8">
+      <Title>매물 지도</Title>
+      <Select name="city" class="mt-2" items={countries} bind:value={selected} placeholder="부동산 지역 선택" on:keydown={handleKeydown} />
+      <Input name="location" placeholder="주소" value={location} on:keydown={handleKeydown} />
+      <Input name="googleMap" placeholder="iframe 태그" value={googleMap} on:keydown={handleKeydown} />
+    </div>
   </div>
   <button type="submit" on:click={beforeSubmit} 
   id="contact" class="bg-primary-700 text-white w-full h-[70px] border-t-2 flex justify-center items-center p-4 hover:cursor-pointer">

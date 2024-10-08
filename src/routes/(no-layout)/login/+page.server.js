@@ -1,4 +1,5 @@
 import { redirect } from "@sveltejs/kit";
+import { API_SERVER } from "$env/static/private";
 
 export const actions = {
   default: async ({ cookies, request, url }) => {
@@ -6,7 +7,7 @@ export const actions = {
     const username = data.get("username");
     const password = data.get("password");
 
-    const response = await fetch("http://localhost:4321/users/login", {
+    const response = await fetch(`${API_SERVER}/users/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

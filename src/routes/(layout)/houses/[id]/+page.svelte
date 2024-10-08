@@ -35,7 +35,7 @@
   <TitleResponsive>{data.title}</TitleResponsive>
 </div>
 <div id="main-carousel" class="w-full">
-  <MainImages images={data.images.split('\n')} />
+  <MainImages title={data.title} images={data.images.split('|')} />
 </div>
 <div>
   <div class="px-4 md:px-20 my-4">

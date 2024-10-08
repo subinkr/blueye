@@ -1,7 +1,6 @@
 <script>
 
   import { Button } from "flowbite-svelte";
-  import Title from "../lib/components/title.svelte";
 
   let src="/images/people/ceo.jpg";
 

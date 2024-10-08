@@ -2,6 +2,7 @@
   import Title from '$lib/components/title.svelte';
   import Panel from '$lib/components/panel.svelte';
   import { marked } from 'marked';
+  import { API_SERVER } from "$env/static/private";
 
   export let houses;
 </script>
@@ -12,7 +13,7 @@
     <div>준비중입니다.</div>
   {/if}
   {#each houses as house}
-    <Panel img={`http://localhost:4321/public/image/${house.image}`} href={"/houses/" + house.id}>
+    <Panel img={`${API_SERVER}/public/image/${house.image}`} href={"/houses/" + house.id}>
       <div class="p-4 flex flex-col gap-4 border-gray-100 dark:border-gray-700 border-2 rounded-b-lg">
         <b>{house.title}</b>
         <div>{@html marked(house?.date ?? "")}</div>

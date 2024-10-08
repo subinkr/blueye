@@ -1,12 +1,12 @@
 <script>
-  import { Modal } from "flowbite-svelte";
+  import { Modal, Img } from "flowbite-svelte";
 
   export let title;
 	export let images;
   let modal = false;
 </script>
 
-<Modal color="primary" {title} bind:open={modal} autoclose outsideclose>
+<Modal color="primary" {title} bind:open={modal} size='xl' outsideclose>
   {#each images as src}
     <img src={`http://localhost:4321/public/image/${src}`} alt={src} />
   {/each}
