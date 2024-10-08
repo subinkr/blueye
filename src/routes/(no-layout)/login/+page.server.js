@@ -17,7 +17,11 @@ export const actions = {
 
     const { accessToken } = await response.json();
     if (accessToken) {
-      cookies.set("accessToken", accessToken, { path: "/", httpOnly: true });
+      cookies.set("accessToken", accessToken, {
+        path: "/",
+        httpOnly: true,
+        secure: true,
+      });
     }
     if (url.searchParams.has("redirectTo")) {
       redirect(303, url.searchParams.get("redirectTo"));
