@@ -1,4 +1,4 @@
-import { redirect } from "@sveltejs/kit";
+import { redirect, fail } from "@sveltejs/kit";
 import { API_SERVER } from "$env/static/private";
 
 export async function load({ cookies }) {
@@ -19,7 +19,13 @@ export const actions = {
       },
       body: data,
     });
-    const { id } = await response.json();
+    const json = await response.json();
+
+    const { id, statusCode, message } = json;
+    if (message !== undefined) {
+      return fail(statusCode, { message });
+    }
+
     redirect(303, `/houses/${id}`);
   },
 };

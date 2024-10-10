@@ -4,7 +4,6 @@
   import { marked } from 'marked';
 
   export let houses;
-  export let API_SERVER;
 </script>
 
 <Title>부동산</Title>
@@ -13,7 +12,7 @@
     <div>준비중입니다.</div>
   {/if}
   {#each houses as house}
-    <Panel img={`${API_SERVER}/public/image/${house.image}`} href={"/houses/" + house.id}>
+    <Panel img={house.image} href={"/houses/" + house.id}>
       <div class="p-4 flex flex-col gap-4 border-gray-100 dark:border-gray-700 border-2 rounded-b-lg">
         <b>{house.title}</b>
         <div>{@html marked(house?.date ?? "")}</div>

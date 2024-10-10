@@ -8,9 +8,12 @@
   import { page } from '$app/stores';
 
   export let data;
+
+  $: houses = data.houses;
+  $: trips = data.trips;
   
-  const [country] = menus.filter((country) => country.child.filter(city => city.href === $page.url.pathname).length);
-  const [city] = country.child.filter(city => city.href === $page.url.pathname)
+  $: [country] = menus.filter((country) => country.child.filter(city => city.href === $page.url.pathname).length);
+  $: [city] = country.child.filter(city => city.href === $page.url.pathname)
 
 </script>
 
@@ -20,20 +23,20 @@
     <TitleSmall>{country.title}</TitleSmall>
   </div>
   <div class="w-full sm:w-9/12 min-h-16 bg-white dark:bg-gray-900 flex justify-between px-8 items-center gap-4 sm:gap-8 rounded-t-lg">
-    <a rel="external" class={$page.url.search === '' ? "underline" : "hover:underline"} href="/introduces/{$page.params.city}"><TitleSmall>전체</TitleSmall></a>
+    <a class={$page.url.search === '' ? "underline" : "hover:underline"} href="/introduces/{$page.params.city}"><TitleSmall>전체</TitleSmall></a>
     <div class="flex gap-4 sm:gap-8">
-      <a rel="external" class={$page.url.search === '?houses' ? "underline" : "hover:underline"} href="/introduces/{$page.params.city}?houses"><TitleSmall>부동산</TitleSmall></a>
-      <a rel="external" class={$page.url.search === '?trips' ? "underline" : "hover:underline"} href="/introduces/{$page.params.city}?trips"><TitleSmall>한달살기</TitleSmall></a>
+      <a class={$page.url.search === '?houses' ? "underline" : "hover:underline"} href="/introduces/{$page.params.city}?houses"><TitleSmall>부동산</TitleSmall></a>
+      <a class={$page.url.search === '?trips' ? "underline" : "hover:underline"} href="/introduces/{$page.params.city}?trips"><TitleSmall>여행</TitleSmall></a>
     </div>
   </div>
 </div>
 {#if $page.url.search === '?houses' || $page.url.search === '' }
   <div id="houses" class="w-full sm:px-20 py-8">
-    <Houses houses={data.houses} API_SERVER={data.API_SERVER} />
+    <Houses houses={houses} />
   </div>
 {/if}
 {#if $page.url.search === '?trips' || $page.url.search === '' }
   <div id="trips" class="w-full sm:px-20 py-8">
-    <Trips trips={data.trips} />
+    <Trips trips={trips} />
   </div>
 {/if}

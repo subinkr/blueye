@@ -3,9 +3,10 @@
   import Panel from '$lib/components/panel.svelte';
 
   export let trips;
+  
 </script>
 
-<Title>한달살기</Title>
+<Title>여행</Title>
 <div class="mt-4 flex flex-wrap gap-4 justify-center">
   {#if !trips.length}
     <div>준비중입니다.</div>

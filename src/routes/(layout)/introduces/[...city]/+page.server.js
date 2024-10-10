@@ -7,5 +7,5 @@ export async function load({ params }) {
   const houses = await housesRes.json();
   const trips = [];
 
-  return { houses, trips, API_SERVER };
+  return { houses, trips };
 }

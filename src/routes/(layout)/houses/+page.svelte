@@ -6,6 +6,7 @@
   import HouseInfo from "./house-info.svelte";
   import AlignCenter from "$lib/components/align-center.svelte";
   import { Input, Textarea, Select, Button, Modal } from "flowbite-svelte";
+	import { enhance } from '$app/forms';
 
   function handleKeydown(event) {
     if (event.key === 'Enter') {
@@ -14,6 +15,14 @@
   }
 
   export let data;
+  export let form;
+
+  $: if (form?.message) {
+    alert(form.message); // 서버에서 받은 error를 경고로 표시
+  }
+
+  const { API_SERVER } = data;
+
   let modal = false;
   let selected;
 
@@ -53,7 +62,6 @@
   let expectedReturn = ""
   let tax = ""
   let images = ""
-  // let images = ""
 
   $: newImages = []
 
@@ -68,7 +76,7 @@
   </div>
 {/if}
 
-<form method="POST" action="?/house">
+<form method="POST" action="?/house" use:enhance>
   <div id="title" class="w-full text-center mb-4 p-4 border-b-2">
     <Input name="title" placeholder="프로젝트 이름" bind:value={title} on:keydown={handleKeydown} />
   </div>
@@ -79,7 +87,7 @@
         {#if images.length}
           {#each images.split('|') as src}
             <div class='relative'>
-              <img src={`${data.API_SERVER}/public/image/${src}`} alt={src} />
+              <img src={src} alt={src} />
               <Button on:click={
                 () => {
                   images = images.split('|').filter(image => image !== src).join('|')
@@ -96,7 +104,7 @@
               const formData = new FormData();
               formData.append('file', e.target.files[0]);
 
-              const response = await fetch(`${data.API_SERVER}/data/image`, {
+              const response = await fetch(`${API_SERVER}/data/image`, {
                 method: 'POST',
                 body: formData
               });

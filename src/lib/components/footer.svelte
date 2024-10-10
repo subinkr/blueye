@@ -47,7 +47,7 @@
   <div class="w-[80vw] text-xs flex flex-col gap-8 lg:gap-1 text-gray-500 font-normal lg:font-bold">
     <div class="flex flex-col justify-center items-center gap-1">
       <BlueyeLogo />
-      <div class="text-base font-bold mt-8">한국 · 중국 · 말레이시아 · 싱가포르 · 캄보디아 · 베트남 · 두바이</div>
+      <div class="text-base font-bold mt-8">대한민국 · 말레이시아 · 베트남 · 싱가포르 · 아랍에미리트 · 중국 · 캄보디아</div>
       <div class="lg:flex gap-4 font-bold">
         <div>아시아 라이프 매거진 더리치(The Litchi)</div>
         <Separator />
