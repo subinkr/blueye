@@ -14,7 +14,7 @@ export const countries = [
   {
     title: "아랍에미리트",
     name: "uae",
-    status: "정보필요",
+    status: "개발중",
     child: [
       {
         title: "두바이",
@@ -26,7 +26,7 @@ export const countries = [
   {
     title: "캄보디아",
     name: "cambodia",
-    status: "개발예정",
+    status: "개발중",
     child: [
       {
         title: "프놈펜",
@@ -38,7 +38,7 @@ export const countries = [
   {
     title: "중국",
     name: "china",
-    status: "정보필요",
+    status: "개발중",
     child: [
       {
         title: "북경",
@@ -55,7 +55,7 @@ export const countries = [
   {
     title: "베트남",
     name: "vietnam",
-    status: "정보필요",
+    status: "개발중",
     child: [
       {
         title: "하노이",
@@ -73,7 +73,7 @@ export const countries = [
     title: "싱가포르",
     name: "singapore",
     href: "/introduces/singapore",
-    status: "정보필요",
+    status: "개발중",
     child: [
       {
         title: "싱가포르",
@@ -85,7 +85,7 @@ export const countries = [
   {
     title: "대한민국",
     name: "korea",
-    status: "정보필요",
+    status: "개발중",
     child: [
       {
         title: "서울",
