@@ -76,7 +76,7 @@
 <div class="w-full flex flex-col gap-4 text-center">
   <Title>매물 지도</Title>
   <TitleSmall>{data.location}</TitleSmall>
-  {@html marked(data.googleMap)}
+  {@html marked(`<iframe class="w-full h-80" ${data.googleMap.split('<iframe').length > 1 ? data.googleMap.split('<iframe')[1] : "></iframe>"}`)}
   
 </div>
 <button id="contact" class="bg-primary-700 text-white w-full h-[70px] border-t-2 flex justify-center items-center p-4 hover:cursor-pointer">

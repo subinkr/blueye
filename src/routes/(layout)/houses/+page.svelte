@@ -199,15 +199,15 @@
               <CogOutline size="xl" /><b>구성</b>
             </AlignCenter>
             <Textarea name="config" class="h-40 resize-none" placeholder="1층~7층 주차장,
-  8층 Facilities,
-  9층 ~ 49층 4개 동 3,600세대." value={config} />
+8층 Facilities,
+9층 ~ 49층 4개 동 3,600세대." value={config} />
           </HouseInfo>
           <HouseInfo>
             <AlignCenter>
               <CalendarMonthOutline size="xl" /><b>입주 예정일</b>
             </AlignCenter>
             <Textarea name="date" class="h-40 resize-none" placeholder="2차 일부: 2024년 12월,
-  3차 : 2029년." value={date} />
+3차 : 2029년." value={date} />
           </HouseInfo>
           <HouseInfo>
             <AlignCenter>
