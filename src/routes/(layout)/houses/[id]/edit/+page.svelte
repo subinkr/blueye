@@ -7,6 +7,7 @@
   import AlignCenter from "$lib/components/align-center.svelte";
   import { Input, Textarea, Select, Button, Modal } from "flowbite-svelte";
 	import { enhance } from '$app/forms';
+  import { onMount } from "svelte";
 
   function handleKeydown(event) {
     if (event.key === 'Enter') {
@@ -17,11 +18,11 @@
   export let data;
   export let form;
 
+  const { API_SERVER, house } = data;
+
   $: if (form?.message) {
     alert(form.message); // 서버에서 받은 error를 경고로 표시
   }
-
-  const { API_SERVER } = data;
 
   let modal = false;
   let selected;
@@ -38,36 +39,39 @@
     { value: 'cambodia/phnompenh', name: '캄보디아 프놈펜' },
   ];
 
-  let title = ""
-  let descriptions = [
-    {
-      id: 0,
-      title: '',
-      content: '',
-    }
-  ]
-  let descriptionsString = ""
-  let builder = ""
-  let builderDetail = ""
-  let price = ""
-  let location = ""
-  let googleMap = ""
-  let pricePerSquareMeter = ""
-  let salesType = ""
-  let squareMeter = ""
-  let config = ""
-  let date = ""
-  let houseHolders = ""
-  let own = ""
-  let expectedReturn = ""
-  let tax = ""
-  let images = ""
+  let title = house.title
+  let descriptions = JSON.parse(house.descriptions)
+  let descriptionsString = house.descriptionsString
+  let builder = house.builder
+  let builderDetail = house.builderDetail
+  let price = house.price
+  let location = house.location
+  let googleMap = house.googleMap
+  let pricePerSquareMeter = house.pricePerSquareMeter
+  let salesType = house.salesType
+  let squareMeter = house.squareMeter
+  let config = house.config
+  let date = house.date
+  let houseHolders = house.houseHolders
+  let own = house.own
+  let expectedReturn = house.expectedReturn
+  let tax = house.tax
+  let images = house.images
 
   $: newImages = []
 
   const beforeSubmit = () => {
     descriptionsString = JSON.stringify(descriptions)
   };
+
+  onMount(() => {
+    for(let i = 0 ; i < countries.length ; i++) {
+      if(countries[i].value === house.city) {
+        document.getElementById("select").selectedIndex = i + 1;
+        break;
+      }
+    }
+  })
 </script>
 
 {#if $scrollY >= $headerHeight}
@@ -247,7 +251,7 @@
   <div class='w-full px-4 md:px-20'>
     <div class="w-full flex flex-col gap-4 text-center mb-8">
       <Title>매물 지도</Title>
-      <Select name="city" class="mt-2" items={countries} bind:value={selected} placeholder="부동산 지역 선택" on:keydown={handleKeydown} />
+      <Select id='select' name="city" class="mt-2" items={countries} bind:value={selected} placeholder="부동산 지역 선택" on:keydown={handleKeydown} />
       <Input name="location" placeholder="주소" value={location} on:keydown={handleKeydown} />
       <Input name="googleMap" placeholder="iframe 태그" value={googleMap} on:keydown={handleKeydown} />
     </div>

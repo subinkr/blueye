@@ -7,10 +7,11 @@
   import MainImages from "./main-images.svelte";
   import { scrollY, headerHeight, screenHeight, footerTop } from "$lib/scroll-controls/index.ts"
   import HouseInfos from "./house-infos.svelte";
-
   import { peoples } from "$lib/data/peoples.ts";
+  import { page } from '$app/stores'
 
   export let data;
+  let { house, uploader } = data
   $: height = $footerTop - $screenHeight;
 
   const resize = () => {
@@ -22,20 +23,29 @@
 
 {#if $scrollY >= $headerHeight}
   <div id="title" class="z-20 fixed top-0 left-0 bg-white dark:bg-gray-900 w-full border-b-2 flex justify-center items-center p-4 text-center">
-    <TitleResponsive>{data.title}</TitleResponsive>
+    <TitleResponsive>{house.title}</TitleResponsive>
   </div>
 {/if}
-{#if $scrollY <= height}
+{#if $scrollY <= height && !uploader}
 <button id="contact" class="z-20 fixed bottom-0 left-0 bg-primary-700 text-white w-full border-t-2 flex justify-center items-center p-4 hover:cursor-pointer">
   <Title>문의하기</Title>
 </button>
+{:else}
+<div class='w-full z-20 fixed bottom-0 left-0 flex'>
+  <a href={`${$page.params.id}/edit`} class="bg-primary-700 text-white flex-1 flex justify-center items-center p-4 hover:cursor-pointer">
+    <Title>수정하기</Title>
+  </a>
+  <a href={`${$page.params.id}/delete`} class="bg-red-700 text-white flex-1 flex justify-center items-center p-4 hover:cursor-pointer">
+    <Title>삭제하기</Title>
+  </a>
+</div>
 {/if}
 
 <div id="title" class="w-full text-center mb-4 p-4 border-b-2">
-  <TitleResponsive>{data.title}</TitleResponsive>
+  <TitleResponsive>{house.title}</TitleResponsive>
 </div>
 <div id="main-carousel" class="w-full">
-  <MainImages title={data.title} images={data.images.split('|')} />
+  <MainImages title={house.title} images={house.images.split('|')} />
 </div>
 <div>
   <div class="px-4 md:px-20 my-4">
@@ -43,7 +53,7 @@
       <Title>매물 특징</Title>
       <div class="flex flex-col sm:flex-row gap-8">
         <div class="flex-1 flex flex-col gap-8">
-          {#each JSON.parse(data.descriptions) as description}
+          {#each JSON.parse(house.descriptions) as description}
           <div class="flex flex-col gap-4">
             <TitleSmall>{description.title}</TitleSmall>
             <div>{description.content}</div>
@@ -51,10 +61,10 @@
           {/each}
         </div>
         <div class="flex flex-col gap-4 justify-start items-center">
-          <img class="min-w-[120px]" src={"/images/people/" + data.writer + ".jpg"} alt={data.writer} />
+          <img class="min-w-[120px]" src={"/images/people/" + house.writer + ".jpg"} alt={house.writer} />
           <div class="text-center">
-            <TitleResponsive>{peoples[data.writer].name}</TitleResponsive>
-            <div>{peoples[data.writer].team + ' ' + peoples[data.writer].position}</div>
+            <TitleResponsive>{peoples[house.writer].name}</TitleResponsive>
+            <div>{peoples[house.writer].team + ' ' + peoples[house.writer].position}</div>
           </div>
         </div>
       </div>
@@ -62,21 +72,21 @@
     <Hr />
     <div class="flex flex-col gap-4 justify-center items-center">
       <Title>개발사 정보</Title>
-      <TitleSmall>{data.builder}</TitleSmall>
-      <div>{data.builderDetail}</div>
+      <TitleSmall>{house.builder}</TitleSmall>
+      <div>{house.builderDetail}</div>
     </div>
     <Hr />
     <div class="h-fit flex flex-col gap-4">
       <Title>매물 정보</Title>
-      <HouseInfos house={data} />
+      <HouseInfos house={house} />
     </div>
     <Hr />
   </div>
 </div>
 <div class="w-full flex flex-col gap-4 text-center">
   <Title>매물 지도</Title>
-  <TitleSmall>{data.location}</TitleSmall>
-  {@html marked(`<iframe class="w-full h-80" ${data.googleMap.split('<iframe').length > 1 ? data.googleMap.split('<iframe')[1] : "></iframe>"}`)}
+  <TitleSmall>{house.location}</TitleSmall>
+  {@html marked(`<iframe class="w-full h-80" ${house.googleMap.split('<iframe').length > 1 ? house.googleMap.split('<iframe')[1] : "></iframe>"}`)}
   
 </div>
 <button id="contact" class="bg-primary-700 text-white w-full h-[70px] border-t-2 flex justify-center items-center p-4 hover:cursor-pointer">
