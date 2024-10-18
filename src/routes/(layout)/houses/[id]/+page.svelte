@@ -30,7 +30,7 @@
 <button id="contact" class="z-20 fixed bottom-0 left-0 bg-primary-700 text-white w-full border-t-2 flex justify-center items-center p-4 hover:cursor-pointer">
   <Title>문의하기</Title>
 </button>
-{:else}
+{:else if $scrollY <= height}
 <div class='w-full z-20 fixed bottom-0 left-0 flex'>
   <a href={`${$page.params.id}/edit`} class="bg-primary-700 text-white flex-1 flex justify-center items-center p-4 hover:cursor-pointer">
     <Title>수정하기</Title>
@@ -89,9 +89,18 @@
   {@html marked(`<iframe class="w-full h-80" ${house.googleMap.split('<iframe').length > 1 ? house.googleMap.split('<iframe')[1] : "></iframe>"}`)}
   
 </div>
+
+{#if !uploader}
 <button id="contact" class="bg-primary-700 text-white w-full h-[70px] border-t-2 flex justify-center items-center p-4 hover:cursor-pointer">
   <Title>문의하기</Title>
-    <!-- <MainButton title="문의하기">
-      정보 입력
-    </MainButton> -->
 </button>
+{:else }
+<div class='w-full flex'>
+  <a href={`${$page.params.id}/edit`} class="bg-primary-700 text-white flex-1 flex justify-center items-center p-4 hover:cursor-pointer">
+    <Title>수정하기</Title>
+  </a>
+  <a href={`${$page.params.id}/delete`} class="bg-red-700 text-white flex-1 flex justify-center items-center p-4 hover:cursor-pointer">
+    <Title>삭제하기</Title>
+  </a>
+</div>
+{/if}

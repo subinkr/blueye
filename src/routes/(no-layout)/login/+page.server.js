@@ -1,6 +1,12 @@
 import { redirect } from "@sveltejs/kit";
 import { API_SERVER } from "$env/static/private";
 
+export async function load({ cookies }) {
+  if (cookies.get("accessToken")) {
+    redirect(303, "/");
+  }
+}
+
 export const actions = {
   default: async ({ cookies, request, url }) => {
     const data = await request.formData();
