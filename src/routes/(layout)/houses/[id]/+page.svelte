@@ -27,9 +27,9 @@
   </div>
 {/if}
 {#if $scrollY <= height && !uploader}
-<button id="contact" class="z-20 fixed bottom-0 left-0 bg-primary-700 text-white w-full border-t-2 flex justify-center items-center p-4 hover:cursor-pointer">
+<a href="https://pf.kakao.com/_qpRxjxb/chat" class="z-20 fixed bottom-0 left-0 bg-primary-700 text-white w-full border-t-2 flex justify-center items-center p-4 hover:cursor-pointer">
   <Title>문의하기</Title>
-</button>
+</a>
 {:else if $scrollY <= height}
 <div class='w-full z-20 fixed bottom-0 left-0 flex'>
   <a href={`${$page.params.id}/edit`} class="bg-primary-700 text-white flex-1 flex justify-center items-center p-4 hover:cursor-pointer">
@@ -91,9 +91,9 @@
 </div>
 
 {#if !uploader}
-<button id="contact" class="bg-primary-700 text-white w-full h-[70px] border-t-2 flex justify-center items-center p-4 hover:cursor-pointer">
+<a href="https://pf.kakao.com/_qpRxjxb/chat" class="bg-primary-700 text-white w-full h-[70px] border-t-2 flex justify-center items-center p-4 hover:cursor-pointer">
   <Title>문의하기</Title>
-</button>
+</a>
 {:else }
 <div class='w-full flex'>
   <a href={`${$page.params.id}/edit`} class="bg-primary-700 text-white flex-1 flex justify-center items-center p-4 hover:cursor-pointer">
