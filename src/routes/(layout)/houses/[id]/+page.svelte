@@ -56,7 +56,7 @@
           {#each JSON.parse(house.descriptions) as description}
           <div class="flex flex-col gap-4">
             <TitleSmall>{description.title}</TitleSmall>
-            <div>{description.content}</div>
+            <div>{@html marked(description.content.split('\n').join('\n\n') ?? "")}</div>
           </div>
           {/each}
         </div>

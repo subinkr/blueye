@@ -2,7 +2,6 @@ export const countries = [
   {
     title: "말레이시아",
     name: "malaysia",
-    status: "개발중",
     child: [
       {
         title: "조호바루",
@@ -14,7 +13,6 @@ export const countries = [
   {
     title: "아랍에미리트",
     name: "uae",
-    status: "개발중",
     child: [
       {
         title: "두바이",
@@ -26,7 +24,6 @@ export const countries = [
   {
     title: "캄보디아",
     name: "cambodia",
-    status: "개발중",
     child: [
       {
         title: "프놈펜",
@@ -38,7 +35,6 @@ export const countries = [
   {
     title: "중국",
     name: "china",
-    status: "개발중",
     child: [
       {
         title: "북경",
@@ -55,7 +51,6 @@ export const countries = [
   {
     title: "베트남",
     name: "vietnam",
-    status: "개발중",
     child: [
       {
         title: "하노이",
@@ -73,7 +68,6 @@ export const countries = [
     title: "싱가포르",
     name: "singapore",
     href: "/introduces/singapore",
-    status: "개발중",
     child: [
       {
         title: "싱가포르",
@@ -85,7 +79,6 @@ export const countries = [
   {
     title: "대한민국",
     name: "korea",
-    status: "개발중",
     child: [
       {
         title: "서울",
@@ -99,7 +92,6 @@ export const countries = [
 export const menus = [
   {
     title: "회사소개",
-    status: "완료",
     href: "/",
     child: [
       {
@@ -121,22 +113,4 @@ export const menus = [
     ],
   },
   ...countries,
-  {
-    title: "고객센터",
-    status: "정보필요",
-    child: [
-      {
-        title: "공지사항",
-        href: "/contact/announce",
-      },
-      {
-        title: "설명회 & 현장투어",
-        href: "/contact/ask",
-      },
-      {
-        title: "Q&A",
-        href: "/contact/qna",
-      },
-    ],
-  },
 ];

@@ -86,6 +86,16 @@
         "/images/benefits/magazine/18.jpg",
       ]
     },
+    {
+      title: "설명회",
+      content: "주기적으로 다양한 해외 부동산 설명회를 진행하고 있습니다.",
+      images: [
+        "/images/benefits/presentation/1.jpg",
+        "/images/benefits/presentation/2.jpg",
+        "/images/benefits/presentation/3.jpg",
+        "/images/benefits/presentation/4.jpg",
+      ]
+    }
   ]
 </script>
 

@@ -149,7 +149,7 @@
                   <TrashBinOutline size='lg' />
                 </Button>
               </div>
-              <Input placeholder="소개 내용" bind:value={description.content} on:keydown={handleKeydown} />
+              <Textarea placeholder="소개 내용" bind:value={description.content} on:keydown={handleKeydown} />
             {/each}
             <Button class="text-2xl" on:click={
               () => {
