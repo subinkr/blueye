@@ -9,10 +9,13 @@
   import HouseInfos from "./house-infos.svelte";
   import { peoples } from "$lib/data/peoples.ts";
   import { page } from '$app/stores'
+  import { Alert, Button } from 'flowbite-svelte';
 
   export let data;
   let { house, uploader } = data
   $: height = $footerTop - $screenHeight;
+
+  let deleteCheck = false
 
   const resize = () => {
     height = $footerTop - $screenHeight
@@ -20,6 +23,19 @@
 </script>
 
 <svelte:window on:resize={resize} />
+
+{#if deleteCheck}
+<Alert class="z-30 fixed top-10 left-1/2 -translate-x-1/2">
+  <div class="flex items-center gap-3">
+    <span class="text-lg font-medium">글을 삭제하시겠습니까?</span>
+  </div>
+  <p class="mt-2 mb-4 text-sm">등록하신 {house.title} 매물 정보가 영구히 삭제되며 복구할 수 없습니다.</p>
+  <div class="flex gap-2">
+    <Button href={`${$page.params.id}/delete`} size="xs">삭제</Button>
+    <Button on:click={() => deleteCheck = false} size="xs" outline>취소</Button>
+  </div>
+</Alert>
+{/if}
 
 {#if $scrollY >= $headerHeight}
   <div id="title" class="z-20 fixed top-0 left-0 bg-white dark:bg-gray-900 w-full border-b-2 flex justify-center items-center p-4 text-center">
@@ -35,9 +51,9 @@
   <a href={`${$page.params.id}/edit`} class="bg-primary-700 text-white flex-1 flex justify-center items-center p-4 hover:cursor-pointer">
     <Title>수정하기</Title>
   </a>
-  <a href={`${$page.params.id}/delete`} class="bg-red-700 text-white flex-1 flex justify-center items-center p-4 hover:cursor-pointer">
+  <button on:click={() => deleteCheck = true} class="bg-red-700 text-white flex-1 flex justify-center items-center p-4 hover:cursor-pointer">
     <Title>삭제하기</Title>
-  </a>
+  </button>
 </div>
 {/if}
 
@@ -99,8 +115,8 @@
   <a href={`${$page.params.id}/edit`} class="bg-primary-700 text-white flex-1 flex justify-center items-center p-4 hover:cursor-pointer">
     <Title>수정하기</Title>
   </a>
-  <a href={`${$page.params.id}/delete`} class="bg-red-700 text-white flex-1 flex justify-center items-center p-4 hover:cursor-pointer">
+  <button on:click={() => deleteCheck = true} class="bg-red-700 text-white flex-1 flex justify-center items-center p-4 hover:cursor-pointer">
     <Title>삭제하기</Title>
-  </a>
+  </button>
 </div>
 {/if}
