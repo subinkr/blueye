@@ -1,21 +1,20 @@
 <script>
   import { marked } from 'marked'
-  import { Hr } from "flowbite-svelte";
   import Title from "$lib/components/title.svelte";
   import TitleResponsive from "$lib/components/title-responsive.svelte";
   import TitleSmall from "$lib/components/title-small.svelte";
-  import MainImages from "./main-images.svelte";
   import { scrollY, headerHeight, screenHeight, footerTop } from "$lib/scroll-controls/index.ts"
-  import HouseInfos from "./house-infos.svelte";
   import { peoples } from "$lib/data/peoples.ts";
   import { page } from '$app/stores'
   import { Alert, Button } from 'flowbite-svelte';
 
   export let data;
-  let { house, uploader } = data
+  let { tour, uploader } = data
   $: height = $footerTop - $screenHeight;
 
   let deleteCheck = false
+  let visible = false
+  const images = tour.images.split('|')
 
   const resize = () => {
     height = $footerTop - $screenHeight
@@ -29,7 +28,7 @@
   <div class="flex items-center gap-3">
     <span class="text-lg font-medium">글을 삭제하시겠습니까?</span>
   </div>
-  <p class="mt-2 mb-4 text-sm">등록하신 {house.title} 매물 정보가 영구히 삭제되며 복구할 수 없습니다.</p>
+  <p class="mt-2 mb-4 text-sm">등록하신 {tour.title} 매물 정보가 영구히 삭제되며 복구할 수 없습니다.</p>
   <div class="flex gap-2">
     <Button href={`${$page.params.id}/delete`} size="xs">삭제</Button>
     <Button on:click={() => deleteCheck = false} size="xs" outline>취소</Button>
@@ -39,7 +38,7 @@
 
 {#if $scrollY >= $headerHeight}
   <div id="title" class="z-20 fixed top-0 left-0 bg-white dark:bg-gray-900 w-full border-b-2 flex justify-center items-center p-4 text-center">
-    <TitleResponsive>{house.title}</TitleResponsive>
+    <TitleResponsive>{tour.title}</TitleResponsive>
   </div>
 {/if}
 {#if $scrollY <= height && !uploader}
@@ -57,19 +56,17 @@
 </div>
 {/if}
 
-<div id="title" class="w-full text-center mb-4 p-4 border-b-2">
-  <TitleResponsive>{house.title}</TitleResponsive>
-</div>
-<div id="main-carousel" class="w-full">
-  <MainImages title={house.title} images={house.images.split('|')} />
+<div id="title" class="w-full text-center p-4 border-b-2">
+  <TitleResponsive>{tour.title}</TitleResponsive>
 </div>
 <div class='w-full'>
+  <img class='w-full max-h-[50vh] object-cover' src={tour.mainImage} alt={tour.mainImage} />
   <div class="px-4 md:px-20 my-4">
     <div class="flex flex-col gap-8">
-      <Title>매물 특징</Title>
+      <Title>투어 특징</Title>
       <div class="flex flex-col sm:flex-row gap-8">
         <div class="flex-1 flex flex-col gap-8">
-          {#each JSON.parse(house.descriptions) as description}
+          {#each JSON.parse(tour.descriptions) as description}
           <div class="flex flex-col gap-4">
             <TitleSmall>{description.title}</TitleSmall>
             <div class='prose max-w-none'>{@html marked(description.content.split('\n').join('\n\n') ?? "")}</div>
@@ -77,33 +74,38 @@
           {/each}
         </div>
         <div class="flex flex-col gap-4 justify-start items-center">
-          <img class="min-w-[120px]" src={"/images/people/" + house.writer + ".jpg"} alt={house.writer} />
+          <img class="min-w-[120px]" src={"/images/people/" + tour.writer + ".jpg"} alt={tour.writer} />
           <div class="text-center">
-            <TitleResponsive>{peoples[house.writer].name}</TitleResponsive>
-            <div>{peoples[house.writer].team + ' ' + peoples[house.writer].position}</div>
+            <TitleResponsive>{peoples[tour.writer].name}</TitleResponsive>
+            <div>{peoples[tour.writer].team + ' ' + peoples[tour.writer].position}</div>
           </div>
         </div>
       </div>
+      <div class="flex flex-col sm:flex-row justify-evenly items-center sm:items-start gap-4">
+        <div class="flex flex-col justify-start items-center">
+          <Title>참가비</Title>
+          <div class='prose text-center max-w-none'>{@html marked(tour.price.split('\n').join('\n\n') ?? "")}</div>
+        </div>
+        <div class="flex flex-col justify-start items-center">
+          <Title>투어일</Title>
+          <div class='prose text-center max-w-none'>{@html marked(tour.date.split('\n').join('\n\n') ?? "")}</div>
+        </div>
+      </div>
     </div>
-    <Hr />
-    <div class="flex flex-col gap-4 justify-center items-center">
-      <Title>개발사 정보</Title>
-      <TitleSmall>{house.builder}</TitleSmall>
-      <div class="w-full prose max-w-none">{@html marked(house.builderDetail.split('\n').join('\n\n') ?? "")}</div>
-    </div>
-    <Hr />
-    <div class="h-fit flex flex-col gap-4">
-      <Title>매물 정보</Title>
-      <HouseInfos house={house} />
-    </div>
-    <Hr />
   </div>
 </div>
-<div class="w-full flex flex-col gap-4 text-center">
-  <Title>매물 지도</Title>
-  <TitleSmall>{house.location}</TitleSmall>
-  {@html marked(`<iframe class="w-full h-80" ${house.googleMap.split('<iframe').length > 1 ? house.googleMap.split('<iframe')[1] : "></iframe>"}`)}
-  
+<div class='px-4 w-full lg:w-[80vw] flex flex-col justify-center items-center'>
+  <div class='my-4'><Title>상세 정보</Title></div>
+  {#if visible}
+    {#each images as src}
+      <img src={src} alt={src} />
+    {/each}
+  {:else}
+    <div class='w-full relative'>
+      <img class='w-full max-h-[100vh] object-cover object-left-top' src={images[0]} alt={images[0]} />
+      <button class="w-full h-[20vh] flex flex-1 justify-center items-end p-4 text-2xl absolute bottom-0 left-0 bg-gradient-to-t from-white from-10% via-white via-30% to-transparent" on:click={() => (visible = true)}>더보기</button>
+    </div>
+  {/if}
 </div>
 
 {#if !uploader}

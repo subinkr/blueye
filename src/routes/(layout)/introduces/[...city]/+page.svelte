@@ -1,6 +1,6 @@
 <script>
   import Houses from './houses.svelte';
-  import Trips from './trips.svelte';
+  import Tours from './tours.svelte';
   import Title from '$lib/components/title.svelte';
   import TitleSmall from '$lib/components/title-small.svelte';
   import { menus } from '$lib/data/menus'
@@ -10,7 +10,7 @@
   export let data;
 
   $: houses = data.houses;
-  $: trips = data.trips;
+  $: tours = data.tours;
   
   $: [country] = menus.filter((country) => country.child.filter(city => city.href === $page.url.pathname).length);
   $: [city] = country.child.filter(city => city.href === $page.url.pathname)
@@ -25,8 +25,8 @@
   <div class="w-full sm:w-9/12 min-h-16 bg-white dark:bg-gray-900 flex justify-between px-8 items-center gap-4 sm:gap-8 rounded-t-lg">
     <a class={$page.url.search === '' ? "underline" : "hover:underline"} href="/introduces/{$page.params.city}"><TitleSmall>전체</TitleSmall></a>
     <div class="flex gap-4 sm:gap-8">
-      <a class={$page.url.search === '?houses' ? "underline" : "hover:underline"} href="/introduces/{$page.params.city}?houses"><TitleSmall>부동산</TitleSmall></a>
-      <a class={$page.url.search === '?trips' ? "underline" : "hover:underline"} href="/introduces/{$page.params.city}?trips"><TitleSmall>여행</TitleSmall></a>
+      <a class={$page.url.search === '?houses' ? "underline" : "hover:underline"} href="/introduces/{$page.params.city}?houses"><TitleSmall>매물</TitleSmall></a>
+      <a class={$page.url.search === '?tours' ? "underline" : "hover:underline"} href="/introduces/{$page.params.city}?tours"><TitleSmall>투어</TitleSmall></a>
     </div>
   </div>
 </div>
@@ -35,8 +35,8 @@
     <Houses houses={houses} />
   </div>
 {/if}
-{#if $page.url.search === '?trips' || $page.url.search === '' }
-  <div id="trips" class="w-full sm:px-20 py-8">
-    <Trips trips={trips} />
+{#if $page.url.search === '?tours' || $page.url.search === '' }
+  <div id="tours" class="w-full sm:px-20 py-8">
+    <Tours tours={tours} />
   </div>
 {/if}

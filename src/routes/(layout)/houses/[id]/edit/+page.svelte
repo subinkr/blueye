@@ -53,8 +53,6 @@
   let config = house.config
   let date = house.date
   let houseHolders = house.houseHolders
-  let own = house.own
-  let expectedReturn = house.expectedReturn
   let tax = house.tax
   let images = house.images
 
@@ -221,21 +219,9 @@
           </HouseInfo>
           <HouseInfo>
             <AlignCenter>
-              <UserOutline size="xl" /><b>소유권 형태</b>
-            </AlignCenter>
-            <Textarea name="own" class="h-40 resize-none" placeholder="FREE HOLD (영구 소유)" value={own} />
-          </HouseInfo>
-          <HouseInfo>
-            <AlignCenter>
               <BuildingOutline size="xl" /><b>개발 및 시공</b>
             </AlignCenter>
             <Textarea name="builder" class="h-40 resize-none" placeholder="FURI (푸리)" bind:value={builder} />
-          </HouseInfo>
-          <HouseInfo>
-            <AlignCenter>
-              <DollarOutline size="xl" /><b>예상 임대 수익률</b>
-            </AlignCenter>
-            <Textarea name="expectedReturn" class="h-40 resize-none" placeholder="평균 4 ~ 5%" value={expectedReturn} />
           </HouseInfo>
           <HouseInfo>
             <AlignCenter>

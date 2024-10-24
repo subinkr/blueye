@@ -51,21 +51,9 @@
   </HouseInfo>
   <HouseInfo>
     <AlignCenter>
-      <UserOutline size="xl" /><b>소유권 형태</b>
-    </AlignCenter>
-    <div class="prose max-w-none">{@html marked(house?.own.split('\n').join('\n\n') ?? "")}</div>
-  </HouseInfo>
-  <HouseInfo>
-    <AlignCenter>
       <BuildingOutline size="xl" /><b>개발 및 시공</b>
     </AlignCenter>
     <div class="prose max-w-none">{@html marked(house?.builder.split('\n').join('\n\n') ?? "")}</div>
-  </HouseInfo>
-  <HouseInfo>
-    <AlignCenter>
-      <DollarOutline size="xl" /><b>예상 임대 수익률</b>
-    </AlignCenter>
-    <div class="prose max-w-none">{@html marked(house?.expectedReturn.split('\n').join('\n\n') ?? "")}</div>
   </HouseInfo>
   <HouseInfo>
     <AlignCenter>

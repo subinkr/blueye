@@ -25,6 +25,15 @@ export default {
           900: "#1A237E",
         },
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            p: {
+              margin: "0", // p 태그의 마진을 없앰
+            },
+          },
+        },
+      },
     },
   },
 
