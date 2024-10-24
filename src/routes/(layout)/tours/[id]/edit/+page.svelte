@@ -1,11 +1,8 @@
 <script>
-  import { TrashBinOutline, BuildingOutline, CalendarMonthOutline, CashOutline, CogOutline, DollarOutline, HomeOutline, LandmarkOutline, RulerCombinedOutline, UserOutline, UsersGroupOutline } from "flowbite-svelte-icons";
-  import { Hr } from "flowbite-svelte";
+  import { TrashBinOutline } from "flowbite-svelte-icons";
   import Title from "$lib/components/title.svelte";
   import { scrollY, headerHeight } from "$lib/scroll-controls/index.ts"
-  import HouseInfo from "./house-info.svelte";
-  import AlignCenter from "$lib/components/align-center.svelte";
-  import { Input, Textarea, Select, Button, Modal } from "flowbite-svelte";
+  import { Input, Textarea, Select, Button } from "flowbite-svelte";
 	import { enhance } from '$app/forms';
   import { onMount } from "svelte";
 
@@ -18,13 +15,12 @@
   export let data;
   export let form;
 
-  const { API_SERVER, house } = data;
+  const { API_SERVER, tour } = data;
 
   $: if (form?.message) {
     alert(form.message); // 서버에서 받은 error를 경고로 표시
   }
 
-  let modal = false;
   let selected;
 
   let countries = [
@@ -39,24 +35,13 @@
     { value: 'cambodia/phnompenh', name: '캄보디아 프놈펜' },
   ];
 
-  let title = house.title
-  let descriptions = JSON.parse(house.descriptions)
-  let descriptionsString = house.descriptionsString
-  let builder = house.builder
-  let builderDetail = house.builderDetail
-  let price = house.price
-  let location = house.location
-  let googleMap = house.googleMap
-  let pricePerSquareMeter = house.pricePerSquareMeter
-  let salesType = house.salesType
-  let squareMeter = house.squareMeter
-  let config = house.config
-  let date = house.date
-  let houseHolders = house.houseHolders
-  let own = house.own
-  let expectedReturn = house.expectedReturn
-  let tax = house.tax
-  let images = house.images
+  let title = tour.title
+  let descriptions = JSON.parse(tour.descriptions)
+  let descriptionsString = tour.descriptionsString
+  let price = tour.price
+  let date = tour.date
+  let mainImage = tour.mainImage
+  let images = tour.images
 
   $: newImages = []
 
@@ -66,7 +51,7 @@
 
   onMount(() => {
     for(let i = 0 ; i < countries.length ; i++) {
-      if(countries[i].value === house.city) {
+      if(countries[i].value === tour.city) {
         document.getElementById("select").selectedIndex = i + 1;
         break;
       }
@@ -80,65 +65,49 @@
   </div>
 {/if}
 
-<form method="POST" action="?/house" use:enhance>
-  <div id="title" class="w-full text-center mb-4 p-4 border-b-2">
+<form method="POST" action="?/tour" class="w-full" use:enhance>
+  <div id="title" class="w-full text-center p-4 border-b-2">
     <Input name="title" placeholder="프로젝트 이름" bind:value={title} on:keydown={handleKeydown} />
   </div>
-  <Input name="images" bind:value={images} class="hidden" />
-  <div id="main-carousel" class="w-full flex flex-col items-center">
-    <Modal color="primary" {title} bind:open={modal} size='xl' outsideclose>
-      <Input name="images" class="hidden" bind:value={images} on:keydown={handleKeydown} />
-        {#if images.length}
-          {#each images.split('|') as src}
-            <div class='relative'>
-              <img src={src} alt={src} />
-              <Button on:click={
-                () => {
-                  images = images.split('|').filter(image => image !== src).join('|')
-                }
-              } class="w-16 h-16 absolute flex justify-center items-center top-0 right-0">
-                <TrashBinOutline size='lg' />
-              </Button>
-            </div>
-          {/each}
-        {/if}
-        {#each newImages as newImage}
-          <Input type="file" accept="image/*" class={!newImage.value ? "" : 'hidden'} on:change={async (e) => {
-            if(e.target.files.length) {
-              const formData = new FormData();
-              formData.append('file', e.target.files[0]);
 
-              const response = await fetch(`${API_SERVER}/data/image`, {
-                method: 'POST',
-                body: formData
-              });
+  {#if !mainImage}
+    <Input type="file" accept="image/*" on:change={async (e) => {
+      if(e.target.files.length) {
+        const formData = new FormData();
+        formData.append('file', e.target.files[0]);
 
-              if (response.ok) {
-                const { image } = await response.json();
-                images = images !== '' ? `${images}|${image}` : image
-              } else {
-                console.error('Image upload failed');
-              }
-              newImage.value = true
-              newImages = newImages
-            }
-          }}/>
-        {/each}
-        <Button on:click={() => {
-          newImages.push({id: `image-${newImages.length}`, value: ''})
-          newImages = newImages
-        }} class="w-full text-2xl mt-4">+</Button>
-    </Modal>
-    <div class='w-full px-4 md:px-20'>
-      <Button on:click={() => {
-        modal = true
-      }} class="w-full text-lg mt-4">이미지 추가 ({images.split('|')[0] === '' ? 0 : images.split('|').length})</Button>
+        const response = await fetch(`${API_SERVER}/data/image`, {
+          method: 'POST',
+          body: formData
+        });
+
+        if (response.ok) {
+          const { image } = await response.json();
+          mainImage = image
+        } else {
+          console.error('Image upload failed');
+        }
+      }
+    }}/>
+  {:else}
+    <div class='relative'>
+      <img class="w-full max-h-[50vh] object-cover" src={mainImage} alt={mainImage} />
+      <Button on:click={
+        () => {
+          mainImage = ""
+        }
+      } class="w-16 h-16 absolute flex justify-center items-center top-0 right-0">
+        <TrashBinOutline size='lg' />
+      </Button>
     </div>
-  </div>
+  {/if}
+
+  <Input name="mainImage" bind:value={mainImage} class="hidden" />
+  
   <div>
     <div class="px-4 md:px-20 my-4">
       <div class="flex flex-col gap-8">
-        <Title>매물 특징</Title>
+        <Title>투어 특징</Title>
         <div class="flex flex-col sm:flex-row gap-8">
           <div class="w-full flex flex-col gap-4">
             <Input name="descriptions" class="hidden" bind:value={descriptionsString} on:keydown={handleKeydown} />
@@ -153,7 +122,7 @@
                   <TrashBinOutline size='lg' />
                 </Button>
               </div>
-              <Textarea placeholder="소개 내용" class="h-40 resize-none" bind:value={description.content} />
+              <Textarea placeholder="소개 내용" bind:value={description.content} />
             {/each}
             <Button class="text-2xl" on:click={
               () => {
@@ -165,96 +134,62 @@
             }>+</Button>
           </div>
         </div>
-      </div>
-      <Hr />
-      <div class="flex flex-col gap-4 justify-center items-center">
-        <Title>개발사 정보</Title>
-        <Input placeholder="개발사 이름" size='lg' class="font-bold" bind:value={builder} on:keydown={handleKeydown} />
-        <Textarea name="builderDetail" placeholder="개발사 정보 상세" value={builderDetail}/>
-      </div>
-      <Hr />
-      <div class="h-fit flex flex-col gap-4">
-        <Title>매물 정보</Title>
-        
-        <div class="pb-4 text-center">
-          <Input name="price" placeholder="$200,000(최소가 매물) ~ $500,000(최고가 매물)" size='lg' class="font-bold" value={price} on:keydown={handleKeydown} />
-        </div>
-        <div class="flex flex-wrap gap-4 justify-center items-start text-center">
-          <HouseInfo>
-            <AlignCenter>
-              <CashOutline size="xl" /><b>평균 분양가 (m²당 USD)</b>
-            </AlignCenter>
-            <Textarea name="pricePerSquareMeter" class="h-40 resize-none" placeholder="$4,100" value={pricePerSquareMeter} />
-          </HouseInfo>
-          <HouseInfo>
-            <AlignCenter>
-              <HomeOutline size="xl" /><b>판매 유형</b>
-            </AlignCenter>
-            <Textarea name="salesType" class="h-40 resize-none" placeholder="분양" value={salesType} />
-          </HouseInfo>
-          <HouseInfo>
-            <AlignCenter>
-              <RulerCombinedOutline size="xl" /><b>전용 면적 (m²)</b>
-            </AlignCenter>
-            <Textarea name="squareMeter" class="h-40 resize-none" placeholder="40, 50, 60, 문의 필요" value={squareMeter} />
-          </HouseInfo>
-          <HouseInfo>
-            <AlignCenter>
-              <CogOutline size="xl" /><b>구성</b>
-            </AlignCenter>
-            <Textarea name="config" class="h-40 resize-none" placeholder="1층~7층 주차장,
-8층 Facilities,
-9층 ~ 49층 4개 동 3,600세대." value={config} />
-          </HouseInfo>
-          <HouseInfo>
-            <AlignCenter>
-              <CalendarMonthOutline size="xl" /><b>입주 예정일</b>
-            </AlignCenter>
-            <Textarea name="date" class="h-40 resize-none" placeholder="2차 일부: 2024년 12월,
-3차 : 2029년." value={date} />
-          </HouseInfo>
-          <HouseInfo>
-            <AlignCenter>
-              <UsersGroupOutline size="xl" /><b>총 세대수</b>
-            </AlignCenter>
-            <Textarea name="houseHolders" class="h-40 resize-none" placeholder="3600세대" value={houseHolders} />
-          </HouseInfo>
-          <HouseInfo>
-            <AlignCenter>
-              <UserOutline size="xl" /><b>소유권 형태</b>
-            </AlignCenter>
-            <Textarea name="own" class="h-40 resize-none" placeholder="FREE HOLD (영구 소유)" value={own} />
-          </HouseInfo>
-          <HouseInfo>
-            <AlignCenter>
-              <BuildingOutline size="xl" /><b>개발 및 시공</b>
-            </AlignCenter>
-            <Textarea name="builder" class="h-40 resize-none" placeholder="FURI (푸리)" bind:value={builder} />
-          </HouseInfo>
-          <HouseInfo>
-            <AlignCenter>
-              <DollarOutline size="xl" /><b>예상 임대 수익률</b>
-            </AlignCenter>
-            <Textarea name="expectedReturn" class="h-40 resize-none" placeholder="평균 4 ~ 5%" value={expectedReturn} />
-          </HouseInfo>
-          <HouseInfo>
-            <AlignCenter>
-              <LandmarkOutline size="xl" /><b>취득세</b>
-            </AlignCenter>
-            <Textarea name="tax" class="h-40 resize-none" placeholder="SPA(계약서)금액의 4%" value={tax} />
-          </HouseInfo>
+        <div class="flex flex-col sm:flex-row justify-evenly items-center sm:items-start gap-4">
+          <div class="w-full flex flex-col justify-start items-center">
+            <Title>참가비</Title>
+            <Textarea name="price" placeholder={`최대 4인 / 95,000원\n(1인 참가 시에도 95,000원)`} size='lg' class="font-bold" value={price} />
+          </div>
+          <div class="w-full flex flex-col justify-start items-center">
+            <Title>투어일</Title>
+            <Textarea name="date" placeholder="1일(4시간) / 상시, 문의 필요" size='lg' class="font-bold" value={date} />
+          </div>
         </div>
       </div>
-      <Hr />
     </div>
   </div>
-  <div class='w-full px-4 md:px-20'>
-    <div class="w-full flex flex-col gap-4 text-center mb-8">
-      <Title>매물 지도</Title>
-      <Select id='select' name="city" class="mt-2" items={countries} bind:value={selected} placeholder="부동산 지역 선택" on:keydown={handleKeydown} />
-      <Input name="location" placeholder="주소" value={location} on:keydown={handleKeydown} />
-      <Input name="googleMap" placeholder="iframe 태그" value={googleMap} on:keydown={handleKeydown} />
-    </div>
+  <Select name="city" class="mt-2" items={countries} bind:value={selected} placeholder="부동산 지역 선택" on:keydown={handleKeydown} />
+  <Input name="images" bind:value={images} class="hidden" />
+  <div id="images" class="w-full flex flex-col items-center">
+    {#if images.length}
+      {#each images.split('|') as src}
+        <div class='relative'>
+          <img src={src} alt={src} />
+          <Button on:click={
+            () => {
+              images = images.split('|').filter(image => image !== src).join('|')
+            }
+          } class="w-16 h-16 absolute flex justify-center items-center top-0 right-0">
+            <TrashBinOutline size='lg' />
+          </Button>
+        </div>
+      {/each}
+    {/if}
+    {#each newImages as newImage}
+      <Input type="file" accept="image/*" class={!newImage.value ? "" : 'hidden'} on:change={async (e) => {
+        if(e.target.files.length) {
+          const formData = new FormData();
+          formData.append('file', e.target.files[0]);
+
+          const response = await fetch(`${API_SERVER}/data/image`, {
+            method: 'POST',
+            body: formData
+          });
+
+          if (response.ok) {
+            const { image } = await response.json();
+            images = images !== '' ? `${images}|${image}` : image
+          } else {
+            console.error('Image upload failed');
+          }
+          newImage.value = true
+          newImages = newImages
+        }
+      }}/>
+    {/each}
+    <Button on:click={() => {
+      newImages.push({id: `image-${newImages.length}`, value: ''})
+      newImages = newImages
+    }} class="w-full text-2xl mt-4">+</Button>
   </div>
   <button type="submit" on:click={beforeSubmit} 
   id="contact" class="bg-primary-700 text-white w-full h-[70px] border-t-2 flex justify-center items-center p-4 hover:cursor-pointer">
