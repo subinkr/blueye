@@ -1,5 +1,5 @@
 <script>
-  import { TrashBinOutline, BuildingOutline, CalendarMonthOutline, CashOutline, CogOutline, DollarOutline, HomeOutline, LandmarkOutline, RulerCombinedOutline, UserOutline, UsersGroupOutline } from "flowbite-svelte-icons";
+  import { TrashBinOutline, BuildingOutline, CalendarMonthOutline, CashOutline, CogOutline, HomeOutline, LandmarkOutline, RulerCombinedOutline, UsersGroupOutline } from "flowbite-svelte-icons";
   import { Hr } from "flowbite-svelte";
   import Title from "$lib/components/title.svelte";
   import { scrollY, headerHeight } from "$lib/scroll-controls/index.ts"
@@ -41,7 +41,7 @@
 
   let title = house.title
   let descriptions = JSON.parse(house.descriptions)
-  let descriptionsString = house.descriptionsString
+  let descriptionsString = ''
   let builder = house.builder
   let builderDetail = house.builderDetail
   let price = house.price

@@ -37,7 +37,7 @@
 
   let title = tour.title
   let descriptions = JSON.parse(tour.descriptions)
-  let descriptionsString = tour.descriptionsString
+  let descriptionsString = ''
   let price = tour.price
   let date = tour.date
   let mainImage = tour.mainImage
@@ -147,7 +147,7 @@
       </div>
     </div>
   </div>
-  <Select name="city" class="mt-2" items={countries} bind:value={selected} placeholder="부동산 지역 선택" on:keydown={handleKeydown} />
+  <Select id='select' name="city" class="mt-2" items={countries} bind:value={selected} placeholder="부동산 지역 선택" on:keydown={handleKeydown} />
   <Input name="images" bind:value={images} class="hidden" />
   <div id="images" class="w-full flex flex-col items-center">
     {#if images.length}

@@ -13,7 +13,7 @@
     <div>준비중입니다.</div>
   {/if}
   {#each tours as tour}
-    <Panel img={tour.image} href={"/tour/" + tour.id}>
+    <Panel img={tour.image} href={"/tours/" + tour.id}>
       <div class="p-4 flex flex-col gap-4 border-gray-100 dark:border-gray-700 border-2 rounded-b-lg">
         <b>{tour.title}</b>
         <div class='prose text-center max-w-none'>{@html marked(tour?.date.split('\n').join('\n\n') ?? "")}</div>
