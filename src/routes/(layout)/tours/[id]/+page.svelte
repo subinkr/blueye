@@ -28,7 +28,7 @@
   <div class="flex items-center gap-3">
     <span class="text-lg font-medium">글을 삭제하시겠습니까?</span>
   </div>
-  <p class="mt-2 mb-4 text-sm">등록하신 {tour.title} 매물 정보가 영구히 삭제되며 복구할 수 없습니다.</p>
+  <p class="mt-2 mb-4 text-sm">등록하신 {tour.title} 투어 정보가 영구히 삭제되며 복구할 수 없습니다.</p>
   <div class="flex gap-2">
     <Button href={`${$page.params.id}/delete`} size="xs">삭제</Button>
     <Button on:click={() => deleteCheck = false} size="xs" outline>취소</Button>
