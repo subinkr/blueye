@@ -149,47 +149,52 @@
   </div>
   <Select id='select' name="city" class="mt-2" items={countries} bind:value={selected} placeholder="부동산 지역 선택" on:keydown={handleKeydown} />
   <Input name="images" bind:value={images} class="hidden" />
-  <div id="images" class="w-full flex flex-col items-center">
-    {#if images.length}
-      {#each images.split('|') as src}
-        <div class='relative'>
-          <img src={src} alt={src} />
-          <Button on:click={
-            () => {
-              images = images.split('|').filter(image => image !== src).join('|')
+  <div class='my-4'>
+    <Title>상세 정보</Title>
+  </div>
+  <div class='w-full flex justify-center'>
+    <div id="images" class="w-full lg:w-[80vw] flex flex-col items-center">
+      {#if images.length}
+        {#each images.split('|') as src}
+          <div class='relative'>
+            <img src={src} alt={src} />
+            <Button on:click={
+              () => {
+                images = images.split('|').filter(image => image !== src).join('|')
+              }
+            } class="w-16 h-16 absolute flex justify-center items-center top-0 right-0">
+              <TrashBinOutline size='lg' />
+            </Button>
+          </div>
+        {/each}
+      {/if}
+      {#each newImages as newImage}
+        <Input type="file" accept="image/*" class={!newImage.value ? "" : 'hidden'} on:change={async (e) => {
+          if(e.target.files.length) {
+            const formData = new FormData();
+            formData.append('file', e.target.files[0]);
+
+            const response = await fetch(`${API_SERVER}/data/image`, {
+              method: 'POST',
+              body: formData
+            });
+
+            if (response.ok) {
+              const { image } = await response.json();
+              images = images !== '' ? `${images}|${image}` : image
+            } else {
+              console.error('Image upload failed');
             }
-          } class="w-16 h-16 absolute flex justify-center items-center top-0 right-0">
-            <TrashBinOutline size='lg' />
-          </Button>
-        </div>
-      {/each}
-    {/if}
-    {#each newImages as newImage}
-      <Input type="file" accept="image/*" class={!newImage.value ? "" : 'hidden'} on:change={async (e) => {
-        if(e.target.files.length) {
-          const formData = new FormData();
-          formData.append('file', e.target.files[0]);
-
-          const response = await fetch(`${API_SERVER}/data/image`, {
-            method: 'POST',
-            body: formData
-          });
-
-          if (response.ok) {
-            const { image } = await response.json();
-            images = images !== '' ? `${images}|${image}` : image
-          } else {
-            console.error('Image upload failed');
+            newImage.value = true
+            newImages = newImages
           }
-          newImage.value = true
-          newImages = newImages
-        }
-      }}/>
-    {/each}
-    <Button on:click={() => {
-      newImages.push({id: `image-${newImages.length}`, value: ''})
-      newImages = newImages
-    }} class="w-full text-2xl mt-4">+</Button>
+        }}/>
+      {/each}
+      <Button on:click={() => {
+        newImages.push({id: `image-${newImages.length}`, value: ''})
+        newImages = newImages
+      }} class="w-full text-2xl mt-4">+</Button>
+    </div>
   </div>
   <button type="submit" on:click={beforeSubmit} 
   id="contact" class="bg-primary-700 text-white w-full h-[70px] border-t-2 flex justify-center items-center p-4 hover:cursor-pointer">
