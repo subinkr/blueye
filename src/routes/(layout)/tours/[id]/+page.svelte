@@ -64,7 +64,7 @@
   <div class="px-4 md:px-20 my-4">
     <div>
       <Title>투어 특징</Title>
-      <div class="flex flex-col sm:flex-row gap-8">
+      <div class="flex flex-col sm:flex-row gap-8 my-8">
         <div class="flex-1 flex flex-col gap-8">
           {#each JSON.parse(tour.descriptions) as description}
           <div class="flex flex-col gap-4">
