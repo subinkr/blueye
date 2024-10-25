@@ -62,7 +62,7 @@
 <div class='w-full'>
   <img class='w-full max-h-[50vh] object-cover' src={tour.mainImage} alt={tour.mainImage} />
   <div class="px-4 md:px-20 my-4">
-    <div class="flex flex-col gap-8">
+    <div>
       <Title>투어 특징</Title>
       <div class="flex flex-col sm:flex-row gap-8">
         <div class="flex-1 flex flex-col gap-8">
@@ -72,13 +72,6 @@
             <div class='prose max-w-none'>{@html marked(description.content.split('\n').join('\n\n') ?? "")}</div>
           </div>
           {/each}
-        </div>
-        <div class="flex flex-col gap-4 justify-start items-center">
-          <img class="min-w-[120px]" src={"/images/people/" + tour.writer + ".jpg"} alt={tour.writer} />
-          <div class="text-center">
-            <TitleResponsive>{peoples[tour.writer].name}</TitleResponsive>
-            <div>{peoples[tour.writer].team + ' ' + peoples[tour.writer].position}</div>
-          </div>
         </div>
       </div>
       <div class="flex flex-col sm:flex-row justify-evenly items-center sm:items-start gap-4">
