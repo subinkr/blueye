@@ -16,7 +16,7 @@ export async function load({ cookies, params }) {
     error(404, "Not found");
   }
 
-  if (house.writer === loginUserId) {
+  if (house.writer === loginUserId || loginUserId === 0) {
     uploader = true;
   }
 

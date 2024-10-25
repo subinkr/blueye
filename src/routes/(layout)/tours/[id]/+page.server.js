@@ -16,7 +16,7 @@ export async function load({ cookies, params }) {
     error(404, "Not found");
   }
 
-  if (tour.writer === loginUserId) {
+  if (tour.writer === loginUserId || loginUserId === 0) {
     uploader = true;
   }
 
