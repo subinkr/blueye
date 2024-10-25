@@ -91,7 +91,7 @@
   <div class='my-4'><Title>상세 정보</Title></div>
   {#if visible}
     {#each images as src}
-      <img src={src} alt={src} />
+      <img class="w-full object-cover object-left-top" src={src} alt={src} />
     {/each}
   {:else}
     <div class='w-full relative'>
