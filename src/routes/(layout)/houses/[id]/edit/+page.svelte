@@ -225,9 +225,9 @@
           </HouseInfo>
           <HouseInfo>
             <AlignCenter>
-              <LandmarkOutline size="xl" /><b>취득세</b>
+              <LandmarkOutline size="xl" /><b>세금</b>
             </AlignCenter>
-            <Textarea name="tax" class="h-40 resize-none" placeholder="SPA(계약서)금액의 4%" value={tax} />
+            <Textarea name="tax" class="h-40 resize-none" placeholder="취득세: SPA(계약서)금액의 4%" value={tax} />
           </HouseInfo>
         </div>
       </div>

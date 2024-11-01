@@ -57,7 +57,7 @@
   </HouseInfo>
   <HouseInfo>
     <AlignCenter>
-      <LandmarkOutline size="xl" /><b>취득세</b>
+      <LandmarkOutline size="xl" /><b>세금</b>
     </AlignCenter>
     <div class="prose max-w-none">{@html marked(house?.tax.split('\n').join('\n\n') ?? "")}</div>
   </HouseInfo>
