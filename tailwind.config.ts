@@ -31,6 +31,14 @@ export default {
             p: {
               margin: "0", // p 태그의 마진을 없앰
             },
+            ul: {
+              margin: "0",
+            },
+            li: {
+              p: {
+                margin: "0",
+              },
+            },
           },
         },
       },
