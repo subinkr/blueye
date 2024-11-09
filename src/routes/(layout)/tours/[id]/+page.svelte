@@ -69,7 +69,7 @@
           {#each JSON.parse(tour.descriptions) as description}
           <div class="flex flex-col gap-4">
             <TitleSmall>{description.title}</TitleSmall>
-            <div class='prose max-w-none'>{@html marked(description.content.split('\n').join('\n\n') ?? "")}</div>
+            <div class='prose max-w-none text-black dark:text-white'>{@html marked(description.content.split('\n').join('\n\n') ?? "")}</div>
           </div>
           {/each}
         </div>
@@ -77,11 +77,11 @@
       <div class="flex flex-col sm:flex-row justify-evenly items-center sm:items-start gap-4">
         <div class="flex flex-col justify-start items-center">
           <Title>참가비</Title>
-          <div class='prose text-center max-w-none'>{@html marked(tour.price.split('\n').join('\n\n') ?? "")}</div>
+          <div class='prose text-center max-w-none text-black dark:text-white'>{@html marked(tour.price.split('\n').join('\n\n') ?? "")}</div>
         </div>
         <div class="flex flex-col justify-start items-center">
           <Title>투어일</Title>
-          <div class='prose text-center max-w-none'>{@html marked(tour.date.split('\n').join('\n\n') ?? "")}</div>
+          <div class='prose text-center max-w-none text-black dark:text-white'>{@html marked(tour.date.split('\n').join('\n\n') ?? "")}</div>
         </div>
       </div>
     </div>

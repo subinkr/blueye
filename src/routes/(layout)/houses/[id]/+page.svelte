@@ -72,7 +72,7 @@
           {#each JSON.parse(house.descriptions) as description}
           <div class="flex flex-col gap-4">
             <TitleSmall>{description.title}</TitleSmall>
-            <div class='prose max-w-none'>{@html marked(description.content.split('\n').join('\n\n') ?? "")}</div>
+            <div class='prose max-w-none text-black dark:text-white'>{@html marked(description.content.split('\n').join('\n\n') ?? "")}</div>
           </div>
           {/each}
         </div>
@@ -89,7 +89,7 @@
     <div class="flex flex-col gap-4 justify-center items-center">
       <Title>개발사 정보</Title>
       <TitleSmall>{house.builder}</TitleSmall>
-      <div class="w-full prose max-w-none">{@html marked(house.builderDetail.split('\n').join('\n\n') ?? "")}</div>
+      <div class="w-full prose max-w-none text-black dark:text-white">{@html marked(house.builderDetail.split('\n').join('\n\n') ?? "")}</div>
     </div>
     <Hr />
     <div class="h-fit flex flex-col gap-4">

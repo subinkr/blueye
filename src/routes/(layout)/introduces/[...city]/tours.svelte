@@ -16,8 +16,8 @@
     <Panel img={tour.image} href={"/tours/" + tour.id}>
       <div class="p-4 flex flex-col gap-4 border-gray-100 dark:border-gray-700 border-2 rounded-b-lg">
         <b>{tour.title}</b>
-        <div class='prose text-center max-w-none'>{@html marked(tour?.date.split('\n').join('\n\n') ?? "")}</div>
-        <div class='prose text-center max-w-none'>{@html marked(tour?.price.split('\n').join('\n\n') ?? "")}</div>
+        <div class='prose text-center max-w-none text-black dark:text-white'>{@html marked(tour?.date.split('\n').join('\n\n') ?? "")}</div>
+        <div class='prose text-center max-w-none text-black dark:text-white'>{@html marked(tour?.price.split('\n').join('\n\n') ?? "")}</div>
       </div>
     </Panel>
   {/each}
