@@ -62,7 +62,7 @@ export const peoples = [
   { id: 40, name: "주칠성", position: "팀장", team: "시안 매매전문" },
   { id: 41, name: "설지영", position: "매니저", team: "항저우" },
   { id: 42, name: "이수연", position: "팀장", team: "서울센터 계약팀" },
-  { id: 43, name: "정효령", position: "매니저", team: "중국 공식계정관리" },
+  // { id: 43, name: "정효령", position: "매니저", team: "중국 공식계정관리" },
   { id: 44, name: "이선균", position: "팀장", team: "너디블루사업부" },
   { id: 45, name: "강수빈", position: "매니저", team: "너디블루사업부" },
   { id: 46, name: "이경섭", position: "대표", team: "코칭(한국)" },

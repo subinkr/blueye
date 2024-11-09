@@ -12,7 +12,7 @@
 </script>
 
 <div class="w-64">
-  <Card {img} {horizontal} class="flex justify-between gap-4 min-h-[340px] relative">
+  <Card {img} {horizontal} class="flex justify-between gap-4 min-h-[440px] relative">
     <div class="text-black dark:text-white">
       <TitleSmall>{region}</TitleSmall>
       <TitleSmall>{building}</TitleSmall>
