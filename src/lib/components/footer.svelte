@@ -64,31 +64,31 @@
     <div class="lg:flex gap-4">
       <div class="font-bold w-24">상하이센터</div>
       <Separator />
-      <div>上海市闵行区虹莘路3988号(디존빌딩 408호)</div>
+      <div>上海市闵行区虹泉路1000号 A座701室</div>
       <Separator />
       <div>대표전화 (186) 1694 0029</div>
     </div>
     <div class="lg:flex gap-4">
-      <div class="font-bold w-24">서울광화문센터</div>
-      <Separator />
-      <div>서울 종로구 종로1 교보생명빌딩 15층</div>
-    </div>
-    <div class="lg:flex gap-4">
-      <div class="font-bold w-24">블루아시아</div>
+      <div class="font-bold w-24">서울센터</div>
       <Separator />
       <div>현대가산퍼블릭 서울 금천구 디지털로 178. A동 418호</div>
       <Separator />
       <div>대표전화 (02) 2114 8288</div>
     </div>
     <div class="lg:flex gap-4">
-      <div class="font-bold w-24">캄보디아모건센터</div>
+      <div class="font-bold w-24">캄보디아센터</div>
       <Separator />
       <div>St.Sopheak Monkol RD, Tonle Basak, koh Pich Phnom Penh</div>
       <Separator />
       <div>대표전화 (855) 15 493 600</div>
     </div>
     <div class="lg:flex gap-4">
-      <div class="font-bold w-24">호치민아시아센터</div>
+      <div class="font-bold w-24">말레이시아센터</div>
+      <Separator />
+      <div>HI JAUAN MACROLINK, BLOCK A-32-05,Medini Central1,79250, Iskandar PuteriI,Johor</div>
+    </div>
+    <div class="lg:flex gap-4">
+      <div class="font-bold w-24">호치민센터</div>
       <Separator />
       <div>On the third floor of building D2 Galleria, Le Thuoc Street, Thao Dien Ward, District 2, Thu Duc City, HCMC</div>
     </div>
