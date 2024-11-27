@@ -25,7 +25,7 @@
       <!-- <div>{why.description}</div> -->
       <div class="flex flex-col gap-4">
         {#each why.reasons as reason}
-        <div class="flex flex-col sm:flex-row items-center gap-4 text-gray-400">
+        <div class="flex flex-col sm:flex-row items-start gap-4 text-gray-400">
           <div class="flex gap-4 justify-center items-center">
             <CheckOutline strokeWidth='4' />
             <div class="min-w-40 text-lg font-extrabold md:text-xl text-gray-400">{reason.title}</div>
