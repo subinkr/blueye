@@ -112,8 +112,8 @@
               });
 
               if (response.ok) {
-                const { image } = await response.json();
-                images = images !== '' ? `${images}|${image}` : image
+                const { url } = await response.json();
+                images = images !== '' ? `${images}|${url}` : url
               } else {
                 console.error('Image upload failed');
               }
