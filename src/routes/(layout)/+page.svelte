@@ -75,7 +75,7 @@
 
   <div class="w-full flex justify-center">
   {#if data.reports?.length === 0}
-    <div class="text-center py-12 bg-white rounded-lg shadow">
+    <div class="text-center">
       <h3 class="mt-2 text-sm font-medium text-gray-900">등록된 보고서가 없습니다</h3>
     </div>
   {:else}
