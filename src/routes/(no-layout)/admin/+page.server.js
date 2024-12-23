@@ -9,6 +9,11 @@ export async function load({ cookies }) {
 
 export const actions = {
   username: async ({ request, cookies }) => {
+    const accessToken = cookies.get("accessToken");
+    if (!accessToken) {
+      redirect(303, "/login?redirectTo=admin");
+    }
+
     const data = await request.formData();
     const newUsername = data.get("newUsername");
     await fetch(`${API_SERVER}/users`, {
@@ -23,6 +28,11 @@ export const actions = {
   },
 
   password: async ({ request, cookies }) => {
+    const accessToken = cookies.get("accessToken");
+    if (!accessToken) {
+      redirect(303, "/login?redirectTo=admin");
+    }
+    
     const data = await request.formData();
     const newPassword = data.get("newPassword");
     const repeatPassword = data.get("repeatPassword");

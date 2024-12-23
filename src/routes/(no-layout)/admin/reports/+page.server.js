@@ -2,9 +2,9 @@ import { API_SERVER } from '$env/static/private';
 import { redirect } from '@sveltejs/kit';
 
 export async function load({ cookies }) {
-  const accessToken = cookies.get('access_token');
+  const accessToken = cookies.get('accessToken');
   if (!accessToken) {
-    throw redirect(303, '/login');
+    redirect(303, "/login?redirectTo=admin/reports");
   }
 
   return { API_SERVER };
@@ -12,9 +12,9 @@ export async function load({ cookies }) {
 
 export const actions = {
   default: async ({ request, cookies }) => {
-    const accessToken = cookies.get('access_token');
+    const accessToken = cookies.get('accessToken');
     if (!accessToken) {
-      throw redirect(303, '/login');
+      redirect(303, "/login?redirectTo=admin/reports");
     }
 
     const formData = await request.formData();

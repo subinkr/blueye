@@ -113,4 +113,45 @@ export const menus = [
     ],
   },
   ...countries,
+  {
+    title: "리서치센터",
+    href: "/reports/all",
+    child: [
+      {
+        title: "말레이시아",
+        name: "malaysia",
+        href: "/reports/malaysia",
+      },
+      {
+        title: "아랍에미리트",
+        name: "uae",
+        href: "/reports/uae",
+      },
+      {
+        title: "캄보디아",
+        name: "cambodia",
+        href: "/reports/cambodia",
+      },
+      {
+        title: "중국",
+        name: "china",
+        href: "/reports/china",
+      },
+      {
+        title: "베트남",
+        name: "vietnam",
+        href: "/reports/vietnam",
+      },
+      {
+        title: "싱가포르",
+        name: "singapore",
+        href: "/reports/singapore",
+      },
+      {
+        title: "대한민국",
+        name: "korea",
+        href: "/reports/korea",
+      },
+    ],
+  },
 ];

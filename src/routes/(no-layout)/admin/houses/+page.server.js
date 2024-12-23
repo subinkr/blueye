@@ -3,16 +3,16 @@ import { API_SERVER } from "$env/static/private";
 
 export async function load({ cookies }) {
   if (!cookies.get("accessToken")) {
-    redirect(303, "/login?redirectTo=tours");
+    redirect(303, "/login?redirectTo=admin/houses");
   }
 
   return { API_SERVER };
 }
 
 export const actions = {
-  tour: async ({ request, cookies }) => {
+  house: async ({ request, cookies }) => {
     const data = await request.formData();
-    const response = await fetch(`${API_SERVER}/tours`, {
+    const response = await fetch(`${API_SERVER}/houses`, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${cookies.get("accessToken")}`,
@@ -26,6 +26,6 @@ export const actions = {
       return fail(statusCode, { message });
     }
 
-    redirect(303, `/tours/${id}`);
+    redirect(303, `/houses/${id}`);
   },
 };
