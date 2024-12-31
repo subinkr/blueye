@@ -1,5 +1,4 @@
 <script>
-  const { API_SERVER } = data;
   let file;
   let uploading = false;
   export let data;
