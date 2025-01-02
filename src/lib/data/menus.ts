@@ -37,12 +37,12 @@ export const countries = [
     name: "china",
     child: [
       {
-        title: "북경",
+        title: "베이징",
         name: "beijing",
         href: "/introduces/china/beijing",
       },
       {
-        title: "상해",
+        title: "상하이",
         name: "shanghai",
         href: "/introduces/china/shanghai",
       },

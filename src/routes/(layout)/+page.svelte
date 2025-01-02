@@ -5,7 +5,6 @@
   import Branch from './branch.svelte';
   import Why from './why.svelte';
   import People from './people.svelte';
-  import Benefits from './benefits.svelte';
   import Contact from './contact.svelte';
   import { onMount } from 'svelte';
   import { page } from '$app/stores';
@@ -41,9 +40,6 @@
 <div id="reviews" class="w-full py-20 flex flex-col gap-4 bg-primary-50 dark:bg-black">
   <Reviews />
 </div>
-<div id="benefits" class=" w-full flex flex-col gap-4 justify-center py-20">
-  <Benefits />
-</div>
-<div id="contact" class="w-full pt-20 flex flex-col gap-12 justify-center items-center bg-primary-50 dark:bg-black">
+<div id="contact" class="w-full pt-20 flex flex-col gap-12 justify-center items-center">
   <Contact />
 </div>
