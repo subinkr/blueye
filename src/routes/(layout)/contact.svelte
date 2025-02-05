@@ -11,7 +11,7 @@
   <div class="md:flex justify-center items-center gap-4">
     <TitleSmall>전화번호</TitleSmall>
     <Separator />
-    <div class="text-lg">(02) 2114 8288</div>
+    <div class="text-lg">(02) 2070 8280</div>
   </div>
   <div class="md:flex justify-center items-center gap-4">
     <TitleSmall>카카오톡</TitleSmall>

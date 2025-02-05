@@ -36,11 +36,11 @@ export const countries = [
     title: "중국",
     name: "china",
     child: [
-      {
-        title: "베이징",
-        name: "beijing",
-        href: "/introduces/china/beijing",
-      },
+      // {
+      //   title: "베이징",
+      //   name: "beijing",
+      //   href: "/introduces/china/beijing",
+      // },
       {
         title: "상하이",
         name: "shanghai",
@@ -52,11 +52,11 @@ export const countries = [
     title: "베트남",
     name: "vietnam",
     child: [
-      {
-        title: "하노이",
-        name: "hanoi",
-        href: "/introduces/vietnam/hanoi",
-      },
+      // {
+      //   title: "하노이",
+      //   name: "hanoi",
+      //   href: "/introduces/vietnam/hanoi",
+      // },
       {
         title: "호치민",
         name: "hochiminhcity",
@@ -64,18 +64,18 @@ export const countries = [
       },
     ],
   },
-  {
-    title: "싱가포르",
-    name: "singapore",
-    href: "/introduces/singapore",
-    child: [
-      {
-        title: "싱가포르",
-        name: "singapore",
-        href: "/introduces/singapore",
-      },
-    ],
-  },
+  // {
+  //   title: "싱가포르",
+  //   name: "singapore",
+  //   href: "/introduces/singapore",
+  //   child: [
+  //     {
+  //       title: "싱가포르",
+  //       name: "singapore",
+  //       href: "/introduces/singapore",
+  //     },
+  //   ],
+  // },
   {
     title: "대한민국",
     name: "korea",

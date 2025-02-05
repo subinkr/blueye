@@ -35,8 +35,8 @@
     <Houses houses={houses} />
   </div>
 {/if}
-{#if !$page.url.searchParams.get('q') || $page.url.searchParams.get('q') === 'tours'}
+<!-- {#if !$page.url.searchParams.get('q') || $page.url.searchParams.get('q') === 'tours'}
   <div id="tours" class="w-full sm:px-20 py-8">
     <Tours tours={tours} />
   </div>
-{/if}
+{/if} -->

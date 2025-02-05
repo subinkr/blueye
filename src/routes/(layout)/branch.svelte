@@ -7,7 +7,7 @@
 
 <div class="flex gap-2 items-center pt-12">
   <div class="flex flex-col justify-center items-center">
-    <TitleResponsive>블루아이는 7개 국가 9개 도시에</TitleResponsive>
+    <TitleResponsive>블루아이는 전 세계 각 국가에서</TitleResponsive>
     <TitleResponsive>현지 지사를 운영하고 있습니다.</TitleResponsive>
   </div>
 </div>
