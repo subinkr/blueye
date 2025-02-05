@@ -23,18 +23,18 @@
     <TitleSmall>{country.title}</TitleSmall>
   </div>
   <div class="w-full sm:w-9/12 min-h-16 bg-white dark:bg-gray-900 flex justify-between px-8 items-center gap-4 sm:gap-8 rounded-t-lg">
-    <a class={$page.url.search === '' ? "underline" : "hover:underline"} href="/introduces/{$page.params.city}"><TitleSmall>전체</TitleSmall></a>
+    <!-- <a class={$page.url.search === '' ? "underline" : "hover:underline"} href="/introduces/{$page.params.city}"><TitleSmall>전체</TitleSmall></a>
     <div class="flex gap-4 sm:gap-8">
       <a class={$page.url.searchParams.get('q') === 'houses' ? "underline" : "hover:underline"} href="/introduces/{$page.params.city}?q=houses"><TitleSmall>매물</TitleSmall></a>
       <a class={$page.url.searchParams.get('q') === 'tours' ? "underline" : "hover:underline"} href="/introduces/{$page.params.city}?q=tours"><TitleSmall>투어</TitleSmall></a>
-    </div>
+    </div> -->
   </div>
 </div>
-{#if !$page.url.searchParams.get('q') || $page.url.searchParams.get('q') === 'houses'}
+<!-- {#if !$page.url.searchParams.get('q') || $page.url.searchParams.get('q') === 'houses'} -->
   <div id="houses" class="w-full sm:px-20 py-8">
     <Houses houses={houses} />
   </div>
-{/if}
+<!-- {/if} -->
 <!-- {#if !$page.url.searchParams.get('q') || $page.url.searchParams.get('q') === 'tours'}
   <div id="tours" class="w-full sm:px-20 py-8">
     <Tours tours={tours} />
