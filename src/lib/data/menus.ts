@@ -158,4 +158,9 @@ export const menus = [
   },
   ...countries,
   ...research,
+  {
+    title: "상속 인사이트",
+    href: "/magazines",
+    child: [],
+  },
 ];
