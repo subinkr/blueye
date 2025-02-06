@@ -6,7 +6,7 @@
   export let houses;
 </script>
 
-<Title>매물</Title>
+<!-- <Title>매물</Title> -->
 <div class="mt-4 flex flex-wrap gap-4 justify-center">
   {#if !houses.length}
     <div>준비중입니다.</div>
