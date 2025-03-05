@@ -1,8 +1,3 @@
-<script>
-  import { enhance } from '$app/forms';
-  import Itinerary from './itinerary.svelte';
-</script>
-
 <div class="w-full min-h-screen bg-white flex flex-col pb-20">
   <!-- Hero Section -->
   <div class="relative py-20 min-h-[600px] flex items-center justify-center overflow-hidden">
