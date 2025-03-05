@@ -1,5 +1,6 @@
 <script>
   import { enhance } from '$app/forms';
+  import Itinerary from './itinerary.svelte';
 </script>
 
 <div class="w-full min-h-screen bg-white flex flex-col pb-20">
@@ -444,6 +445,164 @@
                 VIP 예약하기
               </a>
               <p class="text-sm text-gray-500 text-center mt-4">* 선착순 마감, 예약 확정 시 계약금 20% 결제</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Itinerary Section -->
+  <div class="py-16 md:py-20 bg-blue-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-10 md:mb-16">
+        <span class="inline-block px-4 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold mb-4">TOUR SCHEDULE</span>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">두바이 부동산 투어 <span class="text-blue-600">일정</span></h2>
+      </div>
+      
+      <div class="max-w-5xl mx-auto">
+        <div class="flex flex-wrap -mx-4">
+          <!-- Day 1 -->
+          <div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
+            <div class="bg-white rounded-xl shadow-md overflow-hidden h-full flex flex-col relative">
+              <div class="bg-blue-600 text-white p-4 flex items-center justify-between">
+                <h3 class="font-bold text-xl">1일차</h3>
+              </div>
+              <div class="p-5 flex-grow">
+                <ul class="space-y-3">
+                  <li class="flex items-start">
+                    <svg class="w-5 h-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                    <span>두바이 도착</span>
+                  </li>
+                  <li class="flex items-start">
+                    <svg class="w-5 h-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                    <span>호텔 체크인 및 휴식</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Day 2 -->
+          <div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
+            <div class="bg-white rounded-xl shadow-md overflow-hidden h-full flex flex-col relative">
+              <div class="bg-blue-600 text-white p-4 flex items-center justify-between">
+                <h3 class="font-bold text-xl">2일차</h3>
+              </div>
+              <div class="p-5 flex-grow">
+                <ul class="space-y-3">
+                  <li class="flex items-start">
+                    <svg class="w-5 h-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                    <span>마리나 요트 크루즈</span>
+                  </li>
+                  <li class="flex items-start">
+                    <svg class="w-5 h-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                    <span>부동산 임장 (1차)</span>
+                  </li>
+                  <li class="flex items-start">
+                    <svg class="w-5 h-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                    <span>세계 최대 높이 관람차(블루워터스)</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Day 3 -->
+          <div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
+            <div class="bg-white rounded-xl shadow-md overflow-hidden h-full flex flex-col relative">
+              <div class="bg-blue-600 text-white p-4 flex items-center justify-between">
+                <h3 class="font-bold text-xl">3일차</h3>
+              </div>
+              <div class="p-5 flex-grow">
+                <ul class="space-y-3">
+                  <li class="flex items-start">
+                    <svg class="w-5 h-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                    <span>팜 주메이라 모노레일 및 전망대 투어</span>
+                  </li>
+                  <li class="flex items-start">
+                    <svg class="w-5 h-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                    <span>아랍 전통시장(수크마디낫)</span>
+                  </li>
+                  <li class="flex items-start">
+                    <svg class="w-5 h-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                    <span>부동산 임장 (2차)</span>
+                  </li>
+                  <li class="flex items-start">
+                    <svg class="w-5 h-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                    <span>두바이 몰</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Day 4 -->
+          <div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
+            <div class="bg-white rounded-xl shadow-md overflow-hidden h-full flex flex-col relative">
+              <div class="bg-blue-600 text-white p-4 flex items-center justify-between">
+                <h3 class="font-bold text-xl">4일차</h3>
+              </div>
+              <div class="p-5 flex-grow">
+                <ul class="space-y-3">
+                  <li class="flex items-start">
+                    <svg class="w-5 h-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                    <span>부동산 임장 (3차)</span>
+                  </li>
+                  <li class="flex items-start">
+                    <svg class="w-5 h-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                    <span>에미레이츠 몰</span>
+                  </li>
+                  <li class="flex items-start">
+                    <svg class="w-5 h-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                    <span>다음 날 한국 도착</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl shadow-lg p-6 mt-4">
+          <div class="flex items-center mb-4">
+            <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center mr-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold">투어 일정 안내</h3>
+          </div>
+          <p class="text-gray-600 mb-4">상기 일정은 현지 사정에 따라 변경될 수 있으며, 일정 변경 시 사전에 안내해 드립니다. 자세한 내용은 예약 시 안내해 드립니다.</p>
+          <div class="flex flex-wrap gap-4">
+            <div class="bg-blue-50 rounded-lg p-3 flex items-center">
+              <svg class="w-5 h-5 text-blue-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+              </svg>
+              <span class="text-sm font-medium">2025.4.3(목)~4.7(월)</span>
             </div>
           </div>
         </div>
