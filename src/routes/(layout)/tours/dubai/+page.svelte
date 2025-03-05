@@ -35,12 +35,12 @@
             <div class="text-sm text-gray-200">소득세 및 양도세</div>
           </div>
           <div class="bg-white/10 backdrop-blur-md p-4 rounded-lg flex-1 min-w-[150px] max-w-[200px]">
-            <div class="text-3xl font-bold text-yellow-400">5년</div>
-            <div class="text-sm text-gray-200">골든 비자 발급</div>
+            <div class="text-3xl font-bold text-yellow-400">100%</div>
+            <div class="text-sm text-gray-200">외국인 소유권</div>
           </div>
           <div class="bg-white/10 backdrop-blur-md p-4 rounded-lg flex-1 min-w-[150px] max-w-[200px]">
-            <div class="text-3xl font-bold text-yellow-400">20%</div>
-            <div class="text-sm text-gray-200">연간 가격 상승률</div>
+            <div class="text-3xl font-bold text-yellow-400">10년+</div>
+            <div class="text-sm text-gray-200">골든 비자 혜택</div>
           </div>
         </div>
       </div>
@@ -381,7 +381,7 @@
             <h3 class="text-2xl font-bold mb-2">프리미엄 패키지</h3>
             <p class="text-indigo-200 mb-4">4박 6일 VIP 투어</p>
             <div class="flex items-baseline">
-              <span class="text-3xl font-bold">₩900만</span>
+              <span class="text-3xl font-bold">₩1,500만</span>
               <span class="text-indigo-200 ml-2">(항공권 별도)</span>
             </div>
           </div>
