@@ -116,7 +116,7 @@
             <h3 class="text-2xl font-bold text-white absolute bottom-6 left-6">높은 투자 수익률</h3>
           </div>
           <div class="p-6">
-            <p class="text-gray-700 mb-6">부동산의 지속적인 가치 상승과 높은 임대 수익률로 매력적인 투자 기회를 제공합니다. 프라임 지역의 경우 연 8-12%의 임대 수익률을 기대할 수 있습니다.</p>
+            <p class="text-gray-700 mb-6">부동산의 지속적인 가치 상승과 높은 임대 수익률로 매력적인 투자 기회를 제공합니다. 프라임 지역의 경우 연 6-10%의 임대 수익률을 기대할 수 있습니다.</p>
             <div class="flex flex-wrap gap-2">
               <span class="px-3 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">높은 임대 수익</span>
               <span class="px-3 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">자산 가치 상승</span>
