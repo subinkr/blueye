@@ -381,7 +381,7 @@
             <h3 class="text-2xl font-bold mb-2">프리미엄 패키지</h3>
             <p class="text-indigo-200 mb-4">4박 6일 VIP 투어</p>
             <div class="flex items-baseline">
-              <span class="text-3xl font-bold">₩1,500만</span>
+              <span class="text-3xl font-bold">₩900만</span>
               <span class="text-indigo-200 ml-2">(항공권 별도)</span>
             </div>
           </div>
