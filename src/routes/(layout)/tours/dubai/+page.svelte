@@ -625,37 +625,19 @@
                 <svg class="w-5 h-5 text-blue-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
-                <span>1인 1실 변경을 신청하시는 경우, 추가 요금이 발생합니다.</span>
-              </li>
-              <li class="flex items-start">
-                <svg class="w-5 h-5 text-blue-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </svg>
                 <span>계절성에 따른 요금 변동으로 인해 비행기 표 비용은 별도 요금으로 간주됩니다.</span>
               </li>
               <li class="flex items-start">
                 <svg class="w-5 h-5 text-blue-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
-                <span>호텔룸 1인 1실 사용 시 100만원(3박5일) / 300만원(4박6일) 추가 요금이 발생합니다. (VAT 별도)</span>
+                <span>호텔룸 1인 1실 사용 시 100만원(3박5일) / 200만원(4박6일) 추가 요금이 발생합니다. (VAT 별도)</span>
               </li>
               <li class="flex items-start">
                 <svg class="w-5 h-5 text-blue-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
                 <span>세부 일정은 현지 사정에 따라 변동될 수 있으며, 최대한 빠른 시일내에 사전 안내드립니다.</span>
-              </li>
-              <li class="flex items-start">
-                <svg class="w-5 h-5 text-blue-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </svg>
-                <span>투자 투어 신청서를 작성하시고 24시간 내에 입금이 확인되지 않으면, 자동으로 예약 취소가 됩니다.</span>
-              </li>
-              <li class="flex items-start">
-                <svg class="w-5 h-5 text-blue-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </svg>
-                <span>상품 비용은 1인 기준 500만원(3박5일) / 1500만원(4박6일) 입니다.</span>
               </li>
             </ul>
           </div>
