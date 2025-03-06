@@ -6,6 +6,7 @@
   import Why from './why.svelte';
   import People from './people.svelte';
   import Contact from './contact.svelte';
+  import Stats from './stats.svelte';
   import { onMount } from 'svelte';
   import { page } from '$app/stores';
 
@@ -22,24 +23,40 @@
   })
 </script>
 
-<div id="main-carousel" class="w-full">
+<!-- <section id="main-carousel" class="w-full">
   <MainCarousel />
-</div>
-<div id="ceo">
+</section> -->
+
+<section id="stats" class="bg-white">
+  <Stats />
+</section>
+
+<section id="ceo" class="w-full bg-gray-50">
   <Ceo />
-</div>
-<div id="branch" class="w-full py-8 min-h-screen flex flex-col gap-4 justify-center items-center bg-primary-50 dark:bg-black">
+</section>
+
+<section id="branch" class="w-full bg-white">
   <Branch />
-</div>
-<div id="people" class="py-20">
+</section>
+
+<section id="people" class="bg-white">
   <People />
-</div>
-<div id="why" class="w-full flex justify-center">
+</section>
+
+<section id="why" class="w-full bg-gray-50">
   <Why />
-</div>
-<div id="reviews" class="w-full py-20 flex flex-col gap-4 bg-primary-50 dark:bg-black">
+</section>
+
+<section id="reviews" class="w-full bg-white">
   <Reviews />
-</div>
-<div id="contact" class="w-full pt-20 flex flex-col gap-12 justify-center items-center">
+</section>
+
+<section id="contact" class="w-full bg-gray-50">
   <Contact />
-</div>
+</section>
+
+<style>
+  section {
+    scroll-margin-top: 80px; /* For smooth scrolling with fixed header */
+  }
+</style>

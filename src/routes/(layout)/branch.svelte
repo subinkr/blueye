@@ -1,25 +1,58 @@
 <script>
   import { countries } from '$lib/data/menus.ts';
   import Panel from "$lib/components/panel.svelte";
-  import TitleResponsive from '$lib/components/title-responsive.svelte';
-
 </script>
 
-<div class="flex gap-2 items-center pt-12">
-  <div class="flex flex-col justify-center items-center">
-    <TitleResponsive>블루아이는 전 세계 각 국가에서</TitleResponsive>
-    <TitleResponsive>현지 지사를 운영하고 있습니다.</TitleResponsive>
+<div class="w-full py-24 bg-gray-50">
+  <div class="container mx-auto px-4 lg:px-8">
+    <!-- 섹션 헤더 -->
+    <div class="text-center mb-16">
+      <span class="inline-block px-4 py-1 bg-gray-200 text-gray-800 text-xs font-medium tracking-widest uppercase mb-3">글로벌 네트워크</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">블루아이 글로벌 지사</h2>
+      <div class="w-24 h-1 bg-yellow-400 mx-auto mb-6"></div>
+      <p class="text-gray-600 max-w-2xl mx-auto">7개국 9개 도시에 위치한 블루아이 지사는 현지 전문가들의 네트워크를 통해 프리미엄 부동산 서비스를 제공합니다.</p>
+    </div>
+    
+    <!-- 지사 목록 -->
+    <div class="w-full max-w-7xl mx-auto">
+      <div class="flex flex-wrap justify-center">
+        {#each countries as country}
+          {#each country.child as child}
+            <div class="w-full sm:w-1/2 lg:w-1/3 p-4">
+              <div class="group overflow-hidden transition-all duration-500 shadow-md hover:shadow-xl h-full">
+                <Panel href={child.href} img={"/images/intro/" + child.name + ".jpg"}>
+                  <div class="absolute left-0 bottom-0 w-full p-6 flex justify-between items-end bg-white dark:bg-gray-900 opacity-80 transform transition-transform duration-300 group-hover:translate-y-0">
+                    <div>
+                      <h3 class="text-lg font-bold md:text-xl lg:text-2xl">{child.title}</h3>
+                      <div class="flex items-center mt-2">
+                        <div class="h-px w-8 bg-yellow-400 mr-3"></div>
+                        <p class="text-sm text-gray-500 uppercase tracking-wider">{country.title}</p>
+                      </div>
+                    </div>
+                    <div class="bg-yellow-400 p-2 rounded-full transform transition-transform duration-300 group-hover:rotate-90">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
+                  </div>
+                </Panel>
+              </div>
+            </div>
+          {/each}
+        {/each}
+      </div>
+    </div>
   </div>
 </div>
-<div class="max-w-[800px] flex flex-wrap gap-4 justify-center items-center pb-12">
-  {#each countries as country}
-    {#each country.child as child}
-    <Panel href={child.href} img={"/images/intro/" + child.name + ".jpg"}>
-      <div class="absolute left-0 bottom-0 w-full p-4 flex justify-between items-end bg-white dark:bg-gray-900">
-        <h3 class="text-lg font-bold md:text-xl lg:text-2xl">{child.title}</h3>
-        <h3 class="text-sm text-gray-400">{country.title}</h3>
-      </div>
-    </Panel>
-    {/each}
-  {/each}
-</div>
+
+<style>
+  /* 지사 카드 호버 효과 */
+  :global(.group:hover img) {
+    transform: scale(1.05);
+    transition: transform 0.7s ease-out;
+  }
+  
+  :global(img) {
+    transition: transform 0.5s ease-out;
+  }
+</style>

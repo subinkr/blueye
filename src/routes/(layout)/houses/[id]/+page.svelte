@@ -1,6 +1,6 @@
 <script>
   import { marked } from 'marked'
-  import { Hr } from "flowbite-svelte";
+  import { Hr, Badge } from "flowbite-svelte";
   import Title from "$lib/components/title.svelte";
   import TitleResponsive from "$lib/components/title-responsive.svelte";
   import TitleSmall from "$lib/components/title-small.svelte";
@@ -10,6 +10,7 @@
   import { peoples } from "$lib/data/peoples.ts";
   import { page } from '$app/stores'
   import { Alert, Button } from 'flowbite-svelte';
+  import { MapPinSolid, ClockSolid, BuildingSolid } from 'flowbite-svelte-icons';
 
   export let data;
   let { house, uploader } = data
@@ -37,86 +38,103 @@
 </Alert>
 {/if}
 
-{#if $scrollY >= $headerHeight}
-  <div id="title" class="z-20 fixed top-0 left-0 bg-white dark:bg-gray-900 w-full border-b-2 flex justify-center items-center p-4 text-center">
-    <TitleResponsive>{house.title}</TitleResponsive>
-  </div>
-{/if}
-{#if $scrollY <= height && !uploader}
-<a href="https://pf.kakao.com/_qpRxjxb/chat" class="z-20 fixed bottom-0 left-0 bg-primary-700 text-white w-full border-t-2 flex justify-center items-center p-4 hover:cursor-pointer">
-  <Title>문의하기</Title>
-</a>
-{:else if $scrollY <= height}
-<div class='w-full z-20 fixed bottom-0 left-0 flex'>
-  <a href={`${$page.params.id}/edit`} class="bg-primary-700 text-white flex-1 flex justify-center items-center p-4 hover:cursor-pointer">
-    <Title>수정하기</Title>
-  </a>
-  <button on:click={() => deleteCheck = true} class="bg-red-700 text-white flex-1 flex justify-center items-center p-4 hover:cursor-pointer">
-    <Title>삭제하기</Title>
-  </button>
-</div>
-{/if}
 
-<div id="title" class="w-full text-center mb-4 p-4 border-b-2">
-  <TitleResponsive>{house.title}</TitleResponsive>
-</div>
-<div id="main-carousel" class="w-full">
-  <MainImages title={house.title} images={house.images.split('|')} />
-</div>
-<div class='w-full'>
-  <div class="px-4 md:px-20 my-4">
-    <div class="flex flex-col gap-8">
-      <Title>매물 특징</Title>
-      <div class="flex flex-col sm:flex-row gap-8">
-        <div class="flex-1 flex flex-col gap-8">
-          {#each JSON.parse(house.descriptions) as description}
-          <div class="flex flex-col gap-4">
-            <TitleSmall>{description.title}</TitleSmall>
-            <div class='prose max-w-none text-black dark:text-white'>{@html marked(description.content.split('\n').join('\n\n') ?? "")}</div>
+<div class="w-full bg-gray-50 dark:bg-gray-800 py-6">
+  <div class="container mx-auto px-4 md:px-8">
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+      <div>
+        <Badge color="indigo" class="mb-2">프리미엄 매물</Badge>
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">{house.title}</h1>
+        <div class="flex items-center gap-4 mt-2 text-gray-600 dark:text-gray-300">
+          <div class="flex items-center">
+            <MapPinSolid class="w-4 h-4 mr-1" />
+            <span>{house.city}</span>
           </div>
-          {/each}
-        </div>
-        <div class="flex flex-col gap-4 justify-start items-center">
-          <img class="min-w-[120px]" src={"/images/people/" + house.writer + ".jpg"} alt={house.writer} />
-          <div class="text-center">
-            <TitleResponsive>{peoples[house.writer].name}</TitleResponsive>
-            <div>{peoples[house.writer].team + ' ' + peoples[house.writer].position}</div>
+          <div class="flex items-center">
+            <BuildingSolid class="w-4 h-4 mr-1" />
+            <span>{house.builder}</span>
           </div>
         </div>
       </div>
+      <div class="mt-4 md:mt-0">
+        <div class="text-3xl font-bold text-primary-700 dark:text-primary-500">{house.price}</div>
+      </div>
     </div>
-    <Hr />
-    <div class="flex flex-col gap-4 justify-center items-center">
-      <Title>개발사 정보</Title>
-      <TitleSmall>{house.builder}</TitleSmall>
-      <div class="w-full prose max-w-none text-black dark:text-white">{@html marked(house.builderDetail.split('\n').join('\n\n') ?? "")}</div>
-    </div>
-    <Hr />
-    <div class="h-fit flex flex-col gap-4">
-      <Title>매물 정보</Title>
-      <HouseInfos house={house} />
-    </div>
-    <Hr />
   </div>
 </div>
-<div class="w-full flex flex-col gap-4 text-center">
-  <Title>매물 지도</Title>
-  <TitleSmall>{house.location}</TitleSmall>
-  {@html marked(`<iframe class="w-full h-80" ${house.googleMap.split('<iframe').length > 1 ? house.googleMap.split('<iframe')[1] : "></iframe>"}`)}
-  
+
+<div id="main-carousel" class="w-full mb-8">
+  <MainImages title={house.title} images={house.images.split('|')} />
 </div>
 
-{#if !uploader}
-<a href="https://pf.kakao.com/_qpRxjxb/chat" class="bg-primary-700 text-white w-full h-[70px] border-t-2 flex justify-center items-center p-4 hover:cursor-pointer">
-  <Title>문의하기</Title>
-</a>
-{:else }
-<div class='w-full flex'>
-  <a href={`${$page.params.id}/edit`} class="bg-primary-700 text-white flex-1 flex justify-center items-center p-4 hover:cursor-pointer">
-    <Title>수정하기</Title>
-  </a>
-  <button on:click={() => deleteCheck = true} class="bg-red-700 text-white flex-1 flex justify-center items-center p-4 hover:cursor-pointer">
-    <Title>삭제하기</Title>
-  </button>
+<div class='container mx-auto px-4 md:px-8'>
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+    <div class="lg:col-span-2">
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 p-6 mb-8 overflow-hidden">
+        <h2 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white flex items-center">
+          <span class="inline-block w-1 h-6 bg-primary-700 mr-3"></span>
+          매물 특징
+        </h2>
+        <div class="space-y-8">
+          {#each JSON.parse(house.descriptions) as description}
+          <div class="border-l-4 border-primary-700 pl-4">
+            <h3 class="text-xl font-semibold mb-3 text-gray-800 dark:text-gray-100">{description.title}</h3>
+            <div class='prose max-w-none text-gray-700 dark:text-gray-300 break-words'>{@html marked(description.content.split('\n').join('\n\n') ?? "")}</div>
+          </div>
+          {/each}
+        </div>
+      </div>
+      
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 p-6 mb-8 overflow-hidden">
+        <h2 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white flex items-center">
+          <span class="inline-block w-1 h-6 bg-primary-700 mr-3"></span>
+          개발사 정보
+        </h2>
+        <div class="mb-4">
+          <h3 class="text-xl font-semibold mb-3 text-gray-800 dark:text-gray-100">{house.builder}</h3>
+          <div class="prose max-w-none text-gray-700 dark:text-gray-300 break-words">{@html marked(house.builderDetail.split('\n').join('\n\n') ?? "")}</div>
+        </div>
+      </div>
+      
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 p-6 overflow-hidden">
+        <h2 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white flex items-center">
+          <span class="inline-block w-1 h-6 bg-primary-700 mr-3"></span>
+          매물 정보
+        </h2>
+        <HouseInfos house={house} />
+      </div>
+    </div>
+    
+    <div class="lg:col-span-1">
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 p-6 sticky top-24">
+        <div class="flex flex-col items-center text-center mb-6">
+          <img class="w-32 h-32 rounded-full object-cover border-4 border-primary-100 mb-4" src={"/images/people/" + house.writer + ".jpg"} alt={house.writer} />
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white">{peoples[house.writer].name}</h3>
+          <p class="text-gray-600 dark:text-gray-400">{peoples[house.writer].team + ' ' + peoples[house.writer].position}</p>
+          
+          <div class="w-full mt-6 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700">
+            <div class="flex items-center justify-center gap-2 mb-3">
+              <ClockSolid class="w-5 h-5 text-primary-700" />
+              <span class="font-medium">전문가 상담 가능 시간</span>
+            </div>
+            <p class="text-gray-700 dark:text-gray-300">평일 09:00 - 18:00</p>
+          </div>
+        </div>
+        
+        {#if !uploader}
+          <Button href="https://pf.kakao.com/_qpRxjxb/chat" class="w-full">
+            <span class="mr-2">전문가에게 문의하기</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+            </svg>
+          </Button>
+        {:else}
+          <div class="flex gap-2">
+            <Button href={`${$page.params.id}/edit`} class="flex-1">수정하기</Button>
+            <Button color="red" on:click={() => deleteCheck = true} class="flex-1">삭제하기</Button>
+          </div>
+        {/if}
+      </div>
+    </div>
+  </div>
 </div>
-{/if}

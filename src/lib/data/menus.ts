@@ -89,49 +89,27 @@ export const countries = [
   },
 ];
 
-export const research = [
-  {
-    title: "리서치센터",
-    href: "/reports",
-    child: [
-      // {
-      //   title: "말레이시아",
-      //   name: "malaysia",
-      //   href: "/reports?country=malaysia",
-      // },
-      // {
-      //   title: "아랍에미리트",
-      //   name: "uae",
-      //   href: "/reports?country=uae",
-      // },
-      // {
-      //   title: "캄보디아",
-      //   name: "cambodia",
-      //   href: "/reports?country=cambodia",
-      // },
-      {
-        title: "중국",
-        name: "china",
-        href: "/reports?country=china",
-      },
-      // {
-      //   title: "베트남",
-      //   name: "vietnam",
-      //   href: "/reports?country=vietnam",
-      // },
-      // {
-      //   title: "싱가포르",
-      //   name: "singapore",
-      //   href: "/reports?country=singapore",
-      // },
-      // {
-      //   title: "대한민국",
-      //   name: "korea",
-      //   href: "/reports?country=korea",
-      // },
-    ],
-  },
-]
+export const magazines = {
+  title: "매거진",
+  href: "/magazines",
+  child: [
+    {
+      title: "더 리치",
+      href: "/magazines?type=litchi",
+      child: [],
+    },
+    {
+      title: "더 팩트",
+      href: "/magazines?type=fact",
+      child: [],
+    },
+    {
+      title: "상속 인사이트",
+      href: "/magazines?type=insight",
+      child: [],
+    },
+  ]
+}
 
 export const menus = [
   {
@@ -157,10 +135,5 @@ export const menus = [
     ],
   },
   ...countries,
-  ...research,
-  {
-    title: "상속 인사이트",
-    href: "/magazines",
-    child: [],
-  },
-];
+  magazines
+]
