@@ -15,36 +15,36 @@
 <div class="container mx-auto px-4 py-20 lg:px-8">
   <!-- Section Header -->
   <div class="text-center mb-16">
-    <span class="inline-block px-4 py-1 bg-gray-200 text-gray-800 text-xs font-medium tracking-widest uppercase mb-3">Testimonials</span>
-    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">고객님들의 후기</h2>
+    <span class="inline-block px-4 py-1 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-xs font-medium tracking-widest uppercase mb-3">Testimonials</span>
+    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">고객님들의 후기</h2>
     <div class="w-24 h-1 bg-yellow-400 mx-auto mb-6"></div>
-    <p class="text-gray-600 max-w-2xl mx-auto">블루아이의 전문성과 서비스에 대한 고객님들의 생생한 경험담을 확인하세요.</p>
+    <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">블루아이의 전문성과 서비스에 대한 고객님들의 생생한 경험담을 확인하세요.</p>
   </div>
   
   <!-- Reviews Grid -->
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
     {#each reviews as review, i}
-      <div class="bg-white rounded-sm shadow-md hover:shadow-lg transition-all duration-300 p-6 relative overflow-hidden">
+      <div class="bg-white dark:bg-gray-800 rounded-sm shadow-md hover:shadow-lg transition-all duration-300 p-6 relative overflow-hidden">
         <!-- Decorative quote icon -->
-        <div class="absolute -right-4 -bottom-4 text-gray-100">
+        <div class="absolute -right-4 -bottom-4 text-gray-100 dark:text-gray-700">
           <QuoteSolid size="8x" />
         </div>
         
         <!-- Review content -->
         <div class="relative z-10">
           <!-- Location badge -->
-          <div class="inline-flex items-center px-3 py-1 bg-yellow-100 text-yellow-800 text-xs font-medium mb-4">
+          <div class="inline-flex items-center px-3 py-1 bg-yellow-100 text-yellow-800 text-xs font-medium mb-4 dark:bg-yellow-900/50 dark:text-yellow-300">
             <span class="mr-2">📍</span> {review.region} {review.building}
           </div>
           
           <!-- Review text -->
-          <p class="text-gray-700 mb-6 leading-relaxed">{review.content}</p>
+          <p class="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">{review.content}</p>
           
           <!-- Reviewer info -->
-          <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-100">
+          <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-100 dark:border-gray-700">
             <div>
-              <h4 class="font-bold text-gray-900">{review.title}</h4>
-              <p class="text-sm text-gray-500">{review.detail}</p>
+              <h4 class="font-bold text-gray-900 dark:text-white">{review.title}</h4>
+              <p class="text-sm text-gray-500 dark:text-gray-400">{review.detail}</p>
             </div>
             
             <!-- Star rating -->

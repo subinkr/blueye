@@ -90,4 +90,11 @@
     background-position: center;
     background-attachment: fixed;
   }
+  
+  /* 다크모드에서는 배경을 더 어둡게 */
+  @media (prefers-color-scheme: dark) {
+    #stats-section {
+      background-image: linear-gradient(rgba(10, 15, 25, 0.95), rgba(10, 15, 25, 0.95)), url('/images/main/blueye.jpg');
+    }
+  }
 </style>

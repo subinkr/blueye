@@ -3,14 +3,14 @@
   import Panel from "$lib/components/panel.svelte";
 </script>
 
-<div class="w-full py-24 bg-gray-50">
+<div class="w-full py-24 bg-gray-50 dark:bg-gray-900">
   <div class="container mx-auto px-4 lg:px-8">
     <!-- 섹션 헤더 -->
     <div class="text-center mb-16">
-      <span class="inline-block px-4 py-1 bg-gray-200 text-gray-800 text-xs font-medium tracking-widest uppercase mb-3">글로벌 네트워크</span>
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">블루아이 글로벌 지사</h2>
+      <span class="inline-block px-4 py-1 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-xs font-medium tracking-widest uppercase mb-3">글로벌 네트워크</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">블루아이 글로벌 지사</h2>
       <div class="w-24 h-1 bg-yellow-400 mx-auto mb-6"></div>
-      <p class="text-gray-600 max-w-2xl mx-auto">7개국 9개 도시에 위치한 블루아이 지사는 현지 전문가들의 네트워크를 통해 프리미엄 부동산 서비스를 제공합니다.</p>
+      <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">7개국 9개 도시에 위치한 블루아이 지사는 현지 전문가들의 네트워크를 통해 프리미엄 부동산 서비스를 제공합니다.</p>
     </div>
     
     <!-- 지사 목록 -->
@@ -19,7 +19,7 @@
         {#each countries as country}
           {#each country.child as child}
             <div class="w-full sm:w-1/2 lg:w-1/3 p-4">
-              <div class="group relative overflow-hidden transition-all duration-500 shadow-md hover:shadow-xl h-full rounded-lg">
+              <div class="group relative overflow-hidden transition-all duration-500 shadow-md hover:shadow-xl h-full rounded-lg dark:shadow-gray-800">
                 <Panel href={child.href} img={"/images/intro/" + child.name + ".jpg"}>
                   <!-- Gradient overlay instead of solid background -->
                   <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>

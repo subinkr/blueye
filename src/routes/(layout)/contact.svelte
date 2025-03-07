@@ -5,21 +5,21 @@
   import { EnvelopeSolid, PhoneSolid, MapPinSolid, ClockSolid } from 'flowbite-svelte-icons';
 </script>
 
-<div class="w-full py-24 bg-white">
+<div class="w-full py-24 bg-white dark:bg-gray-900">
   <div class="container mx-auto px-4 lg:px-8">
     <!-- 섹션 헤더 -->
     <div class="text-center mb-16">
-      <span class="inlihttps://pf.kakao.com/_qpRxjxbne-block px-4 py-1 bg-gray-200 text-gray-800 text-xs font-medium tracking-widest uppercase mb-3">문의하기</span>
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">상담 문의</h2>
+      <span class="inline-block px-4 py-1 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-xs font-medium tracking-widest uppercase mb-3">문의하기</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">상담 문의</h2>
       <div class="w-24 h-1 bg-yellow-400 mx-auto mb-6"></div>
-      <p class="text-gray-600 max-w-2xl mx-auto">해외 부동산 투자에 관한 궁금한 점이 있으시면 언제든지 문의해 주세요. 전문가가 친절하게 상담해 드립니다.</p>
+      <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">해외 부동산 투자에 관한 궁금한 점이 있으시면 언제든지 문의해 주세요. 전문가가 친절하게 상담해 드립니다.</p>
     </div>
     
     <div class="flex flex-wrap w-full max-w-6xl mx-auto">
       <!-- 연락처 정보 -->
       <div class="w-full lg:w-1/2 lg:pr-6 mb-8 lg:mb-0">
-        <div class="bg-gray-50 p-8 rounded-sm shadow-md h-full">
-          <h3 class="text-2xl font-bold text-gray-900 mb-6 border-b border-gray-200 pb-4">연락처 정보</h3>
+        <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-sm shadow-md h-full">
+          <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 border-b border-gray-200 dark:border-gray-700 pb-4">연락처 정보</h3>
           
           <div class="space-y-6">
             <!-- 전화번호 -->
@@ -28,8 +28,8 @@
                 <PhoneSolid class="text-gray-900" size="md" />
               </div>
               <div>
-                <h4 class="text-lg font-bold text-gray-900 mb-1">전화번호</h4>
-                <p class="text-gray-600">(02) 2070 8280</p>
+                <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-1">전화번호</h4>
+                <p class="text-gray-600 dark:text-gray-300">(02) 2070 8280</p>
               </div>
             </div>
             
@@ -39,8 +39,8 @@
                 <EnvelopeSolid class="text-gray-900" size="md" />
               </div>
               <div>
-                <h4 class="text-lg font-bold text-gray-900 mb-1">카카오톡</h4>
-                <a href="https://pf.kakao.com/_qpRxjxb/chat" class="text-blue-600 hover:underline transition-all duration-300">
+                <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-1">카카오톡</h4>
+                <a href="https://pf.kakao.com/_qpRxjxb/chat" class="text-blue-600 dark:text-blue-400 hover:underline transition-all duration-300">
                   카카오톡 상담 시작하기
                 </a>
               </div>
@@ -52,8 +52,8 @@
                 <ClockSolid class="text-gray-900" size="md" />
               </div>
               <div>
-                <h4 class="text-lg font-bold text-gray-900 mb-1">영업시간</h4>
-                <p class="text-gray-600">10:00 - 18:00, 시간 조정 가능</p>
+                <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-1">영업시간</h4>
+                <p class="text-gray-600 dark:text-gray-300">10:00 - 18:00, 시간 조정 가능</p>
               </div>
             </div>
             
@@ -63,8 +63,8 @@
                 <MapPinSolid class="text-gray-900" size="md" />
               </div>
               <div>
-                <h4 class="text-lg font-bold text-gray-900 mb-1">회사주소</h4>
-                <p class="text-gray-600">서울특별시 영등포구 국회대로 62길 5, 5층 502호<br>(여의도동, 신태진빌딩)</p>
+                <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-1">회사주소</h4>
+                <p class="text-gray-600 dark:text-gray-300">서울특별시 영등포구 국회대로 62길 5, 5층 502호<br>(여의도동, 신태진빌딩)</p>
               </div>
             </div>
           </div>

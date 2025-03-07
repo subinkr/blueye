@@ -8,6 +8,7 @@
   import Contact from './contact.svelte';
   import Stats from './stats.svelte';
   import DubaiPromo from './dubai-promo.svelte';
+  import HomeTracker from './home-tracker.svelte';
   import { onMount } from 'svelte';
   import { page } from '$app/stores';
 
@@ -32,31 +33,35 @@
   <MainCarousel />
 </section> -->
 
-<section id="stats" class="bg-white">
+<section id="stats" class="bg-white dark:bg-gray-800">
   <Stats />
 </section>
 
-<section id="ceo" class="w-full bg-gray-50">
+<section id="ceo" class="w-full bg-gray-50 dark:bg-gray-900">
   <Ceo />
 </section>
 
-<section id="branch" class="w-full bg-white">
+<section id="home-tracker" class="w-full">
+  <HomeTracker />
+</section>
+
+<section id="branch" class="w-full bg-white dark:bg-gray-800">
   <Branch />
 </section>
 
-<section id="people" class="bg-white">
+<section id="people" class="bg-white dark:bg-gray-900">
   <People />
 </section>
 
-<section id="why" class="w-full bg-gray-50">
+<section id="why" class="w-full bg-gray-50 dark:bg-gray-900">
   <Why />
 </section>
 
-<section id="reviews" class="w-full bg-white">
+<section id="reviews" class="w-full bg-white dark:bg-gray-800">
   <Reviews />
 </section>
 
-<section id="contact" class="w-full bg-gray-50">
+<section id="contact" class="w-full bg-white dark:bg-gray-800">
   <Contact />
 </section>
 

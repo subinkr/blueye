@@ -6,7 +6,7 @@
   }
 </script>
 
-<div class="w-full bg-gradient-to-r from-blue-900 to-indigo-900 py-8 md:py-12 overflow-hidden relative">
+<div class="w-full bg-gradient-to-r from-blue-900 to-indigo-900 py-8 md:py-12 overflow-hidden relative dark:from-blue-950 dark:to-indigo-950">
   <!-- Background elements -->
   <div class="absolute top-0 right-0 w-64 h-64 bg-yellow-400 rounded-full opacity-10 -mr-32 -mt-32"></div>
   <div class="absolute bottom-0 left-0 w-80 h-80 bg-blue-500 rounded-full opacity-10 -ml-40 -mb-40"></div>
@@ -14,7 +14,7 @@
   <div class="container mx-auto px-4 flex flex-col md:flex-row items-center relative z-10">
     <!-- Left content: Text -->
     <div class="md:w-1/2 text-white mb-6 md:mb-0 md:pr-8">
-      <div class="inline-block px-4 py-1 bg-blue-800 text-yellow-400 rounded-full text-sm font-semibold mb-4">
+      <div class="inline-block px-4 py-1 bg-blue-800 text-yellow-400 rounded-full text-sm font-semibold mb-4 dark:bg-blue-900">
         특별 프로모션
       </div>
       <h2 class="text-3xl md:text-4xl font-bold mb-3 leading-tight">
@@ -38,7 +38,7 @@
       
       <button
         on:click={navigateToDubaiTour}
-        class="px-6 py-3 bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-semibold rounded-full transition-all transform hover:scale-105 shadow-lg inline-flex items-center"
+        class="px-6 py-3 bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-semibold rounded-full transition-all transform hover:scale-105 shadow-lg inline-flex items-center dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:text-gray-100"
       >
         투어 상세 보기
         <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

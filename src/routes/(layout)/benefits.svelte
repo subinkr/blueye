@@ -104,7 +104,11 @@
   {#each benefits as benefit}
   <div class="w-[260px]">
     <ButtonMain {...benefit}>
-      <div class="text-center flex gap-4 justify-center items-center flex-wrap p-4">
+      <div class="text-center flex gap-4 justify-center items-center flex-wrap p-4 dark:bg-gray-800">
+        <p class="text-sm text-gray-500 dark:text-gray-400 mb-4 w-full">
+          <b class="dark:text-gray-200">{benefit.title}:</b>
+          {benefit.content}
+        </p>
         {#each benefit.images as image}
           <img class="object-cover h-[300px]" src={image} alt="" />
         {/each}
@@ -119,11 +123,11 @@
     <TabItem open title={benefit.title}>
       <div class="bg-gray-100 dark:bg-gray-700 p-4">
         <p class="text-sm text-gray-500 dark:text-gray-400">
-          <b>{benefit.title}:</b>
+          <b class="dark:text-gray-200">{benefit.title}:</b>
           {benefit.content}
         </p>
       </div>
-      <div class="text-center flex gap-4 justify-center items-center flex-wrap p-4">
+      <div class="text-center flex gap-4 justify-center items-center flex-wrap p-4 dark:bg-gray-800">
         {#each benefit.images as image}
           <img class="object-cover h-[300px]" src={image} alt="" />
         {/each}
