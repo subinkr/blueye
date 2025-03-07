@@ -7,6 +7,7 @@
   import People from './people.svelte';
   import Contact from './contact.svelte';
   import Stats from './stats.svelte';
+  import DubaiPromo from './dubai-promo.svelte';
   import { onMount } from 'svelte';
   import { page } from '$app/stores';
 
@@ -22,6 +23,10 @@
     window.scrollTo({top:location, behavior:'smooth'})
   })
 </script>
+
+<section id="dubai-promo" class="w-full">
+  <DubaiPromo />
+</section>
 
 <!-- <section id="main-carousel" class="w-full">
   <MainCarousel />
