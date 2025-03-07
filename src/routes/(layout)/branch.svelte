@@ -19,20 +19,26 @@
         {#each countries as country}
           {#each country.child as child}
             <div class="w-full sm:w-1/2 lg:w-1/3 p-4">
-              <div class="group overflow-hidden transition-all duration-500 shadow-md hover:shadow-xl h-full">
+              <div class="group relative overflow-hidden transition-all duration-500 shadow-md hover:shadow-xl h-full rounded-lg">
                 <Panel href={child.href} img={"/images/intro/" + child.name + ".jpg"}>
-                  <div class="absolute left-0 bottom-0 w-full p-6 flex justify-between items-end bg-white dark:bg-gray-900 opacity-80 transform transition-transform duration-300 group-hover:translate-y-0">
-                    <div>
-                      <h3 class="text-lg font-bold md:text-xl lg:text-2xl">{child.title}</h3>
-                      <div class="flex items-center mt-2">
-                        <div class="h-px w-8 bg-yellow-400 mr-3"></div>
-                        <p class="text-sm text-gray-500 uppercase tracking-wider">{country.title}</p>
+                  <!-- Gradient overlay instead of solid background -->
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                  
+                  <!-- Content positioned at the bottom -->
+                  <div class="absolute left-0 bottom-0 w-full p-6 z-10 transition-all duration-300">
+                    <div class="flex justify-between items-end">
+                      <div>
+                        <h3 class="text-lg font-bold md:text-xl lg:text-2xl text-white">{child.title}</h3>
+                        <div class="flex items-center mt-2">
+                          <div class="h-px w-8 bg-yellow-400 mr-3"></div>
+                          <p class="text-sm text-yellow-200 uppercase tracking-wider">{country.title}</p>
+                        </div>
                       </div>
-                    </div>
-                    <div class="bg-yellow-400 p-2 rounded-full transform transition-transform duration-300 group-hover:rotate-90">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                      </svg>
+                      <div class="bg-yellow-400 p-2 rounded-full transform transition-transform duration-300 group-hover:rotate-90">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                      </div>
                     </div>
                   </div>
                 </Panel>
@@ -46,13 +52,5 @@
 </div>
 
 <style>
-  /* 지사 카드 호버 효과 */
-  :global(.group:hover img) {
-    transform: scale(1.05);
-    transition: transform 0.7s ease-out;
-  }
-  
-  :global(img) {
-    transition: transform 0.5s ease-out;
-  }
+  /* 지사 카드 */
 </style>
