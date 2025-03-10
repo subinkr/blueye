@@ -16,6 +16,9 @@
   let { house, uploader } = data
   $: height = $footerTop - $screenHeight;
 
+  // Find the writer in the peoples array based on ID
+  $: writer = peoples.find(person => person.id === house.writer);
+
   let deleteCheck = false
 
   const resize = () => {
@@ -108,9 +111,14 @@
     <div class="lg:col-span-1">
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 p-6 sticky top-24">
         <div class="flex flex-col items-center text-center mb-6">
-          <img class="w-32 h-32 rounded-full object-cover border-4 border-primary-100 mb-4" src={"/images/people/" + house.writer + ".jpg"} alt={house.writer} />
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white">{peoples[house.writer].name}</h3>
-          <p class="text-gray-600 dark:text-gray-400">{peoples[house.writer].team + ' ' + peoples[house.writer].position}</p>
+          <img class="w-32 h-32 rounded-full object-cover border-4 border-primary-100 mb-4" src={"/images/people/" + house.writer + ".jpg"} alt={writer ? writer.name : house.writer} />
+          {#if writer}
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white">{writer.name}</h3>
+            <p class="text-gray-600 dark:text-gray-400">{writer.team + ' ' + writer.position}</p>
+          {:else}
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white">작성자 정보 없음</h3>
+            <p class="text-gray-600 dark:text-gray-400">정보를 찾을 수 없습니다</p>
+          {/if}
           
           <div class="w-full mt-6 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700">
             <div class="flex items-center justify-center gap-2 mb-3">
