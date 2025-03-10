@@ -99,6 +99,16 @@ export const magazines = {
       child: [],
     },
     {
+      title: "에듀 아시아",
+      href: "/magazines?type=edu",
+      child: [],
+    },
+    {
+      title: "베한 타임즈",
+      href: "/magazines?type=times",
+      child: [],
+    },
+    {
       title: "더 팩트",
       href: "/magazines?type=fact",
       child: [],
