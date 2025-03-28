@@ -597,7 +597,7 @@
               <svg class="w-5 h-5 text-blue-600 dark:text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
               </svg>
-              <span class="text-sm font-medium">2025.4.3(목)~4.7(월)</span>
+              <span class="text-sm font-medium">매주 목요일</span>
             </div>
           </div>
         </div>
