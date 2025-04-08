@@ -90,7 +90,7 @@
     <div class="lg:flex gap-4">
       <div class="font-bold w-24">호치민센터</div>
       <Separator />
-      <div>On the third floor of building D2 Galleria, Le Thuoc Street, Thao Dien Ward, District 2, Thu Duc City, HCMC</div>
+      <div>2F, 8/6 Vo Truong Toan Street , An Phu Ward, Thu Duc City, HCMC</div>
     </div>
     <div class="lg:flex gap-4">
       <div class="font-bold w-24">하노이센터</div>
