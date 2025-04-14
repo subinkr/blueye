@@ -8,6 +8,7 @@
   import Contact from './contact.svelte';
   import Stats from './stats.svelte';
   import DubaiPromo from './dubai-promo.svelte';
+  import KoreaPromo from './korea-promo.svelte';
   import HomeTracker from './home-tracker.svelte';
   import { onMount } from 'svelte';
   import { page } from '$app/stores';
@@ -25,8 +26,8 @@
   })
 </script>
 
-<section id="dubai-promo" class="w-full">
-  <DubaiPromo />
+<section id="korea-promo" class="w-full">
+  <KoreaPromo />
 </section>
 
 <!-- <section id="main-carousel" class="w-full">
@@ -35,6 +36,10 @@
 
 <section id="stats" class="bg-white dark:bg-gray-800">
   <Stats />
+</section>
+
+<section id="dubai-promo" class="w-full">
+  <DubaiPromo />
 </section>
 
 <section id="ceo" class="w-full bg-gray-50 dark:bg-gray-900">
