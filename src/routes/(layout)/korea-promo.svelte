@@ -77,8 +77,8 @@
           class="w-full h-64 object-cover"
         />
         <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-          <div class="text-white font-semibold">리조트급 신도시 라이프</div>
-          <div class="text-green-300 text-sm">매주 목요일 임장투어 진행 중</div>
+          <div class="text-white font-semibold">매주 목요일 임장투어 진행</div>
+          <div class="text-green-300 text-sm">무료 식사 제공</div>
         </div>
       </div>
     </div>
