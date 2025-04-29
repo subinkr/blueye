@@ -97,12 +97,24 @@
 </script>
 
 <div class="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
   <!-- 헤더 섹션 -->
   <div class="mb-16 flex flex-col md:flex-row md:items-end md:justify-between border-b border-gray-200 dark:border-gray-800 pb-6" in:fade={{ duration: 400, delay: 200 }}>
     <div>
       <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 dark:text-gray-100 inline-flex items-baseline">
         {currentConfig.title}
         <span class="bg-{currentConfig.accentColor}-500 w-2 h-2 rounded-full ml-1.5 inline-block"></span>
+        {#if isLitchi}
+          <a
+            href="https://e5uy5dok1k8.sg.larksuite.com/share/base/form/shrlgwb8T4nNqO21nRRvx5Fu5W6"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="ml-4 inline-flex items-center px-3 py-1.5 border border-{currentConfig.accentColor}-400 text-{currentConfig.accentColor}-600 dark:text-{currentConfig.accentColor}-200 bg-white dark:bg-gray-900 rounded-full shadow-sm text-sm font-semibold hover:bg-{currentConfig.accentColor}-50 dark:hover:bg-{currentConfig.accentColor}-900/30 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-{currentConfig.accentColor}-400"
+            style="vertical-align: middle;"
+          >
+            구독 신청
+          </a>
+        {/if}
       </h1>
     </div>
     <div class="mt-4 md:mt-0 flex items-center text-gray-500 dark:text-gray-400">
