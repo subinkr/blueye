@@ -2,7 +2,7 @@
   import Separator from "$lib/components/icons/separator.svelte";
   import TitleSmall from "$lib/components/title-small.svelte";
   import Title from "$lib/components/title.svelte";
-  import { EnvelopeSolid, PhoneSolid, MapPinSolid, ClockSolid } from 'flowbite-svelte-icons';
+  import { EnvelopeSolid, PhoneSolid, MapPinSolid, ClockSolid, MessagesSolid } from 'flowbite-svelte-icons';
 </script>
 
 <div class="w-full py-24 bg-white dark:bg-gray-900">
@@ -36,7 +36,7 @@
             <!-- 카카오톡 -->
             <div class="flex items-start">
               <div class="bg-yellow-400 p-3 rounded-full mr-4">
-                <EnvelopeSolid class="text-gray-900" size="md" />
+                <MessagesSolid class="text-gray-900" size="md" />
               </div>
               <div>
                 <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-1">카카오톡</h4>
@@ -49,11 +49,11 @@
             <!-- 영업시간 -->
             <div class="flex items-start">
               <div class="bg-yellow-400 p-3 rounded-full mr-4">
-                <ClockSolid class="text-gray-900" size="md" />
+                <EnvelopeSolid class="text-gray-900" size="md" />
               </div>
               <div>
-                <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-1">영업시간</h4>
-                <p class="text-gray-600 dark:text-gray-300">10:00 - 18:00, 시간 조정 가능</p>
+                <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-1">이메일</h4>
+                <p class="text-gray-600 dark:text-gray-300">support@blueye.asia</p>
               </div>
             </div>
             
