@@ -118,8 +118,8 @@ export const magazines = {
       href: "/magazines?type=insight",
       child: [],
     },
-  ]
-}
+  ],
+};
 
 export const menus = [
   {
@@ -145,5 +145,10 @@ export const menus = [
     ],
   },
   ...countries,
-  magazines
-]
+  magazines,
+  {
+    title: "고객몰",
+    href: "/mall",
+    child: [],
+  },
+];

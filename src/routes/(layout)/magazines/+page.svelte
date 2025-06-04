@@ -89,6 +89,10 @@
       // ID로 정렬 (높은 ID가 최신)
       return b.id - a.id;
     });
+  
+  // how many items to show initially / incrementally
+  let itemsToShow = 6;
+  $: visibleMagazines = displayMagazines.slice(0, itemsToShow);
     
   // 최신 매거진의 발행일 (없으면 현재 날짜 사용)
   $: latestPublishedDate = displayMagazines && displayMagazines.length > 0 && displayMagazines[0].published 
@@ -136,7 +140,7 @@
   {:else}
     <!-- 매거진 그리드 -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
-      {#each displayMagazines as magazine, i (magazine.id)}
+      {#each visibleMagazines as magazine, i (magazine.id)}
         <div 
           class="magazine-card group relative overflow-hidden bg-white dark:bg-gray-800 zoom-shadow rounded-lg aspect-[3/4] w-full"
           in:fly={{ y: 20, duration: 400, delay: 100 + (i * 100) }}
@@ -153,6 +157,8 @@
                 <img 
                   src={magazine.thumbnailUrl}
                   alt={magazine.title}
+                  loading="lazy"
+                  decoding="async"
                   class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"
                 />
                 
@@ -219,40 +225,23 @@
           </a>
           
           <!-- 호버시 나타나는 다이내믹 그라데이션 테두리 -->
-          <div class="absolute inset-0 rounded-lg overflow-hidden bg-gradient-to-r from-transparent via-transparent to-transparent group-hover:from-{currentConfig.accentColor}-500 group-hover:via-{currentConfig.accentColor}-300 group-hover:to-{currentConfig.accentColor}-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-40 pointer-events-none gradient-animate"></div>
+          <div class="absolute inset-0 rounded-lg overflow-hidden bg-gradient-to-r from-transparent via-transparent to-transparent group-hover:from-{currentConfig.accentColor}-500 group-hover:via-{currentConfig.accentColor}-300 group-hover:to-{currentConfig.accentColor}-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40 pointer-events-none gradient-border"></div>
         </div>
       {/each}
     </div>
     
-    <!-- 더보기 버튼 -->
-    {#if displayMagazines.length > 6}
+    {#if itemsToShow < displayMagazines.length}
       <div class="flex justify-center mt-12">
-        <button class="group inline-flex items-center px-4 py-2 border border-{currentConfig.accentColor}-200 dark:border-{currentConfig.accentColor}-800 rounded-md text-sm font-medium text-{currentConfig.accentColor}-600 dark:text-{currentConfig.accentColor}-400 hover:bg-{currentConfig.accentColor}-50 dark:hover:bg-{currentConfig.accentColor}-900/30 transition-all duration-300">
-          <span>전체 아카이브 보기</span>
-          <svg class="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <button
+          on:click={() => (itemsToShow = Math.min(itemsToShow + 3, displayMagazines.length))}
+          class="group inline-flex items-center px-4 py-2 border border-{currentConfig.accentColor}-200 dark:border-{currentConfig.accentColor}-800 rounded-md text-sm font-medium text-{currentConfig.accentColor}-600 dark:text-{currentConfig.accentColor}-400 hover:bg-{currentConfig.accentColor}-50 dark:hover:bg-{currentConfig.accentColor}-900/30 transition-all duration-300">
+          <span>더 보기</span>
+          <svg class="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
           </svg>
         </button>
       </div>
     {/if}
-    
-    <!-- 매거진 전문성 강화를 위한 안내 텍스트 -->
-    <div class="mt-20 text-center max-w-4xl mx-auto px-6">
-      <div class="flex items-center justify-center space-x-4 mb-6">
-        <div class="w-16 h-[1px] bg-{currentConfig.accentColor}-500/30"></div>
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-{currentConfig.accentColor}-500/50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-        </svg>
-        <div class="w-16 h-[1px] bg-{currentConfig.accentColor}-500/30"></div>
-      </div>
-      <div class="flex flex-wrap justify-center gap-4 text-xs text-gray-500 dark:text-gray-400">
-        <span> {new Date().getFullYear()} {currentConfig.title}</span>
-        <span>•</span>
-        <span>ISSN: 2021-{Math.floor(1000 + Math.random() * 9000)}</span>
-        <span>•</span>
-        <span>월간 발행</span>
-      </div>
-    </div>
   {/if}
 </div>
 
@@ -303,21 +292,16 @@
                 0 10px 10px -5px rgba(0, 0, 0, 0.1);
   }
   
-  /* 그라데이션 테두리 애니메이션 */
-  .gradient-animate {
-    background-size: 300% 300%;
-    animation: moveGradient 4s alternate infinite;
+  /* Lightweight static gradient border (no keyframe animation) */
+  .gradient-border {
+    background-size: 100% 100%;
+    will-change: opacity;
   }
-  
-  @keyframes moveGradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
+  /* Fade in only on hover (handled by opacity transition in markup) */
+
+  /* Improve hover performance by promoting to its own layer */
+  .magazine-card,
+  .magazine-card img {
+    will-change: transform;
   }
 </style>

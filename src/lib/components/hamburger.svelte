@@ -1,5 +1,5 @@
 <script>
-  import { Drawer, Button, CloseButton, Sidebar, SidebarDropdownItem, SidebarDropdownWrapper, SidebarGroup, SidebarWrapper, DarkMode } from 'flowbite-svelte';
+  import { Drawer, Button, CloseButton, Sidebar, SidebarDropdownItem, SidebarDropdownWrapper, SidebarItem, SidebarGroup, SidebarWrapper, DarkMode } from 'flowbite-svelte';
   import { BarsOutline } from 'flowbite-svelte-icons';
   import { sineIn } from 'svelte/easing';
   import Platforms from './platforms.svelte';
@@ -27,16 +27,27 @@
     <SidebarWrapper divClass="h-[calc(100vh-80px)] flex flex-col items-center overflow-y-auto rounded dark:bg-gray-800">
       <SidebarGroup class="w-full">
         {#each menus as menu}
-          <SidebarDropdownWrapper class="pl-0" href={menu.href} label={menu.title}>
-            {#each menu.child as child}
-              <SidebarDropdownItem href={child.href} label={child.title} on:click={() => (hidden = true)} />
-            {/each}
-          </SidebarDropdownWrapper>
-          {/each}
-        </SidebarGroup>
-        <div class="my-8">
-          <Platforms size="h-8" />
-        </div>
+          {#if menu.child && menu.child.length > 0}
+            <SidebarDropdownWrapper class="pl-0" label={menu.title}>
+              {#each menu.child as child}
+                <SidebarDropdownItem
+                  href={child.href}
+                  label={child.title}
+                  on:click={() => (hidden = true)} />
+              {/each}
+            </SidebarDropdownWrapper>
+          {:else}
+            <SidebarItem
+              href={menu.href}
+              label={menu.title}
+              class="pl-0"
+              on:click={() => (hidden = true)} />
+          {/if}
+        {/each}
+      </SidebarGroup>
+      <div class="my-8">
+        <Platforms size="h-8" />
+      </div>
     </SidebarWrapper>
   </Sidebar>
 </Drawer>
