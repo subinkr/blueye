@@ -73,7 +73,7 @@
       <Separator />
       <div>서울특별시 영등포구 국회대로 62길 5, 5층 502호(여의도동, 신태진빌딩)</div>
       <Separator />
-      <div>대표전화 (02) 2070 8280</div>
+      <div>대표전화 010 5763 0617</div>
     </div>
     <div class="lg:flex gap-4">
       <div class="font-bold w-24">캄보디아센터</div>
