@@ -26,20 +26,20 @@
   })
 </script>
 
-<section id="korea-promo" class="w-full">
+<!-- <section id="korea-promo" class="w-full">
   <KoreaPromo />
-</section>
+</section> -->
 
 <!-- <section id="main-carousel" class="w-full">
   <MainCarousel />
 </section> -->
 
-<section id="stats" class="bg-white dark:bg-gray-800">
-  <Stats />
-</section>
-
 <section id="dubai-promo" class="w-full">
   <DubaiPromo />
+</section>
+
+<section id="stats" class="bg-white dark:bg-gray-800">
+  <Stats />
 </section>
 
 <section id="ceo" class="w-full bg-gray-50 dark:bg-gray-900">
