@@ -29,7 +29,7 @@
               </div>
               <div>
                 <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-1">전화번호</h4>
-                <p class="text-gray-600 dark:text-gray-300">(02) 2070 8280</p>
+                <p class="text-gray-600 dark:text-gray-300">010 5763 0617</p>
               </div>
             </div>
             
