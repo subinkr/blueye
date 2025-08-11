@@ -5,8 +5,8 @@ export async function load({ url }) {
   const limit = url.searchParams.get("limit") || 10;
   
   try {
-    // 활성화된 공지사항만 조회
-    const response = await fetch(`${API_SERVER}/notices?is_active=true&page=${page}&limit=${limit}`);
+    // 공지사항 조회
+    const response = await fetch(`${API_SERVER}/notices?page=${page}&limit=${limit}`);
     
     if (!response.ok) {
       throw new Error('Failed to fetch notices');

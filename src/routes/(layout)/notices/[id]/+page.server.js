@@ -16,11 +16,6 @@ export async function load({ params }) {
     
     const notice = await response.json();
     
-    // 비활성화된 공지사항은 표시하지 않음
-    if (!notice.is_active) {
-      throw error(404, '공지사항을 찾을 수 없습니다.');
-    }
-    
     // 줄바꿈 처리
     if (notice.content) {
       notice.content = notice.content.replace(/\n/g, '<br>');

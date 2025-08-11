@@ -1,12 +1,8 @@
 <script>
   import { 
     CalendarMonthOutline,
-    StarOutline,
     ClockOutline
   } from "flowbite-svelte-icons";
-  import { 
-    Badge
-  } from "flowbite-svelte";
 
   export let data;
   const { notice } = data;
@@ -46,12 +42,6 @@
       <!-- 헤더 -->
       <div class="bg-gradient-to-r from-purple-600 to-blue-600 px-8 py-6">
         <div class="flex items-center justify-between mb-4">
-          {#if notice.is_pinned}
-            <div class="flex items-center">
-              <StarOutline class="w-5 h-5 text-yellow-300" />
-              <Badge color="red" class="ml-2 bg-red-500">고정</Badge>
-            </div>
-          {/if}
           <div class="text-white/80 text-sm">
             {formatRelativeDate(notice.created_at)}
           </div>
