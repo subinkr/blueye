@@ -30,6 +30,7 @@
   "type": "module",
   "dependencies": {
     "dotenv": "^16.4.5",
+    "quill": "^2.0.3",
     "siema": "^1.5.1"
   }
 }

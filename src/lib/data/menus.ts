@@ -147,6 +147,11 @@ export const menus = [
   ...countries,
   magazines,
   {
+    title: "공지사항",
+    href: "/notices",
+    child: [],
+  },
+  {
     title: "고객몰",
     href: "/mall",
     child: [],

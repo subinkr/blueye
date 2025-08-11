@@ -7,7 +7,8 @@
     BuildingOutline, 
     BookOpenOutline, 
     UserOutline, 
-    LockOutline
+    LockOutline,
+    BellOutline
   } from 'flowbite-svelte-icons'
 </script>
 
@@ -16,7 +17,7 @@
     <Title>관리자 페이지</Title>
     
     <!-- 관리 메뉴 -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
       <a href="/admin/houses" class="block">
         <Card padding="xl" class="hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200">
           <div class="flex items-center">
@@ -36,6 +37,18 @@
             <div>
               <h3 class="text-lg font-semibold text-gray-900 dark:text-white">매거진 관리</h3>
               <p class="text-sm text-gray-600 dark:text-gray-400">매거진 업로드 및 관리</p>
+            </div>
+          </div>
+        </Card>
+      </a>
+      
+      <a href="/admin/notices" class="block">
+        <Card padding="xl" class="hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200">
+          <div class="flex items-center">
+            <BellOutline class="w-10 h-10 mr-4 text-purple-600 dark:text-purple-400" />
+            <div>
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">공지사항 관리</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">공지사항 등록 및 관리</p>
             </div>
           </div>
         </Card>
