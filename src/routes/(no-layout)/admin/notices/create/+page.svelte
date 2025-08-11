@@ -7,6 +7,7 @@
   import { onMount } from 'svelte';
 
   export let form;
+  export let data;
 
   $: if (form?.message) {
     alert(form.message);
@@ -36,7 +37,7 @@
       const formData = new FormData();
       formData.append('file', file);
 
-      const response = await fetch('http://localhost:4321/data/image', {
+      const response = await fetch(`${data.API_SERVER}/data/image`, {
         method: 'POST',
         body: formData,
       });
